@@ -48,20 +48,27 @@ class _LearningViewState extends State<LearningView> {
       ),
       child: SafeArea(
         child: currentIndex < wordsToLearn.length
-            ? GestureDetector(
-                onHorizontalDragEnd: (DragEndDetails details) {
-                  // Swipe right to mark as learned, left to keep it unlearned.
-                  if (details.primaryVelocity! > 0) {
-                    _handleCardSwipe(true);
-                  } else if (details.primaryVelocity! < 0) {
-                    _handleCardSwipe(false);
-                  }
-                },
-                child: Center(
-                  child: SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      height: MediaQuery.of(context).size.height * 0.8,
-                      child: WordCard(word: wordsToLearn[currentIndex])),
+            ? Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  child: Dismissible(
+                    resizeDuration: const Duration(milliseconds: 100),
+                    key: UniqueKey(), // Ensures each card can be dismissed
+                    direction: DismissDirection.horizontal,
+                    onDismissed: (direction) {
+                      // Handle swipe direction and card dismissal
+                      bool isLearned = direction == DismissDirection.startToEnd;
+                      _handleCardSwipe(isLearned);
+                    },
+                    background: Container(
+                      color: CupertinoColors.systemGreen,
+                    ),
+                    secondaryBackground: Container(
+                      color: CupertinoColors.systemRed,
+                    ),
+                    child: WordCard(word: wordsToLearn[currentIndex]),
+                  ),
                 ),
               )
             : const Center(

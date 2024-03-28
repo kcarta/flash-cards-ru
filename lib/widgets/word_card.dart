@@ -41,7 +41,6 @@ class _WordCardState extends State<WordCard> {
             color: _isFlipped
                 ? CupertinoColors.systemGrey5
                 : CupertinoColors.activeBlue,
-            borderRadius: BorderRadius.circular(10),
           ),
           padding: const EdgeInsets.all(8),
           child: Stack(
