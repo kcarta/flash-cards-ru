@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:math';
 import '../models/word_model.dart';
 
@@ -15,6 +17,7 @@ class WordCard extends StatefulWidget {
 
 class _WordCardState extends State<WordCard> {
   bool _isFlipped = false;
+  final FlutterTts flutterTts = FlutterTts();
 
   void _flipCard() {
     setState(() {
@@ -41,42 +44,64 @@ class _WordCardState extends State<WordCard> {
             borderRadius: BorderRadius.circular(10),
           ),
           padding: const EdgeInsets.all(8),
-          child: _isFlipped
-              ? Transform(
-                  // Reverse the flip effect for the content
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()..rotateY(pi),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(widget.word.english,
-                          style: const TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: CupertinoColors.black)),
-                      Text(widget.word.type,
-                          style: const TextStyle(
-                              fontSize: 18,
-                              fontStyle: FontStyle.italic,
-                              color: CupertinoColors.black)),
-                    ],
-                  ),
-                )
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(widget.word.russian,
-                        style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: CupertinoColors.white)),
-                    Text(widget.word.type,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            fontStyle: FontStyle.italic,
-                            color: CupertinoColors.white)),
-                  ],
-                ),
+          child: Stack(
+            children: <Widget>[
+              Center(
+                child: _isFlipped
+                    ? Transform(
+                        // Reverse the flip effect for the content
+                        alignment: Alignment.center,
+                        transform: Matrix4.identity()..rotateY(pi),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(widget.word.english,
+                                style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: CupertinoColors.black)),
+                            Text(widget.word.type,
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: CupertinoColors.black)),
+                          ],
+                        ),
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(widget.word.russian,
+                              style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: CupertinoColors.white)),
+                          Text(widget.word.type,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: CupertinoColors.white)),
+                        ],
+                      ),
+              ),
+              _isFlipped
+                  ? Container()
+                  : Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: FloatingActionButton(
+                        onPressed: () async {
+                          await flutterTts.speak(widget.word.russian);
+                        },
+                        backgroundColor: CupertinoColors.activeBlue,
+                        child: const Icon(
+                          CupertinoIcons.volume_up,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+            ],
+          ),
         ),
       ),
     );
