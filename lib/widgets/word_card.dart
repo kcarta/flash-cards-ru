@@ -51,9 +51,11 @@ class _WordCardState extends State<WordCard> {
                     children: <Widget>[
                       Text(widget.word.english,
                           style: const TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold)),
-                      const Text("English",
-                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: CupertinoColors.black)),
+                      Text(widget.word.type,
+                          style: const TextStyle(
                               fontSize: 18,
                               fontStyle: FontStyle.italic,
                               color: CupertinoColors.black)),
