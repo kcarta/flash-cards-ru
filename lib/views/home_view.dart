@@ -23,6 +23,14 @@ class _HomeViewState extends State<HomeView> {
     _loadWords();
   }
 
+  // Reset the words in the database.
+  void _resetWords() async {
+    await dbService.reset();
+    _loadWords();
+    // Reload the view
+    setState(() {});
+  }
+
   void _loadWords() async {
     var allWords = await dbService.getAllWords();
     setState(() {
@@ -78,33 +86,63 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _buildWordsSection(String title, List<Word> words) {
+    Map<String, List<Word>> groupedWords = {};
+
+    // Group words by word.type
+    for (var word in words) {
+      if (groupedWords.containsKey(word.type)) {
+        groupedWords[word.type]!.add(word);
+      } else {
+        groupedWords[word.type] = [word];
+      }
+    }
+
     return SliverToBoxAdapter(
       child: Container(
-          padding: const EdgeInsets.all(10),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(title,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title, // Display the section title here
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 10),
-            ...words.map((word) => Material(
-                  child: ListTile(
-                    title: Text(word.russian),
-                    subtitle: Text(word.english),
-                    trailing: Icon(word.isLearned
-                        ? CupertinoIcons.check_mark_circled
-                        : CupertinoIcons.circle),
-                  ),
-                )),
-          ])),
-    );
-  }
+            ...groupedWords.entries.map((entry) {
+              String type = entry.key;
+              List<Word> words = entry.value;
 
-  // Reset the words in the database.
-  void _resetWords() async {
-    await dbService.reset();
-    _loadWords();
-    // Reload the view
-    setState(() {});
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    type, // Display the type here
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ...words.map((word) => Material(
+                        child: ListTile(
+                          title: Text(word.russian),
+                          subtitle: Text(word.english),
+                          trailing: Icon(
+                            word.isLearned
+                                ? CupertinoIcons.check_mark_circled
+                                : CupertinoIcons.circle,
+                          ),
+                        ),
+                      )),
+                ],
+              );
+            }),
+          ],
+        ),
+      ),
+    );
   }
 }
