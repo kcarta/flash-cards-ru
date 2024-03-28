@@ -1,3 +1,4 @@
+import 'package:flash_cards/services/tts_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/word_model.dart';
@@ -14,6 +15,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   DatabaseService dbService = DatabaseService();
+  TTSService ttsService = TTSService();
   List<Word> unlearnedWords = [];
   List<Word> learnedWords = [];
 
@@ -130,10 +132,13 @@ class _HomeViewState extends State<HomeView> {
                         child: ListTile(
                           title: Text(word.russian),
                           subtitle: Text(word.english),
-                          trailing: Icon(
-                            word.isLearned
-                                ? CupertinoIcons.check_mark_circled
-                                : CupertinoIcons.circle,
+                          trailing: CupertinoButton(
+                            onPressed: () {
+                              ttsService.speak(word.russian);
+                            },
+                            child: const Icon(
+                              Icons.volume_up,
+                            ),
                           ),
                         ),
                       )),
