@@ -14,8 +14,7 @@ class TTSService {
     if (voices.any((voice) => voice["name"] == "Yuri (Enhanced)")) {
       await flutterTts.setVoice({"name": "Yuri (Enhanced)", "locale": "ru-RU"});
     } else if (voices.any((voice) => voice["name"] == "Milena (Enhanced)")) {
-      await flutterTts
-          .setVoice({"name": "Milena (Enhanced)", "locale": "ru-RU"});
+      await flutterTts.setVoice({"name": "Milena (Enhanced)", "locale": "ru-RU"});
     } else {
       await flutterTts.setVoice({"name": "Milena", "locale": "ru-RU"});
     }

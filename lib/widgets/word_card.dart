@@ -109,6 +109,7 @@ class _WordCardState extends State<WordCard> {
                   right: 8,
                   bottom: 8,
                   child: FloatingActionButton(
+                    heroTag: "pronunciation",
                     onPressed: () async {
                       await flutterTts.speak(widget.word.russian);
                     },
@@ -121,6 +122,7 @@ class _WordCardState extends State<WordCard> {
                   left: 8,
                   bottom: 8,
                   child: FloatingActionButton(
+                    heroTag: "pronunciation_test",
                     onPressed: _startPronunciationTest,
                     backgroundColor: CupertinoColors.activeBlue,
                     child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
