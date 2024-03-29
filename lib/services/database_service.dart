@@ -13,7 +13,6 @@ class DatabaseService {
       return _database; // Try returning _database directly.
     } catch (_) {
       _database = await initDb(); // Initialize it if it hasn't been yet.
-      _seedDatabase(); // Seed the database with initial data.
       return _database;
     }
   }
@@ -21,9 +20,12 @@ class DatabaseService {
   Future<Database> initDb() async {
     String path = join(await getDatabasesPath(), 'russian_flashcards.db');
     return await openDatabase(path, version: 1, onCreate: (db, version) async {
-      await db.execute(
-        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, isLearned INTEGER)",
-      );
+      await (Database db) async {
+        await db.execute(
+          "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, isLearned INTEGER)",
+        );
+        await _seedDatabase();
+      }(db);
     });
   }
 
