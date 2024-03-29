@@ -1,6 +1,10 @@
-- Re-layout the cards
-    - Icon in lower-left
-        - Toggle for icons?
-    - type on the bottom-middle
-    - Text larger
+- Flip cards while in English
+- Investigate why the data sometimes gets duplicated
+- Fix icons
+    - In-source icon translation
+    - Missing icons
+    - Number icons
+    - Color icons
 - Grammar pages
+    - Conjugations on verbs / adjectives/adverbs
+- Pronunciation test - record, call to STT, see if result is the same

@@ -1,4 +1,5 @@
 import 'package:flash_cards/services/tts_service.dart';
+import 'package:flash_cards/views/single_word_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/word_model.dart';
@@ -143,10 +144,17 @@ class _HomeViewState extends State<HomeView> {
                             onPressed: () {
                               ttsService.speak(word.russian);
                             },
-                            child: const Icon(
-                              Icons.volume_up,
-                            ),
+                            child: const Icon(Icons.volume_up),
                           ),
+                          onTap: () {
+                            // Navigate to the WordCardView on tap
+                            Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) =>
+                                      SingleWordView(word: word)),
+                            );
+                          },
                         ),
                       )),
                 ],
