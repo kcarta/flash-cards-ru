@@ -18,6 +18,7 @@ class _LearningViewState extends State<LearningView> {
   DatabaseService dbService = DatabaseService();
   List<Word> wordsToLearn = [];
   int currentIndex = 0;
+  bool isCurrentCardFlipped = false;
 
   @override
   void initState() {
@@ -34,6 +35,12 @@ class _LearningViewState extends State<LearningView> {
             isLearned); // Update the learning status in the database.
         currentIndex++;
       }
+    });
+  }
+
+  void _flipCard() {
+    setState(() {
+      isCurrentCardFlipped = !isCurrentCardFlipped;
     });
   }
 
@@ -67,7 +74,10 @@ class _LearningViewState extends State<LearningView> {
                     secondaryBackground: Container(
                       color: CupertinoColors.systemRed,
                     ),
-                    child: WordCard(word: wordsToLearn[currentIndex]),
+                    child: WordCard(
+                        word: wordsToLearn[currentIndex],
+                        isFlipped: isCurrentCardFlipped,
+                        onFlip: _flipCard),
                   ),
                 ),
               )

@@ -6,9 +6,11 @@ import '../models/word_model.dart';
 
 class WordCard extends StatefulWidget {
   final Word word;
+  final bool isFlipped;
+  final VoidCallback? onFlip;
 
-  // ignore: use_key_in_widget_constructors
-  const WordCard({required this.word});
+  const WordCard(
+      {super.key, required this.word, this.isFlipped = false, this.onFlip});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -19,7 +21,16 @@ class _WordCardState extends State<WordCard> {
   bool _isFlipped = false;
   final FlutterTts flutterTts = FlutterTts();
 
+  @override
+  void initState() {
+    super.initState();
+    _isFlipped = widget.isFlipped;
+  }
+
   void _flipCard() {
+    if (widget.onFlip != null) {
+      widget.onFlip!();
+    }
     setState(() {
       _isFlipped = !_isFlipped;
     });
