@@ -20,7 +20,7 @@ class DatabaseService {
     String path = join(await getDatabasesPath(), 'russian_flashcards.db');
     return await openDatabase(path, version: 1, onCreate: (db, version) async {
       await db.execute(
-        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, isLearned INTEGER)",
+        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, forms TEXT, isLearned INTEGER)",
       );
       await _seedDatabase(db);
     });
@@ -31,8 +31,7 @@ class DatabaseService {
     List<dynamic> jsonData = jsonDecode(data);
     List<Word> seedData = jsonData.map((json) => Word.fromMap(json)).toList();
     for (var word in seedData) {
-      await db.insert('Words', word.toMap(),
-          conflictAlgorithm: ConflictAlgorithm.replace);
+      await db.insert('Words', word.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
     }
   }
 
@@ -49,8 +48,7 @@ class DatabaseService {
   Future<List<Word>> getAllWords() async {
     final db = await database;
     var res = await db.query("words");
-    List<Word> list =
-        res.isNotEmpty ? res.map((c) => Word.fromMap(c)).toList() : [];
+    List<Word> list = res.isNotEmpty ? res.map((c) => Word.fromMap(c)).toList() : [];
     return list;
   }
 

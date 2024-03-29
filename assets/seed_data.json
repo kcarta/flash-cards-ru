@@ -43,41 +43,706 @@
     {"russian": "собака", "english": "dog", "type": "noun", "icon": "pets"},
     {"russian": "птица", "english": "bird", "type": "noun", "icon": "auto_awesome_mosaic"},
     {"russian": "лошадь", "english": "horse", "type": "noun", "icon": "agriculture"},
-    {"russian": "говорить", "english": "speak", "type": "verb", "icon": "record_voice_over"},
-    {"russian": "есть", "english": "eat", "type": "verb", "icon": "restaurant"},
-    {"russian": "пить", "english": "drink", "type": "verb", "icon": "local_drink"},
-    {"russian": "читать", "english": "read", "type": "verb", "icon": "menu_book"},
-    {"russian": "писать", "english": "write", "type": "verb", "icon": "edit"},
-    {"russian": "идти", "english": "go", "type": "verb", "icon": "directions_walk"},
-    {"russian": "стоять", "english": "stand", "type": "verb", "icon": "accessibility_new"},
-    {"russian": "сидеть", "english": "sit", "type": "verb", "icon": "chair"},
-    {"russian": "любить", "english": "love", "type": "verb", "icon": "favorite"},
-    {"russian": "играть", "english": "play", "type": "verb", "icon": "sports_esports"},
-    {"russian": "работать", "english": "work", "type": "verb", "icon": "work"},
-    {"russian": "открывать", "english": "open", "type": "verb", "icon": "lock_open"},
-    {"russian": "закрывать", "english": "close", "type": "verb", "icon": "lock"},
-    {"russian": "показывать", "english": "show", "type": "verb", "icon": "visibility"},
-    {"russian": "ходить", "english": "walk", "type": "verb", "icon": "directions_walk"},
-    {"russian": "бегать", "english": "run", "type": "verb", "icon": "directions_run"},
-    {"russian": "плавать", "english": "swim", "type": "verb", "icon": "pool"},
-    {"russian": "видеть", "english": "see", "type": "verb", "icon": "visibility"},
-    {"russian": "слушать", "english": "listen", "type": "verb", "icon": "headset"},
-    {"russian": "помогать", "english": "help", "type": "verb", "icon": "help"},
-    {"russian": "учить", "english": "learn", "type": "verb", "icon": "school"},
-    {"russian": "продавать", "english": "sell", "type": "verb", "icon": "sell"},
-    {"russian": "покупать", "english": "buy", "type": "verb", "icon": "shopping_cart"},
-    {"russian": "делать", "english": "do", "type": "verb", "icon": "build"},
-    {"russian": "знать", "english": "know", "type": "verb", "icon": "psychology"},
-    {"russian": "думать", "english": "think", "type": "verb", "icon": "lightbulb"},
-    {"russian": "чувствовать", "english": "feel", "type": "verb", "icon": "favorite"},
-    {"russian": "встречать", "english": "meet", "type": "verb", "icon": "people_alt"},
-    {"russian": "готовить", "english": "cook", "type": "verb", "icon": "kitchen"},
-    {"russian": "жить", "english": "live", "type": "verb", "icon": "home"},
-    {"russian": "маленький", "english": "small", "type": "adjective", "icon": "photo_size_select_small"},
+    {
+        "russian": "говорить",
+        "english": "speak",
+        "type": "verb",
+        "icon": "record_voice_over",
+        "forms": {
+            "present": {
+                "first-singular": "говорю",
+                "second-singular": "говоришь",
+                "third-singular": "говорит",
+                "first-plural": "говорим",
+                "second-plural": "говорите",
+                "third-plural": "говорят"
+            },
+            "past": {
+                "masculine-singular": "говорил",
+                "feminine-singular": "говорила",
+                "neuter-singular": "говорило",
+                "plural": "говорили"
+            }
+        }
+    },
+    {
+        "russian": "есть",
+        "english": "eat",
+        "type": "verb",
+        "icon": "restaurant",
+        "forms": {
+            "present": {
+                "first-singular": "ем",
+                "second-singular": "ешь",
+                "third-singular": "ест",
+                "first-plural": "едим",
+                "second-plural": "едите",
+                "third-plural": "едят"
+            },
+            "past": {
+                "masculine-singular": "ел",
+                "feminine-singular": "ела",
+                "neuter-singular": "ело",
+                "plural": "ели"
+            }
+        }
+    },
+    {
+        "russian": "пить",
+        "english": "drink",
+        "type": "verb",
+        "icon": "local_drink",
+        "forms": {
+            "present": {
+                "first-singular": "пью",
+                "second-singular": "пьешь",
+                "third-singular": "пьет",
+                "first-plural": "пьем",
+                "second-plural": "пьете",
+                "third-plural": "пьют"
+            },
+            "past": {
+                "masculine-singular": "пил",
+                "feminine-singular": "пила",
+                "neuter-singular": "пило",
+                "plural": "пили"
+            }
+        }
+    },
+    {
+        "russian": "читать",
+        "english": "read",
+        "type": "verb",
+        "icon": "menu_book",
+        "forms": {
+            "present": {
+                "first-singular": "читаю",
+                "second-singular": "читаешь",
+                "third-singular": "читает",
+                "first-plural": "читаем",
+                "second-plural": "читаете",
+                "third-plural": "читают"
+            },
+            "past": {
+                "masculine-singular": "читал",
+                "feminine-singular": "читала",
+                "neuter-singular": "читало",
+                "plural": "читали"
+            }
+        }
+    },
+    {
+        "russian": "писать",
+        "english": "write",
+        "type": "verb",
+        "icon": "edit",
+        "forms": {
+            "present": {
+                "first-singular": "пишу",
+                "second-singular": "пишешь",
+                "third-singular": "пишет",
+                "first-plural": "пишем",
+                "second-plural": "пишете",
+                "third-plural": "пишут"
+            },
+            "past": {
+                "masculine-singular": "писал",
+                "feminine-singular": "писала",
+                "neuter-singular": "писало",
+                "plural": "писали"
+            }
+        }
+    },
+    {
+        "russian": "идти",
+        "english": "go",
+        "type": "verb",
+        "icon": "directions_walk",
+        "forms": {
+            "present": {
+                "first-singular": "иду",
+                "second-singular": "идешь",
+                "third-singular": "идет",
+                "first-plural": "идем",
+                "second-plural": "идете",
+                "third-plural": "идут"
+            },
+            "past": {
+                "masculine-singular": "шел",
+                "feminine-singular": "шла",
+                "neuter-singular": "шло",
+                "plural": "шли"
+            }
+        }
+    },
+    {
+        "russian": "стоять",
+        "english": "stand",
+        "type": "verb",
+        "icon": "accessibility_new",
+        "forms": {
+            "present": {
+                "first-singular": "стою",
+                "second-singular": "стоишь",
+                "third-singular": "стоит",
+                "first-plural": "стоим",
+                "second-plural": "стоите",
+                "third-plural": "стоят"
+            },
+            "past": {
+                "masculine-singular": "стоял",
+                "feminine-singular": "стояла",
+                "neuter-singular": "стояло",
+                "plural": "стояли"
+            }
+        }
+    },
+    {
+        "russian": "сидеть",
+        "english": "sit",
+        "type": "verb",
+        "icon": "chair",
+        "forms": {
+            "present": {
+                "first-singular": "сижу",
+                "second-singular": "сидишь",
+                "third-singular": "сидит",
+                "first-plural": "сидим",
+                "second-plural": "сидите",
+                "third-plural": "сидят"
+            },
+            "past": {
+                "masculine-singular": "сидел",
+                "feminine-singular": "сидела",
+                "neuter-singular": "сидело",
+                "plural": "сидели"
+            }
+        }
+    },
+    {
+        "russian": "любить",
+        "english": "love",
+        "type": "verb",
+        "icon": "favorite",
+        "forms": {
+            "present": {
+                "first-singular": "люблю",
+                "second-singular": "любишь",
+                "third-singular": "любит",
+                "first-plural": "любим",
+                "second-plural": "любите",
+                "third-plural": "любят"
+            },
+            "past": {
+                "masculine-singular": "любил",
+                "feminine-singular": "любила",
+                "neuter-singular": "любило",
+                "plural": "любили"
+            }
+        }
+    },
+    {
+        "russian": "играть",
+        "english": "play",
+        "type": "verb",
+        "icon": "sports_esports",
+        "forms": {
+            "present": {
+                "first-singular": "играю",
+                "second-singular": "играешь",
+                "third-singular": "играет",
+                "first-plural": "играем",
+                "second-plural": "играете",
+                "third-plural": "играют"
+            },
+            "past": {
+                "masculine-singular": "играл",
+                "feminine-singular": "играла",
+                "neuter-singular": "играло",
+                "plural": "играли"
+            }
+        }
+    },
+    {
+        "russian": "работать",
+        "english": "work",
+        "type": "verb",
+        "icon": "work",
+        "forms": {
+            "present": {
+                "first-singular": "работаю",
+                "second-singular": "работаешь",
+                "third-singular": "работает",
+                "first-plural": "работаем",
+                "second-plural": "работаете",
+                "third-plural": "работают"
+            },
+            "past": {
+                "masculine-singular": "работал",
+                "feminine-singular": "работала",
+                "neuter-singular": "работало",
+                "plural": "работали"
+            }
+        }
+    },
+    {
+        "russian": "открывать",
+        "english": "open",
+        "type": "verb",
+        "icon": "lock_open",
+        "forms": {
+            "present": {
+                "first-singular": "открываю",
+                "second-singular": "открываешь",
+                "third-singular": "открывает",
+                "first-plural": "открываем",
+                "second-plural": "открываете",
+                "third-plural": "открывают"
+            },
+            "past": {
+                "masculine-singular": "открывал",
+                "feminine-singular": "открывала",
+                "neuter-singular": "открывало",
+                "plural": "открывали"
+            }
+        }
+    },
+    {
+        "russian": "закрывать",
+        "english": "close",
+        "type": "verb",
+        "icon": "lock",
+        "forms": {
+            "present": {
+                "first-singular": "закрываю",
+                "second-singular": "закрываешь",
+                "third-singular": "закрывает",
+                "first-plural": "закрываем",
+                "second-plural": "закрываете",
+                "third-plural": "закрывают"
+            },
+            "past": {
+                "masculine-singular": "закрывал",
+                "feminine-singular": "закрывала",
+                "neuter-singular": "закрывало",
+                "plural": "закрывали"
+            }
+        }
+    },
+    {
+        "russian": "показывать",
+        "english": "show",
+        "type": "verb",
+        "icon": "visibility",
+        "forms": {
+            "present": {
+                "first-singular": "показываю",
+                "second-singular": "показываешь",
+                "third-singular": "показывает",
+                "first-plural": "показываем",
+                "second-plural": "показываете",
+                "third-plural": "показывают"
+            },
+            "past": {
+                "masculine-singular": "показывал",
+                "feminine-singular": "показывала",
+                "neuter-singular": "показывало",
+                "plural": "показывали"
+            }
+        }
+    },
+    {
+        "russian": "ходить",
+        "english": "walk",
+        "type": "verb",
+        "icon": "directions_walk",
+        "forms": {
+            "present": {
+                "first-singular": "хожу",
+                "second-singular": "ходишь",
+                "third-singular": "ходит",
+                "first-plural": "ходим",
+                "second-plural": "ходите",
+                "third-plural": "ходят"
+            },
+            "past": {
+                "masculine-singular": "ходил",
+                "feminine-singular": "ходила",
+                "neuter-singular": "ходило",
+                "plural": "ходили"
+            }
+        }
+    },
+    {
+        "russian": "бегать",
+        "english": "run",
+        "type": "verb",
+        "icon": "directions_run",
+        "forms": {
+            "present": {
+                "first-singular": "бегу",
+                "second-singular": "бежишь",
+                "third-singular": "бежит",
+                "first-plural": "бежим",
+                "second-plural": "бежите",
+                "third-plural": "бегут"
+            },
+            "past": {
+                "masculine-singular": "бегал",
+                "feminine-singular": "бегала",
+                "neuter-singular": "бегало",
+                "plural": "бегали"
+            }
+        }
+    },
+    {
+        "russian": "плавать",
+        "english": "swim",
+        "type": "verb",
+        "icon": "pool",
+        "forms": {
+            "present": {
+                "first-singular": "плаваю",
+                "second-singular": "плаваешь",
+                "third-singular": "плавает",
+                "first-plural": "плаваем",
+                "second-plural": "плаваете",
+                "third-plural": "плавают"
+            },
+            "past": {
+                "masculine-singular": "плавал",
+                "feminine-singular": "плавала",
+                "neuter-singular": "плавало",
+                "plural": "плавали"
+            }
+        }
+    },
+    {
+        "russian": "видеть",
+        "english": "see",
+        "type": "verb",
+        "icon": "visibility",
+        "forms": {
+            "present": {
+                "first-singular": "вижу",
+                "second-singular": "видишь",
+                "third-singular": "видит",
+                "first-plural": "видим",
+                "second-plural": "видите",
+                "third-plural": "видят"
+            },
+            "past": {
+                "masculine-singular": "видел",
+                "feminine-singular": "видела",
+                "neuter-singular": "видело",
+                "plural": "видели"
+            }
+        }
+    },
+    {
+        "russian": "слушать",
+        "english": "listen",
+        "type": "verb",
+        "icon": "headset",
+        "forms": {
+            "present": {
+                "first-singular": "слушаю",
+                "second-singular": "слушаешь",
+                "third-singular": "слушает",
+                "first-plural": "слушаем",
+                "second-plural": "слушаете",
+                "third-plural": "слушают"
+            },
+            "past": {
+                "masculine-singular": "слушал",
+                "feminine-singular": "слушала",
+                "neuter-singular": "слушало",
+                "plural": "слушали"
+            }
+        }
+    },
+    {
+        "russian": "помогать",
+        "english": "help",
+        "type": "verb",
+        "icon": "help",
+        "forms": {
+            "present": {
+                "first-singular": "помогаю",
+                "second-singular": "помогаешь",
+                "third-singular": "помогает",
+                "first-plural": "помогаем",
+                "second-plural": "помогаете",
+                "third-plural": "помогают"
+            },
+            "past": {
+                "masculine-singular": "помогал",
+                "feminine-singular": "помогала",
+                "neuter-singular": "помогало",
+                "plural": "помогали"
+            }
+        }
+    },
+    {
+        "russian": "учить",
+        "english": "learn",
+        "type": "verb",
+        "icon": "school",
+        "forms": {
+            "present": {
+                "first-singular": "учу",
+                "second-singular": "учишь",
+                "third-singular": "учит",
+                "first-plural": "учим",
+                "second-plural": "учите",
+                "third-plural": "учат"
+            },
+            "past": {
+                "masculine-singular": "учил",
+                "feminine-singular": "учила",
+                "neuter-singular": "учило",
+                "plural": "учили"
+            }
+        }
+    },
+    {
+        "russian": "продавать",
+        "english": "sell",
+        "type": "verb",
+        "icon": "sell",
+        "forms": {
+            "present": {
+                "first-singular": "продаю",
+                "second-singular": "продаешь",
+                "third-singular": "продает",
+                "first-plural": "продаем",
+                "second-plural": "продаете",
+                "third-plural": "продают"
+            },
+            "past": {
+                "masculine-singular": "продавал",
+                "feminine-singular": "продавала",
+                "neuter-singular": "продавало",
+                "plural": "продавали"
+            }
+        }
+    },
+    {
+        "russian": "покупать",
+        "english": "buy",
+        "type": "verb",
+        "icon": "shopping_cart",
+        "forms": {
+            "present": {
+                "first-singular": "покупаю",
+                "second-singular": "покупаешь",
+                "third-singular": "покупает",
+                "first-plural": "покупаем",
+                "second-plural": "покупаете",
+                "third-plural": "покупают"
+            },
+            "past": {
+                "masculine-singular": "покупал",
+                "feminine-singular": "покупала",
+                "neuter-singular": "покупало",
+                "plural": "покупали"
+            }
+        }
+    },
+    {
+        "russian": "делать",
+        "english": "do",
+        "type": "verb",
+        "icon": "build",
+        "forms": {
+            "present": {
+                "first-singular": "делаю",
+                "second-singular": "делаешь",
+                "third-singular": "делает",
+                "first-plural": "делаем",
+                "second-plural": "делаете",
+                "third-plural": "делают"
+            },
+            "past": {
+                "masculine-singular": "делал",
+                "feminine-singular": "делала",
+                "neuter-singular": "делало",
+                "plural": "делали"
+            }
+        }
+    },
+    {
+        "russian": "знать",
+        "english": "know",
+        "type": "verb",
+        "icon": "psychology",
+        "forms": {
+            "present": {
+                "first-singular": "знаю",
+                "second-singular": "знаешь",
+                "third-singular": "знает",
+                "first-plural": "знаем",
+                "second-plural": "знаете",
+                "third-plural": "знают"
+            },
+            "past": {
+                "masculine-singular": "знал",
+                "feminine-singular": "знала",
+                "neuter-singular": "знало",
+                "plural": "знали"
+            }
+        }
+    },
+    {
+        "russian": "думать",
+        "english": "think",
+        "type": "verb",
+        "icon": "lightbulb",
+        "forms": {
+            "present": {
+                "first-singular": "думаю",
+                "second-singular": "думаешь",
+                "third-singular": "думает",
+                "first-plural": "думаем",
+                "second-plural": "думаете",
+                "third-plural": "думают"
+            },
+            "past": {
+                "masculine-singular": "думал",
+                "feminine-singular": "думала",
+                "neuter-singular": "думало",
+                "plural": "думали"
+            }
+        }
+    },
+    {
+        "russian": "чувствовать",
+        "english": "feel",
+        "type": "verb",
+        "icon": "favorite",
+        "forms": {
+            "present": {
+                "first-singular": "чувствую",
+                "second-singular": "чувствуешь",
+                "third-singular": "чувствует",
+                "first-plural": "чувствуем",
+                "second-plural": "чувствуете",
+                "third-plural": "чувствуют"
+            },
+            "past": {
+                "masculine-singular": "чувствовал",
+                "feminine-singular": "чувствовала",
+                "neuter-singular": "чувствовало",
+                "plural": "чувствовали"
+            }
+        }
+    },
+    {
+        "russian": "встречать",
+        "english": "meet",
+        "type": "verb",
+        "icon": "people_alt",
+        "forms": {
+            "present": {
+                "first-singular": "встречаю",
+                "second-singular": "встречаешь",
+                "third-singular": "встречает",
+                "first-plural": "встречаем",
+                "second-plural": "встречаете",
+                "third-plural": "встречают"
+            },
+            "past": {
+                "masculine-singular": "встречал",
+                "feminine-singular": "встречала",
+                "neuter-singular": "встречало",
+                "plural": "встречали"
+            }
+        }
+    },
+    {
+        "russian": "готовить",
+        "english": "cook",
+        "type": "verb",
+        "icon": "kitchen",
+        "forms": {
+            "present": {
+                "first-singular": "готовлю",
+                "second-singular": "готовишь",
+                "third-singular": "готовит",
+                "first-plural": "готовим",
+                "second-plural": "готовите",
+                "third-plural": "готовят"
+            },
+            "past": {
+                "masculine-singular": "готовил",
+                "feminine-singular": "готовила",
+                "neuter-singular": "готовило",
+                "plural": "готовили"
+            }
+        }
+    },
+    {
+        "russian": "жить",
+        "english": "live",
+        "type": "verb",
+        "icon": "home",
+        "forms": {
+            "present": {
+                "first-singular": "живу",
+                "second-singular": "живешь",
+                "third-singular": "живет",
+                "first-plural": "живем",
+                "second-plural": "живете",
+                "third-plural": "живут"
+            },
+            "past": {
+                "masculine-singular": "жил",
+                "feminine-singular": "жила",
+                "neuter-singular": "жило",
+                "plural": "жили"
+            }
+        }
+    },
+    {
+        "russian": "маленький",
+        "english": "small",
+        "type": "adjective",
+        "icon": "photo_size_select_small",
+        "forms": {
+            "masculine": "маленький",
+            "feminine": "маленькая",
+            "neuter": "маленькое",
+            "plural": "маленькие"
+        }
+    },
     {"russian": "новый", "english": "new", "type": "adjective", "icon": "fiber_new"},
     {"russian": "старый", "english": "old", "type": "adjective", "icon": "hourglass_bottom"},
-    {"russian": "хороший", "english": "good", "type": "adjective", "icon": "thumb_up"},
-    {"russian": "плохой", "english": "bad", "type": "adjective", "icon": "thumb_down"},
+    {
+        "russian": "хороший",
+        "english": "good",
+        "type": "adjective",
+        "icon": "thumb_up",
+        "forms": {
+            "masculine": "хороший",
+            "feminine": "хорошая",
+            "neuter": "хорошее",
+            "plural": "хорошие",
+            "adverbial": "хорошо"
+        }
+    },
+    {
+        "russian": "плохой",
+        "english": "bad",
+        "type": "adjective",
+        "icon": "thumb_down",
+        "forms": {
+            "masculine": "плохой",
+            "feminine": "плохая",
+            "neuter": "плохое",
+            "plural": "плохие",
+            "adverbial": "плохо"
+        }
+    },
     {"russian": "яркий", "english": "bright", "type": "adjective", "icon": "highlight"},
     {"russian": "темный", "english": "dark", "type": "adjective", "icon": "nights_stay"},
     {"russian": "тяжелый", "english": "heavy", "type": "adjective", "icon": "fitness_center"},

@@ -1,3 +1,4 @@
+import 'package:flash_cards/widgets/word_forms_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -12,8 +13,7 @@ class WordCard extends StatefulWidget {
   const WordCard({super.key, required this.word, this.isFlipped = false, this.onFlip});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _WordCardState createState() => _WordCardState();
+  State<WordCard> createState() => _WordCardState();
 }
 
 class _WordCardState extends State<WordCard> {
@@ -104,7 +104,7 @@ class _WordCardState extends State<WordCard> {
                 ),
               ),
               // TTS Button (only on non-flipped side)
-              if (!_isFlipped)
+              if (!_isFlipped) // TTS Button
                 Positioned(
                   right: 8,
                   bottom: 8,
@@ -117,7 +117,7 @@ class _WordCardState extends State<WordCard> {
                     child: const Icon(CupertinoIcons.volume_up, color: Colors.yellowAccent, size: 36),
                   ),
                 ),
-              if (!_isFlipped)
+              if (!_isFlipped) // STT Button
                 Positioned(
                   left: 8,
                   bottom: 8,

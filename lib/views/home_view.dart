@@ -10,8 +10,7 @@ class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomeViewState createState() => _HomeViewState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> {
@@ -47,15 +46,35 @@ class _HomeViewState extends State<HomeView> {
     await _loadWords();
   }
 
+  Future<void> _startLearningSession() async {
+    await Navigator.push(
+      context,
+      CupertinoPageRoute(builder: (context) => LearningView(words: _unlearnedWords)),
+    );
+    _loadWords();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('Russian Language Learning')),
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text("Russian Language Learning"),
+        trailing: GestureDetector(
+          onTap: _showSettingsMenu,
+          child: const Icon(CupertinoIcons.settings, size: 30, color: CupertinoColors.systemGrey),
+        ),
+      ),
       child: SafeArea(
         child: Column(
           children: [
             _buildWordLists(),
-            _buildBottomActions(),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: CupertinoButton.filled(
+                onPressed: _startLearningSession,
+                child: const Text("Start Learning"),
+              ),
+            ),
           ],
         ),
       ),
@@ -73,49 +92,8 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-  Widget _buildBottomActions() {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildResetButton(),
-          _buildStartLearningButton(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildResetButton() {
-    return GestureDetector(
-      onTap: _resetWords,
-      child: Container(
-        color: CupertinoColors.systemRed,
-        width: 50,
-        height: 50,
-        child: const Icon(Icons.refresh, color: CupertinoColors.white),
-      ),
-    );
-  }
-
-  Widget _buildStartLearningButton() {
-    return CupertinoButton.filled(
-      onPressed: _startLearningSession,
-      child: const Text('Start Learning'),
-    );
-  }
-
-  Future<void> _startLearningSession() async {
-    await Navigator.push(
-      context,
-      CupertinoPageRoute(builder: (context) => LearningView(words: _unlearnedWords)),
-    );
-    _loadWords();
-  }
-
   Widget _buildWordsSection(String title, List<Word> words) {
     final groupedWords = _groupWordsByType(words);
-
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -155,6 +133,33 @@ class _HomeViewState extends State<HomeView> {
         onTap: () => Navigator.push(
           context,
           CupertinoPageRoute(builder: (context) => SingleWordView(word: word)),
+        ),
+      ),
+    );
+  }
+
+  void _showSettingsMenu() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Settings'),
+        actions: <Widget>[
+          CupertinoActionSheetAction(
+            isDestructiveAction: true, // Optional: styles the action as destructive
+            onPressed: () {
+              Navigator.pop(context); // Close the menu
+              _resetWords(); // Call your reset words method
+            },
+            child: const Text('Reset Words'),
+          ),
+          // Add more actions here if needed
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          isDefaultAction: true,
+          onPressed: () {
+            Navigator.pop(context); // Close the menu without doing anything
+          },
+          child: const Text('Cancel'),
         ),
       ),
     );
