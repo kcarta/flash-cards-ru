@@ -1,0 +1,6 @@
+- Re-layout the cards
+    - Icon in lower-left
+        - Toggle for icons?
+    - type on the bottom-middle
+    - Text larger
+- Grammar pages
