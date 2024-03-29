@@ -112,6 +112,23 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: transitive
+    description:
+      name: font_awesome_flutter
+      sha256: "275ff26905134bcb59417cf60ad979136f1f8257f2f449914b2c3e05bbb4cd6f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.7.0"
+  icons_helper:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: b2128c4cfd8ef41975792d82a72a5b525ce533a0
+      url: "https://github.com/nicks258/icons_helper"
+    source: git
+    version: "1.2.0-nullsafety.1"
   leak_tracker:
     dependency: transitive
     description:

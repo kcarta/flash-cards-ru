@@ -75,6 +75,9 @@ class _WordCardState extends State<WordCard> {
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
                                   color: CupertinoColors.white)),
+                          // Display the parsed word.icon here
+                          Icon(widget.word.icon,
+                              color: CupertinoColors.white, size: 50),
                           Text(widget.word.type,
                               style: const TextStyle(
                                   fontSize: 18,
@@ -95,7 +98,7 @@ class _WordCardState extends State<WordCard> {
                         backgroundColor: CupertinoColors.activeBlue,
                         child: const Icon(
                           CupertinoIcons.volume_up,
-                          color: Colors.white,
+                          color: Colors.yellowAccent,
                         ),
                       ),
                     ),

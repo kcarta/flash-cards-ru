@@ -36,6 +36,8 @@ dependencies:
   path_provider: ^2.1.2
   flutter_bloc: ^8.1.5
   flutter_tts: ^4.0.2
+  icons_helper:
+    git: https://github.com/nicks258/icons_helper # using git repo to fix broken icons (see https://github.com/VoltaireApp/icons_helper/issues/18)
 
 dev_dependencies:
   flutter_test:

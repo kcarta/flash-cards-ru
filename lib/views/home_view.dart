@@ -28,12 +28,10 @@ class _HomeViewState extends State<HomeView> {
   // Reset the words in the database.
   void _resetWords() async {
     await dbService.reset();
-    _loadWords();
-    // Reload the view
-    setState(() {});
+    await _loadWords();
   }
 
-  void _loadWords() async {
+  Future<void> _loadWords() async {
     var allWords = await dbService.getAllWords();
     setState(() {
       unlearnedWords = allWords.where((word) => !word.isLearned).toList();
@@ -62,25 +60,33 @@ class _HomeViewState extends State<HomeView> {
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  _buildWordsSection('Learned Words', learnedWords),
-                  _buildWordsSection('Unlearned Words', unlearnedWords),
+                  _buildWordsSection('Learned', learnedWords),
+                  _buildWordsSection('Not Learned', unlearnedWords),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10),
-              child: CupertinoButton.filled(
-                onPressed: _startLearningSession,
-                child: const Text('Start Learning'),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: CupertinoButton.filled(
-                onPressed: _resetWords,
-                child: const Text('RESET WORDS'),
-              ),
-            ),
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                        onTap: _resetWords,
+                        child: Container(
+                          color: CupertinoColors.systemRed,
+                          width: 50,
+                          height: 50,
+                          child: const Icon(
+                            Icons.refresh,
+                            color: CupertinoColors.white,
+                          ),
+                        )),
+                    CupertinoButton.filled(
+                      onPressed: _startLearningSession,
+                      child: const Text('Start Learning'),
+                    ),
+                  ],
+                )),
           ],
         ),
       ),
@@ -130,6 +136,7 @@ class _HomeViewState extends State<HomeView> {
                   const SizedBox(height: 10),
                   ...words.map((word) => Material(
                         child: ListTile(
+                          leading: Icon(word.icon),
                           title: Text(word.russian),
                           subtitle: Text(word.english),
                           trailing: CupertinoButton(

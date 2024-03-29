@@ -22,7 +22,7 @@ class DatabaseService {
     String path = join(await getDatabasesPath(), 'russian_flashcards.db');
     return await openDatabase(path, version: 1, onCreate: (db, version) async {
       await db.execute(
-        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, isLearned INTEGER)",
+        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, isLearned INTEGER)",
       );
     });
   }
@@ -62,6 +62,6 @@ class DatabaseService {
   Future<void> reset() async {
     final db = await database;
     await db.delete("words");
-    _seedDatabase();
+    await _seedDatabase();
   }
 }
