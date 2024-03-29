@@ -42,66 +42,76 @@ class _WordCardState extends State<WordCard> {
                 ? CupertinoColors.systemGrey5
                 : CupertinoColors.activeBlue,
           ),
-          padding: const EdgeInsets.all(8),
           child: Stack(
             children: <Widget>[
-              Center(
-                child: _isFlipped
-                    ? Transform(
-                        // Reverse the flip effect for the content
-                        alignment: Alignment.center,
-                        transform: Matrix4.identity()..rotateY(pi),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(widget.word.english,
-                                style: const TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: CupertinoColors.black)),
-                            Text(widget.word.type,
-                                style: const TextStyle(
-                                    fontSize: 18,
-                                    fontStyle: FontStyle.italic,
-                                    color: CupertinoColors.black)),
-                          ],
-                        ),
-                      )
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(widget.word.russian,
-                              style: const TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: CupertinoColors.white)),
-                          // Display the parsed word.icon here
-                          Icon(widget.word.icon,
-                              color: CupertinoColors.white, size: 50),
-                          Text(widget.word.type,
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: CupertinoColors.white)),
-                        ],
-                      ),
+              // Word Text
+              Align(
+                alignment: Alignment.center,
+                child: Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+                  child: Text(
+                    _isFlipped ? widget.word.english : widget.word.russian,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: _isFlipped
+                            ? CupertinoColors.black
+                            : CupertinoColors.white),
+                  ),
+                ),
               ),
-              _isFlipped
-                  ? Container()
-                  : Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: FloatingActionButton(
-                        onPressed: () async {
-                          await flutterTts.speak(widget.word.russian);
-                        },
-                        backgroundColor: CupertinoColors.activeBlue,
-                        child: const Icon(
-                          CupertinoIcons.volume_up,
-                          color: Colors.yellowAccent,
-                        ),
-                      ),
+              // Icon
+              Positioned(
+                bottom: 12,
+                left: 0,
+                right: 0,
+                child: Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+                  child: Icon(widget.word.icon,
+                      color: _isFlipped
+                          ? CupertinoColors.black
+                          : Colors.yellowAccent,
+                      size: 48),
+                ),
+              ),
+              // Type Text
+              Positioned(
+                top: 12,
+                left: 0,
+                right: 0,
+                child: Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+                  child: Text(
+                    widget.word.type,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontStyle: FontStyle.italic,
+                      color: _isFlipped
+                          ? CupertinoColors.black
+                          : CupertinoColors.white,
                     ),
+                  ),
+                ),
+              ),
+              // TTS Button (only on non-flipped side)
+              if (!_isFlipped)
+                Positioned(
+                  right: 8,
+                  bottom: 8,
+                  child: FloatingActionButton(
+                    onPressed: () async {
+                      await flutterTts.speak(widget.word.russian);
+                    },
+                    backgroundColor: CupertinoColors.activeBlue,
+                    child: const Icon(CupertinoIcons.volume_up,
+                        color: Colors.yellowAccent, size: 36),
+                  ),
+                ),
             ],
           ),
         ),
