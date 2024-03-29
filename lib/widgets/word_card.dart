@@ -9,8 +9,7 @@ class WordCard extends StatefulWidget {
   final bool isFlipped;
   final VoidCallback? onFlip;
 
-  const WordCard(
-      {super.key, required this.word, this.isFlipped = false, this.onFlip});
+  const WordCard({super.key, required this.word, this.isFlipped = false, this.onFlip});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -36,6 +35,10 @@ class _WordCardState extends State<WordCard> {
     });
   }
 
+  void _startPronunciationTest() async {
+    print("Starting pronunciation test for ${widget.word.russian}");
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -49,9 +52,7 @@ class _WordCardState extends State<WordCard> {
           duration: const Duration(milliseconds: 400),
           curve: Curves.easeInOut,
           decoration: BoxDecoration(
-            color: _isFlipped
-                ? CupertinoColors.systemGrey5
-                : CupertinoColors.activeBlue,
+            color: _isFlipped ? CupertinoColors.systemGrey5 : CupertinoColors.activeBlue,
           ),
           child: Stack(
             children: <Widget>[
@@ -67,9 +68,7 @@ class _WordCardState extends State<WordCard> {
                     style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
-                        color: _isFlipped
-                            ? CupertinoColors.black
-                            : CupertinoColors.white),
+                        color: _isFlipped ? CupertinoColors.black : CupertinoColors.white),
                   ),
                 ),
               ),
@@ -81,11 +80,8 @@ class _WordCardState extends State<WordCard> {
                 child: Transform(
                   alignment: Alignment.center,
                   transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                  child: Icon(widget.word.icon,
-                      color: _isFlipped
-                          ? CupertinoColors.black
-                          : Colors.yellowAccent,
-                      size: 48),
+                  child:
+                      Icon(widget.word.icon, color: _isFlipped ? CupertinoColors.black : Colors.yellowAccent, size: 48),
                 ),
               ),
               // Type Text
@@ -102,9 +98,7 @@ class _WordCardState extends State<WordCard> {
                     style: TextStyle(
                       fontSize: 24,
                       fontStyle: FontStyle.italic,
-                      color: _isFlipped
-                          ? CupertinoColors.black
-                          : CupertinoColors.white,
+                      color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
                     ),
                   ),
                 ),
@@ -119,8 +113,17 @@ class _WordCardState extends State<WordCard> {
                       await flutterTts.speak(widget.word.russian);
                     },
                     backgroundColor: CupertinoColors.activeBlue,
-                    child: const Icon(CupertinoIcons.volume_up,
-                        color: Colors.yellowAccent, size: 36),
+                    child: const Icon(CupertinoIcons.volume_up, color: Colors.yellowAccent, size: 36),
+                  ),
+                ),
+              if (!_isFlipped)
+                Positioned(
+                  left: 8,
+                  bottom: 8,
+                  child: FloatingActionButton(
+                    onPressed: _startPronunciationTest,
+                    backgroundColor: CupertinoColors.activeBlue,
+                    child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
                   ),
                 ),
             ],

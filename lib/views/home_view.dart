@@ -43,8 +43,7 @@ class _HomeViewState extends State<HomeView> {
   void _startLearningSession() async {
     await Navigator.push(
       context,
-      CupertinoPageRoute(
-          builder: (context) => LearningView(words: unlearnedWords)),
+      CupertinoPageRoute(builder: (context) => LearningView(words: unlearnedWords)),
     );
     _loadWords();
   }
@@ -135,33 +134,35 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  ...words.map((word) => Material(
-                        child: ListTile(
-                          leading: Icon(word.icon),
-                          title: Text(word.russian),
-                          subtitle: Text(word.english),
-                          trailing: CupertinoButton(
-                            onPressed: () {
-                              ttsService.speak(word.russian);
-                            },
-                            child: const Icon(Icons.volume_up),
-                          ),
-                          onTap: () {
-                            // Navigate to the WordCardView on tap
-                            Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) =>
-                                      SingleWordView(word: word)),
-                            );
-                          },
-                        ),
-                      )),
+                  ...words.map(_buildWordTile),
                 ],
               );
             }),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildWordTile(word) {
+    return Material(
+      child: ListTile(
+        leading: Icon(word.icon),
+        title: Text(word.russian),
+        subtitle: Text(word.english),
+        trailing: CupertinoButton(
+          onPressed: () {
+            ttsService.speak(word.russian);
+          },
+          child: const Icon(Icons.volume_up),
+        ),
+        onTap: () {
+          // Navigate to the WordCardView on tap
+          Navigator.push(
+            context,
+            CupertinoPageRoute(builder: (context) => SingleWordView(word: word)),
+          );
+        },
       ),
     );
   }

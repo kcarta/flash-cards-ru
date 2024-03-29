@@ -1,8 +1,3 @@
-- Fix icons
-    - In-source icon translation
-    - Missing icons
-    - Number icons
-    - Color icons
 - Flash cards within a category
 - Grammar pages
     - Conjugations on verbs / adjectives/adverbs
