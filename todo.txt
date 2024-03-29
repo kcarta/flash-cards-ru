@@ -1,10 +1,9 @@
-- Flip cards while in English
-- Investigate why the data sometimes gets duplicated
 - Fix icons
     - In-source icon translation
     - Missing icons
     - Number icons
     - Color icons
+- Flash cards within a category
 - Grammar pages
     - Conjugations on verbs / adjectives/adverbs
 - Pronunciation test - record, call to STT, see if result is the same

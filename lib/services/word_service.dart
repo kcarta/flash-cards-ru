@@ -9,7 +9,7 @@ IconData? getMaterialIcon({required String name}) {
 }
 /* NOT USED YET
 
-// Returns an icon by examining the name for the format ICON_LIBRARY.ICON_NAME and if not, looks for a Material icon of the ICON_NAME
+// Returns an icon by examining
 // For example fa.fiveHundredPx returns the icon named fiveHundredPx in the FontAwesome lib, if it didn't exist, it'd try to return the material icon named fiveHundredPx, otherwise you get null.
 // If you don't use the dot notation described it will attempt to get you an icon favoring the Material icon set using getIconGuessFavorMaterial
 IconData? getIconUsingPrefix({required String name}) {
@@ -43,6 +43,10 @@ IconData? getFontAwesomeIcon({required String name}) {
 
 /// Icon data map for Material Icons
 const Map<String, IconData> _iconsMap = <String, IconData>{
+  /* NEWLY-ADDED ICONS */
+  'table_bar': Icons.table_bar,
+
+  /* END NEWLY-ADDED ICONS */
   'ac_unit': Icons.ac_unit,
   'access_alarm': Icons.access_alarm,
   'access_alarms': Icons.access_alarms,
