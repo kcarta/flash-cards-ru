@@ -1,4 +1,4 @@
-import 'package:flash_cards/services/word_service.dart';
+import 'package:flash_cards/services/icon_helper.dart';
 import 'package:flutter/material.dart';
 
 class Word {
