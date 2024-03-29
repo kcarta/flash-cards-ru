@@ -1,5 +1,5 @@
+import 'package:flash_cards/services/word_service.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_helper/icons_helper.dart';
 
 class Word {
   final int? id;
