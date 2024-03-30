@@ -17,6 +17,7 @@ class _LearningViewState extends State<LearningView> {
   List<Word> wordsToLearn = [];
   int currentIndex = 0;
   bool isCurrentCardFlipped = false;
+  bool _showForms = false;
 
   @override
   void initState() {
@@ -44,11 +45,18 @@ class _LearningViewState extends State<LearningView> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: const Text('Learning Session'),
-        leading: CupertinoNavigationBarBackButton(
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
+          middle: const Text('Learning Session'),
+          leading: CupertinoNavigationBarBackButton(
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          trailing: CupertinoSwitch(
+            value: _showForms,
+            onChanged: (bool value) {
+              setState(() {
+                _showForms = value;
+              });
+            },
+          )),
       child: SafeArea(
         child: currentIndex < wordsToLearn.length
             ? Center(
@@ -70,8 +78,12 @@ class _LearningViewState extends State<LearningView> {
                     secondaryBackground: Container(
                       color: CupertinoColors.systemRed,
                     ),
-                    child:
-                        WordCard(word: wordsToLearn[currentIndex], isFlipped: isCurrentCardFlipped, onFlip: _flipCard),
+                    child: WordCard(
+                      word: wordsToLearn[currentIndex],
+                      isFlipped: isCurrentCardFlipped,
+                      onFlip: _flipCard,
+                      showForms: _showForms,
+                    ),
                   ),
                 ),
               )

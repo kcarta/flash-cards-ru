@@ -1,48 +1,1060 @@
 [
-    {"russian": "дом", "english": "house", "type": "noun", "icon": "home"},
-    {"russian": "машина", "english": "car", "type": "noun", "icon": "directions_car"},
-    {"russian": "книга", "english": "book", "type": "noun", "icon": "book"},
-    {"russian": "стол", "english": "table", "type": "noun", "icon": "table_bar"},
-    {"russian": "стул", "english": "chair", "type": "noun", "icon": "event_seat"},
-    {"russian": "вода", "english": "water", "type": "noun", "icon": "local_drink"},
-    {"russian": "чай", "english": "tea", "type": "noun", "icon": "emoji_food_beverage"},
-    {"russian": "кофе", "english": "coffee", "type": "noun", "icon": "coffee"},
-    {"russian": "сок", "english": "juice", "type": "noun", "icon": "local_bar"},
-    {"russian": "хлеб", "english": "bread", "type": "noun", "icon": "breakfast_dining"},
-    {"russian": "соль", "english": "salt", "type": "noun", "icon": "grain"},
-    {"russian": "сахар", "english": "sugar", "type": "noun", "icon": "icecream"},
-    {"russian": "мясо", "english": "meat", "type": "noun", "icon": "set_meal"},
-    {"russian": "рыба", "english": "fish", "type": "noun", "icon": "sailing"},
-    {"russian": "молоко", "english": "milk", "type": "noun", "icon": "local_cafe"},
-    {"russian": "сыр", "english": "cheese", "type": "noun", "icon": "emoji_food_beverage"},
-    {"russian": "парк", "english": "park", "type": "noun", "icon": "park"},
-    {"russian": "школа", "english": "school", "type": "noun", "icon": "school"},
-    {"russian": "университет", "english": "university", "type": "noun", "icon": "account_balance"},
-    {"russian": "магазин", "english": "shop", "type": "noun", "icon": "shop"},
-    {"russian": "рынок", "english": "market", "type": "noun", "icon": "storefront"},
-    {"russian": "город", "english": "city", "type": "noun", "icon": "location_city"},
-    {"russian": "деревня", "english": "village", "type": "noun", "icon": "cottage"},
-    {"russian": "страна", "english": "country", "type": "noun", "icon": "public"},
-    {"russian": "мир", "english": "world", "type": "noun", "icon": "language"},
-    {"russian": "работа", "english": "work", "type": "noun", "icon": "work"},
-    {"russian": "деньги", "english": "money", "type": "noun", "icon": "attach_money"},
-    {"russian": "здание", "english": "building", "type": "noun", "icon": "business"},
-    {"russian": "квартира", "english": "apartment", "type": "noun", "icon": "apartment"},
-    {"russian": "улица", "english": "street", "type": "noun", "icon": "add_road"},
-    {"russian": "дорога", "english": "road", "type": "noun", "icon": "alt_route"},
-    {"russian": "река", "english": "river", "type": "noun", "icon": "water"},
-    {"russian": "море", "english": "sea", "type": "noun", "icon": "directions_boat"},
-    {"russian": "озеро", "english": "lake", "type": "noun", "icon": "water"},
-    {"russian": "лес", "english": "forest", "type": "noun", "icon": "forest"},
-    {"russian": "гора", "english": "mountain", "type": "noun", "icon": "terrain"},
-    {"russian": "поле", "english": "field", "type": "noun", "icon": "grass"},
-    {"russian": "цветок", "english": "flower", "type": "noun", "icon": "local_florist"},
-    {"russian": "дерево", "english": "tree", "type": "noun", "icon": "park"},
-    {"russian": "трава", "english": "grass", "type": "noun", "icon": "grass"},
-    {"russian": "кот", "english": "cat", "type": "noun", "icon": "pets"},
-    {"russian": "собака", "english": "dog", "type": "noun", "icon": "pets"},
-    {"russian": "птица", "english": "bird", "type": "noun", "icon": "auto_awesome_mosaic"},
-    {"russian": "лошадь", "english": "horse", "type": "noun", "icon": "agriculture"},
+    {
+        "russian": "дом",
+        "english": "house",
+        "type": "noun",
+        "icon": "home",
+        "forms": {
+            "singular": {
+                "nominative": "дом",
+                "genitive": "дома",
+                "dative": "дому",
+                "accusative": "дом",
+                "instrumental": "домом",
+                "prepositional": "доме"
+            },
+            "plural": {
+                "nominative": "дома",
+                "genitive": "домов",
+                "dative": "домам",
+                "accusative": "дома",
+                "instrumental": "домами",
+                "prepositional": "домах"
+            }
+        }
+    },
+    {
+        "russian": "машина",
+        "english": "car",
+        "type": "noun",
+        "icon": "directions_car",
+        "forms": {
+            "singular": {
+                "nominative": "машина",
+                "genitive": "машины",
+                "dative": "машине",
+                "accusative": "машину",
+                "instrumental": "машиной",
+                "prepositional": "машине"
+            },
+            "plural": {
+                "nominative": "машины",
+                "genitive": "машин",
+                "dative": "машинам",
+                "accusative": "машины",
+                "instrumental": "машинами",
+                "prepositional": "машинах"
+            }
+        }
+    },
+    {
+        "russian": "книга",
+        "english": "book",
+        "type": "noun",
+        "icon": "book",
+        "forms": {
+            "singular": {
+                "nominative": "книга",
+                "genitive": "книги",
+                "dative": "книге",
+                "accusative": "книгу",
+                "instrumental": "книгой",
+                "prepositional": "книге"
+            },
+            "plural": {
+                "nominative": "книги",
+                "genitive": "книг",
+                "dative": "книгам",
+                "accusative": "книги",
+                "instrumental": "книгами",
+                "prepositional": "книгах"
+            }
+        }
+    },
+    {
+        "russian": "стол",
+        "english": "table",
+        "type": "noun",
+        "icon": "table_bar",
+        "forms": {
+            "singular": {
+                "nominative": "стол",
+                "genitive": "стола",
+                "dative": "столу",
+                "accusative": "стол",
+                "instrumental": "столом",
+                "prepositional": "столе"
+            },
+            "plural": {
+                "nominative": "столы",
+                "genitive": "столов",
+                "dative": "столам",
+                "accusative": "столы",
+                "instrumental": "столами",
+                "prepositional": "столах"
+            }
+        }
+    },
+    {
+        "russian": "стул",
+        "english": "chair",
+        "type": "noun",
+        "icon": "event_seat",
+        "forms": {
+            "singular": {
+                "nominative": "стул",
+                "genitive": "стула",
+                "dative": "стулу",
+                "accusative": "стул",
+                "instrumental": "стулом",
+                "prepositional": "стуле"
+            },
+            "plural": {
+                "nominative": "стулья",
+                "genitive": "стульев",
+                "dative": "стульям",
+                "accusative": "стулья",
+                "instrumental": "стульями",
+                "prepositional": "стульях"
+            }
+        }
+    },
+    {
+        "russian": "вода",
+        "english": "water",
+        "type": "noun",
+        "icon": "local_drink",
+        "forms": {
+            "singular": {
+                "nominative": "вода",
+                "genitive": "воды",
+                "dative": "воде",
+                "accusative": "воду",
+                "instrumental": "водой",
+                "prepositional": "воде"
+            },
+            "plural": {
+                "nominative": "воды",
+                "genitive": "вод",
+                "dative": "водам",
+                "accusative": "воды",
+                "instrumental": "водами",
+                "prepositional": "водах"
+            }
+        }
+    },
+    {
+        "russian": "чай",
+        "english": "tea",
+        "type": "noun",
+        "icon": "emoji_food_beverage",
+        "forms": {
+            "singular": {
+                "nominative": "чай",
+                "genitive": "чая",
+                "dative": "чаю",
+                "accusative": "чай",
+                "instrumental": "чаем",
+                "prepositional": "чае"
+            },
+            "plural": {
+                "nominative": "чаи",
+                "genitive": "чаев",
+                "dative": "чаям",
+                "accusative": "чаи",
+                "instrumental": "чаями",
+                "prepositional": "чаях"
+            }
+        }
+    },
+    {
+        "russian": "кофе",
+        "english": "coffee",
+        "type": "noun",
+        "icon": "coffee",
+        "forms": {
+            "singular": {
+                "nominative": "кофе",
+                "genitive": "кофе",
+                "dative": "кофе",
+                "accusative": "кофе",
+                "instrumental": "кофе",
+                "prepositional": "кофе"
+            },
+            "plural": {
+                "nominative": "кофе",
+                "genitive": "кофе",
+                "dative": "кофе",
+                "accusative": "кофе",
+                "instrumental": "кофе",
+                "prepositional": "кофе"
+            }
+        }
+    },
+    {
+        "russian": "сок",
+        "english": "juice",
+        "type": "noun",
+        "icon": "local_bar",
+        "forms": {
+            "singular": {
+                "nominative": "сок",
+                "genitive": "сока",
+                "dative": "соку",
+                "accusative": "сок",
+                "instrumental": "соком",
+                "prepositional": "соке"
+            },
+            "plural": {
+                "nominative": "соки",
+                "genitive": "соков",
+                "dative": "сокам",
+                "accusative": "соки",
+                "instrumental": "соками",
+                "prepositional": "соках"
+            }
+        }
+    },
+    {
+        "russian": "хлеб",
+        "english": "bread",
+        "type": "noun",
+        "icon": "breakfast_dining",
+        "forms": {
+            "singular": {
+                "nominative": "хлеб",
+                "genitive": "хлеба",
+                "dative": "хлебу",
+                "accusative": "хлеб",
+                "instrumental": "хлебом",
+                "prepositional": "хлебе"
+            },
+            "plural": {
+                "nominative": "хлебы",
+                "genitive": "хлебов",
+                "dative": "хлебам",
+                "accusative": "хлебы",
+                "instrumental": "хлебами",
+                "prepositional": "хлебах"
+            }
+        }
+    },
+    {
+        "russian": "соль",
+        "english": "salt",
+        "type": "noun",
+        "icon": "grain",
+        "forms": {
+            "singular": {
+                "nominative": "соль",
+                "genitive": "соли",
+                "dative": "соли",
+                "accusative": "соль",
+                "instrumental": "солью",
+                "prepositional": "соли"
+            },
+            "plural": {
+                "nominative": "соли",
+                "genitive": "солей",
+                "dative": "солям",
+                "accusative": "соли",
+                "instrumental": "солями",
+                "prepositional": "солях"
+            }
+        }
+    },
+    {
+        "russian": "сахар",
+        "english": "sugar",
+        "type": "noun",
+        "icon": "icecream",
+        "forms": {
+            "singular": {
+                "nominative": "сахар",
+                "genitive": "сахара",
+                "dative": "сахару",
+                "accusative": "сахар",
+                "instrumental": "сахаром",
+                "prepositional": "сахаре"
+            },
+            "plural": {
+                "nominative": "сахара",
+                "genitive": "сахаров",
+                "dative": "сахарам",
+                "accusative": "сахара",
+                "instrumental": "сахарами",
+                "prepositional": "сахарах"
+            }
+        }
+    },
+    {
+        "russian": "мясо",
+        "english": "meat",
+        "type": "noun",
+        "icon": "set_meal",
+        "forms": {
+            "singular": {
+                "nominative": "мясо",
+                "genitive": "мяса",
+                "dative": "мясу",
+                "accusative": "мясо",
+                "instrumental": "мясом",
+                "prepositional": "мясе"
+            },
+            "plural": {
+                "nominative": "мяса",
+                "genitive": "мяс",
+                "dative": "мясам",
+                "accusative": "мяса",
+                "instrumental": "мясами",
+                "prepositional": "мясах"
+            }
+        }
+    },
+    {
+        "russian": "рыба",
+        "english": "fish",
+        "type": "noun",
+        "icon": "sailing",
+        "forms": {
+            "singular": {
+                "nominative": "рыба",
+                "genitive": "рыбы",
+                "dative": "рыбе",
+                "accusative": "рыбу",
+                "instrumental": "рыбой",
+                "prepositional": "рыбе"
+            },
+            "plural": {
+                "nominative": "рыбы",
+                "genitive": "рыб",
+                "dative": "рыбам",
+                "accusative": "рыб",
+                "instrumental": "рыбами",
+                "prepositional": "рыбах"
+            }
+        }
+    },
+    {
+        "russian": "молоко",
+        "english": "milk",
+        "type": "noun",
+        "icon": "local_cafe",
+        "forms": {
+            "singular": {
+                "nominative": "молоко",
+                "genitive": "молока",
+                "dative": "молоку",
+                "accusative": "молоко",
+                "instrumental": "молоком",
+                "prepositional": "молоке"
+            },
+            "plural": {
+                "nominative": "молоки",
+                "genitive": "молок",
+                "dative": "молокам",
+                "accusative": "молоки",
+                "instrumental": "молоками",
+                "prepositional": "молоках"
+            }
+        }
+    },
+    {
+        "russian": "сыр",
+        "english": "cheese",
+        "type": "noun",
+        "icon": "emoji_food_beverage",
+        "forms": {
+            "singular": {
+                "nominative": "сыр",
+                "genitive": "сыра",
+                "dative": "сыру",
+                "accusative": "сыр",
+                "instrumental": "сыром",
+                "prepositional": "сыре"
+            },
+            "plural": {
+                "nominative": "сыры",
+                "genitive": "сыров",
+                "dative": "сырам",
+                "accusative": "сыры",
+                "instrumental": "сырами",
+                "prepositional": "сырах"
+            }
+        }
+    },
+    {
+        "russian": "парк",
+        "english": "park",
+        "type": "noun",
+        "icon": "park",
+        "forms": {
+            "singular": {
+                "nominative": "парк",
+                "genitive": "парка",
+                "dative": "парку",
+                "accusative": "парк",
+                "instrumental": "парком",
+                "prepositional": "парке"
+            },
+            "plural": {
+                "nominative": "парки",
+                "genitive": "парков",
+                "dative": "паркам",
+                "accusative": "парки",
+                "instrumental": "парками",
+                "prepositional": "парках"
+            }
+        }
+    },
+    {
+        "russian": "школа",
+        "english": "school",
+        "type": "noun",
+        "icon": "school",
+        "forms": {
+            "singular": {
+                "nominative": "школа",
+                "genitive": "школы",
+                "dative": "школе",
+                "accusative": "школу",
+                "instrumental": "школой",
+                "prepositional": "школе"
+            },
+            "plural": {
+                "nominative": "школы",
+                "genitive": "школ",
+                "dative": "школам",
+                "accusative": "школы",
+                "instrumental": "школами",
+                "prepositional": "школах"
+            }
+        }
+    },
+    {
+        "russian": "университет",
+        "english": "university",
+        "type": "noun",
+        "icon": "account_balance",
+        "forms": {
+            "singular": {
+                "nominative": "университет",
+                "genitive": "университета",
+                "dative": "университету",
+                "accusative": "университет",
+                "instrumental": "университетом",
+                "prepositional": "университете"
+            },
+            "plural": {
+                "nominative": "университеты",
+                "genitive": "университетов",
+                "dative": "университетам",
+                "accusative": "университеты",
+                "instrumental": "университетами",
+                "prepositional": "университетах"
+            }
+        }
+    },
+    {
+        "russian": "магазин",
+        "english": "shop",
+        "type": "noun",
+        "icon": "shop",
+        "forms": {
+            "singular": {
+                "nominative": "магазин",
+                "genitive": "магазина",
+                "dative": "магазину",
+                "accusative": "магазин",
+                "instrumental": "магазином",
+                "prepositional": "магазине"
+            },
+            "plural": {
+                "nominative": "магазины",
+                "genitive": "магазинов",
+                "dative": "магазинам",
+                "accusative": "магазины",
+                "instrumental": "магазинами",
+                "prepositional": "магазинах"
+            }
+        }
+    },
+    {
+        "russian": "рынок",
+        "english": "market",
+        "type": "noun",
+        "icon": "storefront",
+        "forms": {
+            "singular": {
+                "nominative": "рынок",
+                "genitive": "рынка",
+                "dative": "рынку",
+                "accusative": "рынок",
+                "instrumental": "рынком",
+                "prepositional": "рынке"
+            },
+            "plural": {
+                "nominative": "рынки",
+                "genitive": "рынков",
+                "dative": "рынкам",
+                "accusative": "рынки",
+                "instrumental": "рынками",
+                "prepositional": "рынках"
+            }
+        }
+    },
+    {
+        "russian": "город",
+        "english": "city",
+        "type": "noun",
+        "icon": "location_city",
+        "forms": {
+            "singular": {
+                "nominative": "город",
+                "genitive": "города",
+                "dative": "городу",
+                "accusative": "город",
+                "instrumental": "городом",
+                "prepositional": "городе"
+            },
+            "plural": {
+                "nominative": "города",
+                "genitive": "городов",
+                "dative": "городам",
+                "accusative": "города",
+                "instrumental": "городами",
+                "prepositional": "городах"
+            }
+        }
+    },
+    {
+        "russian": "деревня",
+        "english": "village",
+        "type": "noun",
+        "icon": "cottage",
+        "forms": {
+            "singular": {
+                "nominative": "деревня",
+                "genitive": "деревни",
+                "dative": "деревне",
+                "accusative": "деревню",
+                "instrumental": "деревней",
+                "prepositional": "деревне"
+            },
+            "plural": {
+                "nominative": "деревни",
+                "genitive": "деревень",
+                "dative": "деревням",
+                "accusative": "деревни",
+                "instrumental": "деревнями",
+                "prepositional": "деревнях"
+            }
+        }
+    },
+    {
+        "russian": "страна",
+        "english": "country",
+        "type": "noun",
+        "icon": "public",
+        "forms": {
+            "singular": {
+                "nominative": "страна",
+                "genitive": "страны",
+                "dative": "стране",
+                "accusative": "страну",
+                "instrumental": "страной",
+                "prepositional": "стране"
+            },
+            "plural": {
+                "nominative": "страны",
+                "genitive": "стран",
+                "dative": "странам",
+                "accusative": "страны",
+                "instrumental": "странами",
+                "prepositional": "странах"
+            }
+        }
+    },
+    {
+        "russian": "мир",
+        "english": "world",
+        "type": "noun",
+        "icon": "language",
+        "forms": {
+            "singular": {
+                "nominative": "мир",
+                "genitive": "мира",
+                "dative": "миру",
+                "accusative": "мир",
+                "instrumental": "миром",
+                "prepositional": "мире"
+            },
+            "plural": {
+                "nominative": "миры",
+                "genitive": "миров",
+                "dative": "мирам",
+                "accusative": "миры",
+                "instrumental": "мирами",
+                "prepositional": "мирах"
+            }
+        }
+    },
+    {
+        "russian": "работа",
+        "english": "work",
+        "type": "noun",
+        "icon": "work",
+        "forms": {
+            "singular": {
+                "nominative": "работа",
+                "genitive": "работы",
+                "dative": "работе",
+                "accusative": "работу",
+                "instrumental": "работой",
+                "prepositional": "работе"
+            },
+            "plural": {
+                "nominative": "работы",
+                "genitive": "работ",
+                "dative": "работам",
+                "accusative": "работы",
+                "instrumental": "работами",
+                "prepositional": "работах"
+            }
+        }
+    },
+    {
+        "russian": "деньги",
+        "english": "money",
+        "type": "noun",
+        "icon": "attach_money",
+        "forms": {
+            "singular": {
+                "nominative": "деньги",
+                "genitive": "денег",
+                "dative": "деньгам",
+                "accusative": "деньги",
+                "instrumental": "деньгами",
+                "prepositional": "деньгах"
+            },
+            "plural": {
+                "nominative": "деньги",
+                "genitive": "денег",
+                "dative": "деньгам",
+                "accusative": "деньги",
+                "instrumental": "деньгами",
+                "prepositional": "деньгах"
+            }
+        }
+    },
+    {
+        "russian": "здание",
+        "english": "building",
+        "type": "noun",
+        "icon": "business",
+        "forms": {
+            "singular": {
+                "nominative": "здание",
+                "genitive": "здания",
+                "dative": "зданию",
+                "accusative": "здание",
+                "instrumental": "зданием",
+                "prepositional": "здании"
+            },
+            "plural": {
+                "nominative": "здания",
+                "genitive": "зданий",
+                "dative": "зданиям",
+                "accusative": "здания",
+                "instrumental": "зданиями",
+                "prepositional": "зданиях"
+            }
+        }
+    },
+    {
+        "russian": "квартира",
+        "english": "apartment",
+        "type": "noun",
+        "icon": "apartment",
+        "forms": {
+            "singular": {
+                "nominative": "квартира",
+                "genitive": "квартиры",
+                "dative": "квартире",
+                "accusative": "квартиру",
+                "instrumental": "квартирой",
+                "prepositional": "квартире"
+            },
+            "plural": {
+                "nominative": "квартиры",
+                "genitive": "квартир",
+                "dative": "квартирам",
+                "accusative": "квартиры",
+                "instrumental": "квартирами",
+                "prepositional": "квартирах"
+            }
+        }
+    },
+    {
+        "russian": "улица",
+        "english": "street",
+        "type": "noun",
+        "icon": "add_road",
+        "forms": {
+            "singular": {
+                "nominative": "улица",
+                "genitive": "улицы",
+                "dative": "улице",
+                "accusative": "улицу",
+                "instrumental": "улицей",
+                "prepositional": "улице"
+            },
+            "plural": {
+                "nominative": "улицы",
+                "genitive": "улиц",
+                "dative": "улицам",
+                "accusative": "улицы",
+                "instrumental": "улицами",
+                "prepositional": "улицах"
+            }
+        }
+    },
+    {
+        "russian": "дорога",
+        "english": "road",
+        "type": "noun",
+        "icon": "alt_route",
+        "forms": {
+            "singular": {
+                "nominative": "дорога",
+                "genitive": "дороги",
+                "dative": "дороге",
+                "accusative": "дорогу",
+                "instrumental": "дорогой",
+                "prepositional": "дороге"
+            },
+            "plural": {
+                "nominative": "дороги",
+                "genitive": "дорог",
+                "dative": "дорогам",
+                "accusative": "дороги",
+                "instrumental": "дорогами",
+                "prepositional": "дорогах"
+            }
+        }
+    },
+    {
+        "russian": "река",
+        "english": "river",
+        "type": "noun",
+        "icon": "water",
+        "forms": {
+            "singular": {
+                "nominative": "река",
+                "genitive": "реки",
+                "dative": "реке",
+                "accusative": "реку",
+                "instrumental": "рекой",
+                "prepositional": "реке"
+            },
+            "plural": {
+                "nominative": "реки",
+                "genitive": "рек",
+                "dative": "рекам",
+                "accusative": "реки",
+                "instrumental": "реками",
+                "prepositional": "реках"
+            }
+        }
+    },
+    {
+        "russian": "море",
+        "english": "sea",
+        "type": "noun",
+        "icon": "directions_boat",
+        "forms": {
+            "singular": {
+                "nominative": "море",
+                "genitive": "моря",
+                "dative": "морю",
+                "accusative": "море",
+                "instrumental": "морем",
+                "prepositional": "море"
+            },
+            "plural": {
+                "nominative": "моря",
+                "genitive": "морей",
+                "dative": "морям",
+                "accusative": "моря",
+                "instrumental": "морями",
+                "prepositional": "морях"
+            }
+        }
+    },
+    {
+        "russian": "озеро",
+        "english": "lake",
+        "type": "noun",
+        "icon": "water",
+        "forms": {
+            "singular": {
+                "nominative": "озеро",
+                "genitive": "озера",
+                "dative": "озеру",
+                "accusative": "озеро",
+                "instrumental": "озером",
+                "prepositional": "озере"
+            },
+            "plural": {
+                "nominative": "озера",
+                "genitive": "озер",
+                "dative": "озерам",
+                "accusative": "озера",
+                "instrumental": "озерами",
+                "prepositional": "озерах"
+            }
+        }
+    },
+    {
+        "russian": "лес",
+        "english": "forest",
+        "type": "noun",
+        "icon": "forest",
+        "forms": {
+            "singular": {
+                "nominative": "лес",
+                "genitive": "леса",
+                "dative": "лесу",
+                "accusative": "лес",
+                "instrumental": "лесом",
+                "prepositional": "лесе"
+            },
+            "plural": {
+                "nominative": "леса",
+                "genitive": "лесов",
+                "dative": "лесам",
+                "accusative": "леса",
+                "instrumental": "лесами",
+                "prepositional": "лесах"
+            }
+        }
+    },
+    {
+        "russian": "гора",
+        "english": "mountain",
+        "type": "noun",
+        "icon": "terrain",
+        "forms": {
+            "singular": {
+                "nominative": "гора",
+                "genitive": "горы",
+                "dative": "горе",
+                "accusative": "гору",
+                "instrumental": "горой",
+                "prepositional": "горе"
+            },
+            "plural": {
+                "nominative": "горы",
+                "genitive": "гор",
+                "dative": "горам",
+                "accusative": "горы",
+                "instrumental": "горами",
+                "prepositional": "горах"
+            }
+        }
+    },
+    {
+        "russian": "поле",
+        "english": "field",
+        "type": "noun",
+        "icon": "grass",
+        "forms": {
+            "singular": {
+                "nominative": "поле",
+                "genitive": "поля",
+                "dative": "полю",
+                "accusative": "поле",
+                "instrumental": "полем",
+                "prepositional": "поле"
+            },
+            "plural": {
+                "nominative": "поля",
+                "genitive": "полей",
+                "dative": "полям",
+                "accusative": "поля",
+                "instrumental": "полями",
+                "prepositional": "полях"
+            }
+        }
+    },
+    {
+        "russian": "цветок",
+        "english": "flower",
+        "type": "noun",
+        "icon": "local_florist",
+        "forms": {
+            "singular": {
+                "nominative": "цветок",
+                "genitive": "цветка",
+                "dative": "цветку",
+                "accusative": "цветок",
+                "instrumental": "цветком",
+                "prepositional": "цветке"
+            },
+            "plural": {
+                "nominative": "цветы",
+                "genitive": "цветов",
+                "dative": "цветам",
+                "accusative": "цветы",
+                "instrumental": "цветами",
+                "prepositional": "цветах"
+            }
+        }
+    },
+    {
+        "russian": "дерево",
+        "english": "tree",
+        "type": "noun",
+        "icon": "park",
+        "forms": {
+            "singular": {
+                "nominative": "дерево",
+                "genitive": "дерева",
+                "dative": "дереву",
+                "accusative": "дерево",
+                "instrumental": "деревом",
+                "prepositional": "дереве"
+            },
+            "plural": {
+                "nominative": "деревья",
+                "genitive": "деревьев",
+                "dative": "деревьям",
+                "accusative": "деревья",
+                "instrumental": "деревьями",
+                "prepositional": "деревьях"
+            }
+        }
+    },
+    {
+        "russian": "трава",
+        "english": "grass",
+        "type": "noun",
+        "icon": "grass",
+        "forms": {
+            "singular": {
+                "nominative": "трава",
+                "genitive": "травы",
+                "dative": "траве",
+                "accusative": "траву",
+                "instrumental": "травой",
+                "prepositional": "траве"
+            },
+            "plural": {
+                "nominative": "травы",
+                "genitive": "трав",
+                "dative": "травам",
+                "accusative": "травы",
+                "instrumental": "травами",
+                "prepositional": "травах"
+            }
+        }
+    },
+    {
+        "russian": "кот",
+        "english": "cat",
+        "type": "noun",
+        "icon": "pets",
+        "forms": {
+            "singular": {
+                "nominative": "кот",
+                "genitive": "кота",
+                "dative": "коту",
+                "accusative": "кота",
+                "instrumental": "котом",
+                "prepositional": "коте"
+            },
+            "plural": {
+                "nominative": "коты",
+                "genitive": "котов",
+                "dative": "котам",
+                "accusative": "котов",
+                "instrumental": "котами",
+                "prepositional": "котах"
+            }
+        }
+    },
+    {
+        "russian": "собака",
+        "english": "dog",
+        "type": "noun",
+        "icon": "pets",
+        "forms": {
+            "singular": {
+                "nominative": "собака",
+                "genitive": "собаки",
+                "dative": "собаке",
+                "accusative": "собаку",
+                "instrumental": "собакой",
+                "prepositional": "собаке"
+            },
+            "plural": {
+                "nominative": "собаки",
+                "genitive": "собак",
+                "dative": "собакам",
+                "accusative": "собак",
+                "instrumental": "собаками",
+                "prepositional": "собаках"
+            }
+        }
+    },
+    {
+        "russian": "птица",
+        "english": "bird",
+        "type": "noun",
+        "icon": "auto_awesome_mosaic",
+        "forms": {
+            "singular": {
+                "nominative": "птица",
+                "genitive": "птицы",
+                "dative": "птице",
+                "accusative": "птицу",
+                "instrumental": "птицей",
+                "prepositional": "птице"
+            },
+            "plural": {
+                "nominative": "птицы",
+                "genitive": "птиц",
+                "dative": "птицам",
+                "accusative": "птиц",
+                "instrumental": "птицами",
+                "prepositional": "птицах"
+            }
+        }
+    },
+    {
+        "russian": "лошадь",
+        "english": "horse",
+        "type": "noun",
+        "icon": "agriculture",
+        "forms": {
+            "singular": {
+                "nominative": "лошадь",
+                "genitive": "лошади",
+                "dative": "лошади",
+                "accusative": "лошадь",
+                "instrumental": "лошадью",
+                "prepositional": "лошади"
+            },
+            "plural": {
+                "nominative": "лошади",
+                "genitive": "лошадей",
+                "dative": "лошадям",
+                "accusative": "лошадей",
+                "instrumental": "лошадьми",
+                "prepositional": "лошадях"
+            }
+        }
+    },
     {
         "russian": "говорить",
         "english": "speak",
@@ -715,7 +1727,18 @@
             "plural": "маленькие"
         }
     },
-    {"russian": "новый", "english": "new", "type": "adjective", "icon": "fiber_new"},
+    {
+        "russian": "новый",
+        "english": "new",
+        "type": "adjective",
+        "icon": "fiber_new",
+        "forms": {
+            "masculine": "новый",
+            "feminine": "новая",
+            "neuter": "новое",
+            "plural": "новые"
+        }
+    },
     {"russian": "старый", "english": "old", "type": "adjective", "icon": "hourglass_bottom"},
     {
         "russian": "хороший",
@@ -743,32 +1766,416 @@
             "adverbial": "плохо"
         }
     },
-    {"russian": "яркий", "english": "bright", "type": "adjective", "icon": "highlight"},
-    {"russian": "темный", "english": "dark", "type": "adjective", "icon": "nights_stay"},
-    {"russian": "тяжелый", "english": "heavy", "type": "adjective", "icon": "fitness_center"},
-    {"russian": "легкий", "english": "light", "type": "adjective", "icon": "scale"},
-    {"russian": "красивый", "english": "beautiful", "type": "adjective", "icon": "brush"},
-    {"russian": "уродливый", "english": "ugly", "type": "adjective", "icon": "mood_bad"},
-    {"russian": "быстрый", "english": "fast", "type": "adjective", "icon": "forward_10"},
-    {"russian": "медленный", "english": "slow", "type": "adjective", "icon": "hourglass_top"},
-    {"russian": "горячий", "english": "hot", "type": "adjective", "icon": "whatshot"},
-    {"russian": "холодный", "english": "cold", "type": "adjective", "icon": "ac_unit"},
-    {"russian": "мокрый", "english": "wet", "type": "adjective", "icon": "opacity"},
-    {"russian": "сухой", "english": "dry", "type": "adjective", "icon": "wb_sunny"},
-    {"russian": "пустой", "english": "empty", "type": "adjective", "icon": "delete_outline"},
-    {"russian": "полный", "english": "full", "type": "adjective", "icon": "battery_full"},
-    {"russian": "тяжелый", "english": "hard", "type": "adjective", "icon": "security"},
-    {"russian": "мягкий", "english": "soft", "type": "adjective", "icon": "cloud"},
-    {"russian": "легкий", "english": "easy", "type": "adjective", "icon": "light_mode"},
-    {"russian": "трудный", "english": "difficult", "type": "adjective", "icon": "extension"},
-    {"russian": "близкий", "english": "close", "type": "adjective", "icon": "near_me"},
-    {"russian": "далекий", "english": "far", "type": "adjective", "icon": "flight"},
-    {"russian": "широкий", "english": "wide", "type": "adjective", "icon": "panorama_horizontal"},
-    {"russian": "узкий", "english": "narrow", "type": "adjective", "icon": "remove"},
-    {"russian": "глубокий", "english": "deep", "type": "adjective", "icon": "layers_clear"},
-    {"russian": "поверхностный", "english": "shallow", "type": "adjective", "icon": "layers"},
-    {"russian": "высокий", "english": "tall", "type": "adjective", "icon": "straighten"},
-    {"russian": "низкий", "english": "short", "type": "adjective", "icon": "exposure_neg_1"},
+    {
+        "russian": "яркий",
+        "english": "bright",
+        "type": "adjective",
+        "icon": "highlight",
+        "forms": {
+            "masculine": "яркий",
+            "feminine": "яркая",
+            "neuter": "яркое",
+            "plural": "яркие",
+            "adverbial": "ярко"
+        }
+    },
+    {
+        "russian": "темный",
+        "english": "dark",
+        "type": "adjective",
+        "icon": "nights_stay",
+        "forms": {
+            "masculine": "темный",
+            "feminine": "темная",
+            "neuter": "темное",
+            "plural": "темные",
+            "adverbial": "темно"
+        }
+    },
+    {
+        "russian": "тяжелый",
+        "english": "heavy",
+        "type": "adjective",
+        "icon": "fitness_center",
+        "forms": {
+            "masculine": "тяжелый",
+            "feminine": "тяжелая",
+            "neuter": "тяжелое",
+            "plural": "тяжелые",
+            "adverbial": "тяжело"
+        }
+    },
+    {
+        "russian": "легкий",
+        "english": "light",
+        "type": "adjective",
+        "icon": "scale",
+        "forms": {
+            "masculine": "легкий",
+            "feminine": "легкая",
+            "neuter": "легкое",
+            "plural": "легкие",
+            "adverbial": "легко"
+        }
+    },
+    {
+        "russian": "красивый",
+        "english": "beautiful",
+        "type": "adjective",
+        "icon": "brush",
+        "forms": {
+            "masculine": "красивый",
+            "feminine": "красивая",
+            "neuter": "красивое",
+            "plural": "красивые",
+            "adverbial": "красиво"
+        }
+    },
+    {
+        "russian": "уродливый",
+        "english": "ugly",
+        "type": "adjective",
+        "icon": "mood_bad",
+        "forms": {
+            "masculine": "уродливый",
+            "feminine": "уродливая",
+            "neuter": "уродливое",
+            "plural": "уродливые",
+            "adverbial": "уродливо"
+        }
+    },
+    {
+        "russian": "быстрый",
+        "english": "fast",
+        "type": "adjective",
+        "icon": "forward_10",
+        "forms": {
+            "masculine": "быстрый",
+            "feminine": "быстрая",
+            "neuter": "быстрое",
+            "plural": "быстрые",
+            "adverbial": "быстро"
+        }
+    },
+    {
+        "russian": "медленный",
+        "english": "slow",
+        "type": "adjective",
+        "icon": "hourglass_top",
+        "forms": {
+            "masculine": "медленный",
+            "feminine": "медленная",
+            "neuter": "медленное",
+            "plural": "медленные",
+            "adverbial": "медленно"
+        }
+    },
+    {
+        "russian": "горячий",
+        "english": "hot",
+        "type": "adjective",
+        "icon": "whatshot",
+        "forms": {
+            "masculine": "горячий",
+            "feminine": "горячая",
+            "neuter": "горячее",
+            "plural": "горячие",
+            "adverbial": "горячо"
+        }
+    },
+    {
+        "russian": "холодный",
+        "english": "cold",
+        "type": "adjective",
+        "icon": "ac_unit",
+        "forms": {
+            "masculine": "холодный",
+            "feminine": "холодная",
+            "neuter": "холодное",
+            "plural": "холодные",
+            "adverbial": "холодно"
+        }
+    },
+    {
+        "russian": "мокрый",
+        "english": "wet",
+        "type": "adjective",
+        "icon": "opacity",
+        "forms": {
+            "masculine": "мокрый",
+            "feminine": "мокрая",
+            "neuter": "мокрое",
+            "plural": "мокрые",
+            "adverbial": "мокро"
+        }
+    },
+    {
+        "russian": "сухой",
+        "english": "dry",
+        "type": "adjective",
+        "icon": "wb_sunny",
+        "forms": {
+            "masculine": "сухой",
+            "feminine": "сухая",
+            "neuter": "сухое",
+            "plural": "сухие",
+            "adverbial": "сухо"
+        }
+    },
+    {
+        "russian": "пустой",
+        "english": "empty",
+        "type": "adjective",
+        "icon": "delete_outline",
+        "forms": {
+            "masculine": "пустой",
+            "feminine": "пустая",
+            "neuter": "пустое",
+            "plural": "пустые",
+            "adverbial": "пусто"
+        }
+    },
+    {
+        "russian": "полный",
+        "english": "full",
+        "type": "adjective",
+        "icon": "battery_full",
+        "forms": {
+            "masculine": "полный",
+            "feminine": "полная",
+            "neuter": "полное",
+            "plural": "полные",
+            "adverbial": "полно"
+        }
+    },
+    {
+        "russian": "тяжелый",
+        "english": "hard",
+        "type": "adjective",
+        "icon": "security",
+        "forms": {
+            "masculine": "тяжелый",
+            "feminine": "тяжелая",
+            "neuter": "тяжелое",
+            "plural": "тяжелые",
+            "adverbial": "тяжело"
+        }
+    },
+    {
+        "russian": "мягкий",
+        "english": "soft",
+        "type": "adjective",
+        "icon": "cloud",
+        "forms": {
+            "masculine": "мягкий",
+            "feminine": "мягкая",
+            "neuter": "мягкое",
+            "plural": "мягкие",
+            "adverbial": "мягко"
+        }
+    },
+    {
+        "russian": "легкий",
+        "english": "easy",
+        "type": "adjective",
+        "icon": "light_mode",
+        "forms": {
+            "masculine": "легкий",
+            "feminine": "легкая",
+            "neuter": "легкое",
+            "plural": "легкие",
+            "adverbial": "легко"
+        }
+    },
+    {
+        "russian": "трудный",
+        "english": "difficult",
+        "type": "adjective",
+        "icon": "extension",
+        "forms": {
+            "masculine": "трудный",
+            "feminine": "трудная",
+            "neuter": "трудное",
+            "plural": "трудные",
+            "adverbial": "трудно"
+        }
+    },
+    {
+        "russian": "близкий",
+        "english": "close",
+        "type": "adjective",
+        "icon": "near_me",
+        "forms": {
+            "masculine": "близкий",
+            "feminine": "близка",
+            "neuter": "близко",
+            "plural": "близки",
+            "adverbial": "близко"
+        }
+    },
+    {
+        "russian": "далекий",
+        "english": "far",
+        "type": "adjective",
+        "icon": "flight",
+        "forms": {
+            "masculine": "далекий",
+            "feminine": "далекая",
+            "neuter": "далекое",
+            "plural": "далекие",
+            "adverbial": "далеко"
+        }
+    },
+    {
+        "russian": "широкий",
+        "english": "wide",
+        "type": "adjective",
+        "icon": "panorama_horizontal",
+        "forms": {
+            "masculine": "широкий",
+            "feminine": "широкая",
+            "neuter": "широкое",
+            "plural": "широкие",
+            "adverbial": "широко"
+        }
+    },
+    {
+        "russian": "узкий",
+        "english": "narrow",
+        "type": "adjective",
+        "icon": "remove",
+        "forms": {
+            "masculine": "узкий",
+            "feminine": "узкая",
+            "neuter": "узкое",
+            "plural": "узкие",
+            "adverbial": "узко"
+        }
+    },
+    {
+        "russian": "глубокий",
+        "english": "deep",
+        "type": "adjective",
+        "icon": "layers_clear",
+        "forms": {
+            "masculine": "глубокий",
+            "feminine": "глубокая",
+            "neuter": "глубокое",
+            "plural": "глубокие",
+            "adverbial": "глубоко"
+        }
+    },
+    {
+        "russian": "поверхностный",
+        "english": "shallow",
+        "type": "adjective",
+        "icon": "layers",
+        "forms": {
+            "masculine": "поверхностный",
+            "feminine": "поверхностная",
+            "neuter": "поверхностное",
+            "plural": "поверхностные",
+            "adverbial": "поверхностно"
+        }
+    },
+    {
+        "russian": "высокий",
+        "english": "tall",
+        "type": "adjective",
+        "icon": "straighten",
+        "forms": {
+            "masculine": "высокий",
+            "feminine": "высокая",
+            "neuter": "высокое",
+            "plural": "высокие",
+            "adverbial": "высоко"
+        }
+    },
+    {
+        "russian": "низкий",
+        "english": "short",
+        "type": "adjective",
+        "icon": "exposure_neg_1",
+        "forms": {
+            "masculine": "низкий",
+            "feminine": "низкая",
+            "neuter": "низкое",
+            "plural": "низкие",
+            "adverbial": "низко"
+        }
+    },
+    {
+        "russian": "красный",
+        "english": "red",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "красный",
+            "feminine": "красная",
+            "neuter": "красное",
+            "plural": "красные"
+        }
+    },
+    {
+        "russian": "синий",
+        "english": "blue",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "синий",
+            "feminine": "синяя",
+            "neuter": "синее",
+            "plural": "синие"
+        }
+    },
+    {
+        "russian": "зеленый",
+        "english": "green",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "зеленый",
+            "feminine": "зеленая",
+            "neuter": "зеленое",
+            "plural": "зеленые"
+        }
+    },
+    {
+        "russian": "желтый",
+        "english": "yellow",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "желтый",
+            "feminine": "желтая",
+            "neuter": "желтое",
+            "plural": "желтые"
+        }
+    },
+    {
+        "russian": "черный",
+        "english": "black",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "черный",
+            "feminine": "черная",
+            "neuter": "черное",
+            "plural": "черные"
+        }
+    },
+    {
+        "russian": "белый",
+        "english": "white",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "белый",
+            "feminine": "белая",
+            "neuter": "белое",
+            "plural": "белые"
+        }
+    },
     {"russian": "один", "english": "one", "type": "number", "icon": "tag"},
     {"russian": "два", "english": "two", "type": "number", "icon": "tag"},
     {"russian": "три", "english": "three", "type": "number", "icon": "tag"},
@@ -808,12 +2215,6 @@
     {"russian": "день", "english": "day", "type": "time of day", "icon": "wb_sunny"},
     {"russian": "вечер", "english": "evening", "type": "time of day", "icon": "nights_stay"},
     {"russian": "ночь", "english": "night", "type": "time of day", "icon": "nightlight"},
-    {"russian": "красный", "english": "red", "type": "color", "icon": "palette"},
-    {"russian": "синий", "english": "blue", "type": "color", "icon": "palette"},
-    {"russian": "зеленый", "english": "green", "type": "color", "icon": "palette"},
-    {"russian": "желтый", "english": "yellow", "type": "color", "icon": "palette"},
-    {"russian": "черный", "english": "black", "type": "color", "icon": "palette"},
-    {"russian": "белый", "english": "white", "type": "color", "icon": "palette"},
     {"russian": "Привет", "english": "Hi/Hello", "type": "greeting", "icon": "tag_faces"},
     {"russian": "Доброе утро", "english": "Good morning", "type": "greeting", "icon": "wb_sunny"},
     {"russian": "Добрый день", "english": "Good afternoon", "type": "greeting", "icon": "brightness_high"},
