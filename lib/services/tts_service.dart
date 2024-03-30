@@ -1,14 +1,18 @@
 import 'package:flutter_tts/flutter_tts.dart';
 
 class TTSService {
-  FlutterTts flutterTts = FlutterTts();
+  final FlutterTts flutterTts = FlutterTts();
+  bool _isInitialized = false;
 
   Future<void> speak(String text) async {
-    await setupSpeech(); // TODO move this to a one-time init step
+    if (!_isInitialized) {
+      await _initialize();
+      _isInitialized = true;
+    }
     await flutterTts.speak(text);
   }
 
-  Future<void> setupSpeech() async {
+  Future<void> _initialize() async {
     await flutterTts.setLanguage("ru-RU");
     var voices = await flutterTts.getVoices;
     if (voices.any((voice) => voice["name"] == "Yuri (Enhanced)")) {

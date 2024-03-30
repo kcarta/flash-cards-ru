@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
 import '../services/tts_service.dart';
@@ -15,7 +16,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final DatabaseService _dbService = DatabaseService();
-  final TTSService _ttsService = TTSService();
   List<Word> _unlearnedWords = [];
   List<Word> _learnedWords = [];
 
@@ -33,14 +33,6 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
-  Map<String, List<Word>> _groupWordsByType(List<Word> words) {
-    final Map<String, List<Word>> groupedWords = {};
-    for (final word in words) {
-      groupedWords.putIfAbsent(word.type, () => []).add(word);
-    }
-    return groupedWords;
-  }
-
   Future<void> _resetWords() async {
     await _dbService.reset();
     await _loadWords();
@@ -52,6 +44,30 @@ class _HomeViewState extends State<HomeView> {
       CupertinoPageRoute(builder: (context) => LearningView(words: _unlearnedWords)),
     );
     _loadWords();
+  }
+
+  void _showSettingsMenu() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Settings'),
+        actions: <Widget>[
+          CupertinoActionSheetAction(
+            isDestructiveAction: true,
+            onPressed: () {
+              Navigator.pop(context);
+              _resetWords();
+            },
+            child: const Text('Reset Words'),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          isDefaultAction: true,
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancel'),
+        ),
+      ),
+    );
   }
 
   @override
@@ -67,7 +83,14 @@ class _HomeViewState extends State<HomeView> {
       child: SafeArea(
         child: Column(
           children: [
-            _buildWordLists(),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  WordsSection(title: 'Learned', words: _learnedWords),
+                  WordsSection(title: 'Not Learned', words: _unlearnedWords),
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CupertinoButton.filled(
@@ -80,20 +103,17 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
+}
 
-  Widget _buildWordLists() {
-    return Expanded(
-      child: CustomScrollView(
-        slivers: [
-          _buildWordsSection('Learned', _learnedWords),
-          _buildWordsSection('Not Learned', _unlearnedWords),
-        ],
-      ),
-    );
-  }
+class WordsSection extends StatelessWidget {
+  final String title;
+  final List<Word> words;
 
-  Widget _buildWordsSection(String title, List<Word> words) {
-    final groupedWords = _groupWordsByType(words);
+  const WordsSection({required this.title, required this.words, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final groupedWords = groupWordsByType(words);
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -102,64 +122,60 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
-            ...groupedWords.entries.map(_buildWordTypeSection),
+            ...groupedWords.entries.map((entry) => WordTypeSection(entry: entry)),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildWordTypeSection(MapEntry<String, List<Word>> entry) {
+  Map<String, List<Word>> groupWordsByType(List<Word> words) {
+    final Map<String, List<Word>> groupedWords = {};
+    for (final word in words) {
+      groupedWords.putIfAbsent(word.type, () => []).add(word);
+    }
+    return groupedWords;
+  }
+}
+
+class WordTypeSection extends StatelessWidget {
+  final MapEntry<String, List<Word>> entry;
+
+  const WordTypeSection({required this.entry, super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(entry.key, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         const SizedBox(height: 10),
-        ...entry.value.map(_buildWordTile),
+        ...entry.value.map((word) => WordTile(word: word, key: ValueKey(word.id))),
       ],
     );
   }
+}
 
-  Widget _buildWordTile(Word word) {
+class WordTile extends StatelessWidget {
+  final Word word;
+
+  const WordTile({required this.word, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final TTSService ttsService = Provider.of<TTSService>(context);
     return Material(
       child: ListTile(
         leading: Icon(word.icon),
         title: Text(word.russian),
         subtitle: Text(word.english),
         trailing: CupertinoButton(
-          onPressed: () => _ttsService.speak(word.russian),
+          onPressed: () async => await ttsService.speak(word.russian),
           child: const Icon(Icons.volume_up),
         ),
         onTap: () => Navigator.push(
           context,
           CupertinoPageRoute(builder: (context) => SingleWordView(word: word)),
-        ),
-      ),
-    );
-  }
-
-  void _showSettingsMenu() {
-    showCupertinoModalPopup(
-      context: context,
-      builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Settings'),
-        actions: <Widget>[
-          CupertinoActionSheetAction(
-            isDestructiveAction: true, // Optional: styles the action as destructive
-            onPressed: () {
-              Navigator.pop(context); // Close the menu
-              _resetWords(); // Call your reset words method
-            },
-            child: const Text('Reset Words'),
-          ),
-          // Add more actions here if needed
-        ],
-        cancelButton: CupertinoActionSheetAction(
-          isDefaultAction: true,
-          onPressed: () {
-            Navigator.pop(context); // Close the menu without doing anything
-          },
-          child: const Text('Cancel'),
         ),
       ),
     );

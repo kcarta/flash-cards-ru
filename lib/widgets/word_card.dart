@@ -2,6 +2,7 @@ import 'package:flash_cards/services/stt_service.dart';
 import 'package:flash_cards/services/tts_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'dart:math';
 import '../models/word_model.dart';
 import 'word_forms.dart';
@@ -20,9 +21,6 @@ class WordCard extends StatefulWidget {
 
 class _WordCardState extends State<WordCard> {
   bool _isFlipped = false;
-  // Move these out and pass them in, or make singletons?
-  TTSService ttsService = TTSService();
-  STTService sttService = STTService();
 
   @override
   void initState() {
@@ -39,6 +37,8 @@ class _WordCardState extends State<WordCard> {
 
   @override
   Widget build(BuildContext context) {
+    final TTSService ttsService = Provider.of<TTSService>(context);
+    final STTService sttService = Provider.of<STTService>(context);
     return GestureDetector(
       onTap: _flipCard,
       child: Transform(
@@ -120,7 +120,9 @@ class _WordCardState extends State<WordCard> {
                     bottom: 8,
                     child: FloatingActionButton(
                       heroTag: "speak_${widget.word.russian}", // Ensure unique heroTag
-                      onPressed: _speakWord,
+                      onPressed: () async {
+                        await ttsService.speak(widget.word.russian);
+                      },
                       backgroundColor: CupertinoColors.activeBlue,
                       child: const Icon(CupertinoIcons.volume_up, color: Colors.yellowAccent, size: 36),
                     ),
@@ -133,7 +135,9 @@ class _WordCardState extends State<WordCard> {
                     bottom: 8,
                     child: FloatingActionButton(
                       heroTag: "test_pronunciation_${widget.word.russian}", // Ensure unique heroTag
-                      onPressed: _testPronunciation,
+                      onPressed: () async {
+                        await sttService.testPronunciation(widget.word.russian);
+                      },
                       backgroundColor: CupertinoColors.activeBlue,
                       child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
                     ),
@@ -144,13 +148,5 @@ class _WordCardState extends State<WordCard> {
         ),
       ),
     );
-  }
-
-  Future<void> _speakWord() async {
-    await ttsService.speak(widget.word.russian);
-  }
-
-  Future<void> _testPronunciation() async {
-    await sttService.testPronunciation(widget.word.russian);
   }
 }
