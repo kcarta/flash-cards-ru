@@ -16,7 +16,6 @@ class _LearningViewState extends State<LearningView> {
   DatabaseService dbService = DatabaseService();
   List<Word> wordsToLearn = [];
   int currentIndex = 0;
-  bool isCurrentCardFlipped = false;
   bool _showForms = false;
 
   @override
@@ -32,12 +31,6 @@ class _LearningViewState extends State<LearningView> {
         dbService.updateWordLearnedStatus(currentWord.id!, isLearned); // Update the learning status in the database.
         currentIndex++;
       }
-    });
-  }
-
-  void _flipCard() {
-    setState(() {
-      isCurrentCardFlipped = !isCurrentCardFlipped;
     });
   }
 
@@ -80,8 +73,6 @@ class _LearningViewState extends State<LearningView> {
                     ),
                     child: WordCard(
                       word: wordsToLearn[currentIndex],
-                      isFlipped: isCurrentCardFlipped,
-                      onFlip: _flipCard,
                       showForms: _showForms,
                     ),
                   ),
