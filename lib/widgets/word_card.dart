@@ -1,4 +1,3 @@
-import 'package:flash_cards/widgets/word_forms_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -18,7 +17,6 @@ class WordCard extends StatefulWidget {
 
 class _WordCardState extends State<WordCard> {
   bool _isFlipped = false;
-  final FlutterTts flutterTts = FlutterTts();
 
   @override
   void initState() {
@@ -33,10 +31,6 @@ class _WordCardState extends State<WordCard> {
     setState(() {
       _isFlipped = !_isFlipped;
     });
-  }
-
-  void _startPronunciationTest() async {
-    print("Starting pronunciation test for ${widget.word.russian}");
   }
 
   @override
@@ -56,81 +50,153 @@ class _WordCardState extends State<WordCard> {
           ),
           child: Stack(
             children: <Widget>[
-              // Word Text
-              Align(
-                alignment: Alignment.center,
-                child: Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                  child: Text(
-                    _isFlipped ? widget.word.english : widget.word.russian,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                        color: _isFlipped ? CupertinoColors.black : CupertinoColors.white),
-                  ),
-                ),
-              ),
-              // Icon
-              Positioned(
-                bottom: 12,
-                left: 0,
-                right: 0,
-                child: Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                  child:
-                      Icon(widget.word.icon, color: _isFlipped ? CupertinoColors.black : Colors.yellowAccent, size: 48),
-                ),
-              ),
-              // Type Text
-              Positioned(
-                top: 12,
-                left: 0,
-                right: 0,
-                child: Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                  child: Text(
-                    widget.word.type,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontStyle: FontStyle.italic,
-                      color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
-                    ),
-                  ),
-                ),
-              ),
-              // TTS Button (only on non-flipped side)
-              if (!_isFlipped) // TTS Button
-                Positioned(
-                  right: 8,
-                  bottom: 8,
-                  child: FloatingActionButton(
-                    heroTag: "pronunciation",
-                    onPressed: () async {
-                      await flutterTts.speak(widget.word.russian);
-                    },
-                    backgroundColor: CupertinoColors.activeBlue,
-                    child: const Icon(CupertinoIcons.volume_up, color: Colors.yellowAccent, size: 36),
-                  ),
-                ),
-              if (!_isFlipped) // STT Button
-                Positioned(
-                  left: 8,
-                  bottom: 8,
-                  child: FloatingActionButton(
-                    heroTag: "pronunciation_test",
-                    onPressed: _startPronunciationTest,
-                    backgroundColor: CupertinoColors.activeBlue,
-                    child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
-                  ),
-                ),
+              WordText(isFlipped: _isFlipped, word: widget.word),
+              WordIcon(isFlipped: _isFlipped, icon: widget.word.icon),
+              TypeText(isFlipped: _isFlipped, type: widget.word.type),
+              if (!_isFlipped) SpeakWordFAB(word: widget.word.russian),
+              if (!_isFlipped) TestPronunciationFAB(word: widget.word.russian),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class WordIcon extends StatelessWidget {
+  const WordIcon({
+    super.key,
+    required bool isFlipped,
+    required this.icon,
+  }) : _isFlipped = isFlipped;
+
+  final bool _isFlipped;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 12,
+      left: 0,
+      right: 0,
+      child: Transform(
+        alignment: Alignment.center,
+        transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+        child: Icon(icon, color: _isFlipped ? CupertinoColors.black : Colors.yellowAccent, size: 48),
+      ),
+    );
+  }
+}
+
+class WordText extends StatelessWidget {
+  const WordText({
+    super.key,
+    required bool isFlipped,
+    required this.word,
+  }) : _isFlipped = isFlipped;
+
+  final bool _isFlipped;
+  final Word word;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.center,
+      child: Transform(
+        alignment: Alignment.center,
+        transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+        child: Text(
+          _isFlipped ? word.english : word.russian,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
+              color: _isFlipped ? CupertinoColors.black : CupertinoColors.white),
+        ),
+      ),
+    );
+  }
+}
+
+class TypeText extends StatelessWidget {
+  const TypeText({
+    super.key,
+    required bool isFlipped,
+    required this.type,
+  }) : _isFlipped = isFlipped;
+
+  final bool _isFlipped;
+  final String type;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 12,
+      left: 0,
+      right: 0,
+      child: Transform(
+        alignment: Alignment.center,
+        transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
+        child: Text(
+          type,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 24,
+            fontStyle: FontStyle.italic,
+            color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TestPronunciationFAB extends StatelessWidget {
+  const TestPronunciationFAB({
+    super.key,
+    required this.word,
+  });
+
+  final String word;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: 8,
+      bottom: 8,
+      child: FloatingActionButton(
+        heroTag: "pronunciation_test",
+        onPressed: () {
+          print("Starting pronunciation test for $word");
+        },
+        backgroundColor: CupertinoColors.activeBlue,
+        child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
+      ),
+    );
+  }
+}
+
+class SpeakWordFAB extends StatelessWidget {
+  SpeakWordFAB({
+    super.key,
+    required this.word,
+  });
+
+  final String word;
+  final FlutterTts flutterTts = FlutterTts();
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      right: 8,
+      bottom: 8,
+      child: FloatingActionButton(
+        heroTag: "pronunciation",
+        onPressed: () async {
+          await flutterTts.speak(word);
+        },
+        backgroundColor: CupertinoColors.activeBlue,
+        child: const Icon(CupertinoIcons.volume_up, color: Colors.yellowAccent, size: 36),
       ),
     );
   }
