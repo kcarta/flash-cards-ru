@@ -2,20 +2,36 @@ import 'package:flash_cards/widgets/word_card.dart';
 import 'package:flutter/cupertino.dart';
 import '../models/word_model.dart';
 
-class SingleWordView extends StatelessWidget {
+class SingleWordView extends StatefulWidget {
   final Word word;
 
   const SingleWordView({super.key, required this.word});
 
   @override
+  State<SingleWordView> createState() => _SingleWordViewState();
+}
+
+class _SingleWordViewState extends State<SingleWordView> {
+  bool _showForms = false;
+  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Word Detail'), // You can customize this title
-      ),
+      navigationBar: CupertinoNavigationBar(
+          middle: const Text('Word Detail'), // You can customize this title
+          trailing: CupertinoSwitch(
+            value: _showForms,
+            onChanged: (bool value) {
+              setState(() {
+                _showForms = value;
+              });
+            },
+          )),
       child: SafeArea(
         child: Center(
-          child: WordCard(word: word), // Use your WordCard widget here
+          child: WordCard(
+            word: widget.word,
+            showForms: _showForms,
+          ), // Use your WordCard widget here
         ),
       ),
     );
