@@ -75,9 +75,14 @@ class _HomeViewState extends State<HomeView> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: const Text("Russian Language Learning"),
-        trailing: GestureDetector(
+        leading: GestureDetector(
           onTap: _showSettingsMenu,
           child: const Icon(CupertinoIcons.settings, size: 30, color: CupertinoColors.systemGrey),
+        ),
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: _startLearningSession,
+          child: const Icon(CupertinoIcons.play_arrow_solid, size: 30, color: CupertinoColors.activeBlue),
         ),
       ),
       child: SafeArea(
@@ -89,13 +94,6 @@ class _HomeViewState extends State<HomeView> {
                   WordsSection(title: 'Learned', words: _learnedWords),
                   WordsSection(title: 'Not Learned', words: _unlearnedWords),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: CupertinoButton.filled(
-                onPressed: _startLearningSession,
-                child: const Text("Start Learning"),
               ),
             ),
           ],
