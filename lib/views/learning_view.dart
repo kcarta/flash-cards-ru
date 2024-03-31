@@ -42,13 +42,21 @@ class _LearningViewState extends State<LearningView> {
           leading: CupertinoNavigationBarBackButton(
             onPressed: () => Navigator.of(context).pop(),
           ),
-          trailing: CupertinoSwitch(
-            value: _showForms,
-            onChanged: (bool value) {
-              setState(() {
-                _showForms = value;
-              });
-            },
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(CupertinoIcons.text_badge_plus,
+                  color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2),
+              CupertinoSwitch(
+                activeColor: CupertinoColors.activeBlue,
+                value: _showForms,
+                onChanged: (bool value) {
+                  setState(() {
+                    _showForms = value;
+                  });
+                },
+              ),
+            ],
           )),
       child: SafeArea(
         child: currentIndex < wordsToLearn.length

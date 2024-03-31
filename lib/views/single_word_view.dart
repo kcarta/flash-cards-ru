@@ -18,13 +18,21 @@ class _SingleWordViewState extends State<SingleWordView> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
           middle: const Text('Word Detail'), // You can customize this title
-          trailing: CupertinoSwitch(
-            value: _showForms,
-            onChanged: (bool value) {
-              setState(() {
-                _showForms = value;
-              });
-            },
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(CupertinoIcons.text_badge_plus,
+                  color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2),
+              CupertinoSwitch(
+                activeColor: CupertinoColors.activeBlue,
+                value: _showForms,
+                onChanged: (bool value) {
+                  setState(() {
+                    _showForms = value;
+                  });
+                },
+              ),
+            ],
           )),
       child: SafeArea(
         child: Center(
