@@ -37,8 +37,13 @@ class _FilterPanelState extends State<FilterPanel> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Divider(
+          height: 16,
+          thickness: 1,
+          color: Colors.grey[300],
+        ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,6 +53,9 @@ class _FilterPanelState extends State<FilterPanel> {
               ),
               const SizedBox(height: 8),
               CupertinoSegmentedControl<String>(
+                borderColor: CupertinoColors.activeBlue,
+                selectedColor: CupertinoColors.activeBlue,
+                unselectedColor: CupertinoColors.white,
                 children: const {
                   "all": Text('All'),
                   "learned": Text('Learned'),
@@ -115,7 +123,7 @@ class _FilterPanelState extends State<FilterPanel> {
         const SizedBox(height: 8),
         CupertinoButton(
           onPressed: applyFilters,
-          child: const Text('Apply Filters'),
+          child: const Text('Apply Filters', style: TextStyle(color: CupertinoColors.activeBlue)),
         ),
       ],
     );
