@@ -1,3 +1,4 @@
+import 'package:flash_cards/widgets/grammar_rules_overlay.dart';
 import 'package:flash_cards/widgets/word_card.dart';
 import 'package:flutter/cupertino.dart';
 import '../models/word_model.dart';
@@ -17,7 +18,19 @@ class _SingleWordViewState extends State<SingleWordView> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-          middle: const Text('Word Detail'), // You can customize this title
+          leading: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CupertinoButton(
+                padding: EdgeInsets.zero,
+                child: const Icon(CupertinoIcons.back, color: CupertinoColors.activeBlue),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              const SizedBox(width: 16),
+              const GrammarRulesOverlay(),
+            ],
+          ),
+          middle: const Text('Word Detail'),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -39,7 +52,7 @@ class _SingleWordViewState extends State<SingleWordView> {
           child: WordCard(
             word: widget.word,
             showForms: _showForms,
-          ), // Use your WordCard widget here
+          ),
         ),
       ),
     );
