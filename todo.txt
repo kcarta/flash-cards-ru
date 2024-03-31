@@ -1,4 +1,12 @@
-- Flash cards within a category
+- Type shown on word card instead of in groups
+- Translate type in word card
+- Practice on filtered items
+- Filter per type
+- Speak forms
 - Grammar pages
-    - Conjugations on verbs / adjectives/adverbs
+    - Help button to see:
+        - All grammar pages
+        - Grammar page for type
+    - Two actions under play
 - Pronunciation test - record, call to STT, see if result is the same
+    - Action bar for pronunciation

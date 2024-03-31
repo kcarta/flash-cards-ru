@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
-import '../services/tts_service.dart';
 import 'learning_view.dart';
 import 'single_word_view.dart';
 
@@ -18,9 +16,9 @@ class _HomeViewState extends State<HomeView> {
   final DatabaseService _dbService = DatabaseService();
   List<Word> _unlearnedWords = [];
   List<Word> _learnedWords = [];
-  List<Word> _filteredUnlearnedWords = [];
-  List<Word> _filteredLearnedWords = [];
+  List<Word> _filteredWords = [];
   final TextEditingController _searchController = TextEditingController();
+  String _currentFilter = "all"; // New filter state definition
 
   @override
   void initState() {
@@ -40,21 +38,115 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       _unlearnedWords = allWords.where((word) => !word.isLearned).toList();
       _learnedWords = allWords.where((word) => word.isLearned).toList();
-      _filteredUnlearnedWords = _unlearnedWords;
-      _filteredLearnedWords = _learnedWords;
+      _filterWords();
     });
   }
 
   void _filterWords() {
     final query = _searchController.text.toLowerCase();
+    List<Word> allWords = [];
+    if (_currentFilter == "all" || _currentFilter == "learned") {
+      allWords.addAll(_learnedWords);
+    }
+    if (_currentFilter == "all" || _currentFilter == "unlearned") {
+      allWords.addAll(_unlearnedWords);
+    }
     setState(() {
-      _filteredUnlearnedWords = _unlearnedWords
-          .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
-          .toList();
-      _filteredLearnedWords = _learnedWords
+      _filteredWords = allWords
           .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
           .toList();
     });
+  }
+
+  void _showFilterPanel() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Filters'),
+        message: Column(
+          children: [
+            CupertinoSegmentedControl<String>(
+              padding: const EdgeInsets.all(8.0),
+              children: const {
+                "all": Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
+                  child: Text('All', maxLines: 1),
+                ),
+                "learned": Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
+                  child: Text('Learned', maxLines: 1),
+                ),
+                "unlearned": Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
+                  child: Text('Not Learned', maxLines: 1, overflow: TextOverflow.ellipsis),
+                ),
+              },
+              onValueChanged: (String value) {
+                setState(() {
+                  _currentFilter = value;
+                  _filterWords();
+                });
+                Navigator.pop(context);
+              },
+              groupValue: _currentFilter,
+            ),
+          ],
+        ),
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Done'),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text("Russian Language Learning"),
+        leading: GestureDetector(
+          onTap: _showSettingsMenu,
+          child: const Icon(CupertinoIcons.settings, size: 30, color: CupertinoColors.systemGrey),
+        ),
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: _startLearningSession,
+          child: const Icon(CupertinoIcons.play_arrow_solid, size: 30, color: CupertinoColors.activeBlue),
+        ),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: CupertinoSearchTextField(
+                      controller: _searchController,
+                      placeholder: 'Search Words',
+                    ),
+                  ),
+                  CupertinoButton(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    onPressed: _showFilterPanel,
+                    child: const Icon(CupertinoIcons.slider_horizontal_3),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  WordsSection(title: 'Words', words: _filteredWords),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Future<void> _resetWords() async {
@@ -89,45 +181,6 @@ class _HomeViewState extends State<HomeView> {
           isDefaultAction: true,
           onPressed: () => Navigator.pop(context),
           child: const Text('Cancel'),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: const Text("Russian Language Learning"),
-        leading: GestureDetector(
-          onTap: _showSettingsMenu,
-          child: const Icon(CupertinoIcons.settings, size: 30, color: CupertinoColors.systemGrey),
-        ),
-        trailing: CupertinoButton(
-          padding: EdgeInsets.zero,
-          onPressed: _startLearningSession,
-          child: const Icon(CupertinoIcons.play_arrow_solid, size: 30, color: CupertinoColors.activeBlue),
-        ),
-      ),
-      child: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
-              child: CupertinoSearchTextField(
-                controller: _searchController,
-                placeholder: 'Search Words',
-              ),
-            ),
-            Expanded(
-              child: CustomScrollView(
-                slivers: [
-                  WordsSection(title: 'Learned', words: _filteredLearnedWords),
-                  WordsSection(title: 'Not Learned', words: _filteredUnlearnedWords),
-                ],
-              ),
-            ),
-          ],
         ),
       ),
     );
@@ -192,16 +245,12 @@ class WordTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TTSService ttsService = Provider.of<TTSService>(context);
     return Material(
       child: ListTile(
         leading: Icon(word.icon),
         title: Text(word.russian),
         subtitle: Text(word.english),
-        trailing: CupertinoButton(
-          onPressed: () async => await ttsService.speak(word.russian),
-          child: const Icon(Icons.volume_up),
-        ),
+        trailing: Icon(word.isLearned ? CupertinoIcons.check_mark_circled_solid : CupertinoIcons.circle),
         onTap: () => Navigator.push(
           context,
           CupertinoPageRoute(builder: (context) => SingleWordView(word: word)),

@@ -98,14 +98,144 @@
     {"russian": "без", "english": "without", "type": "preposition", "icon": "remove_circle_outline"},
     {"russian": "внутри", "english": "inside", "type": "preposition", "icon": "input"},
     {"russian": "снаружи", "english": "outside", "type": "preposition", "icon": "exit_to_app"},
-    {"russian": "я", "english": "I", "type": "pronoun", "icon": "person_outline"},
-    {"russian": "ты", "english": "you (singular)", "type": "pronoun", "icon": "person"},
-    {"russian": "он", "english": "he", "type": "pronoun", "icon": "male"},
-    {"russian": "она", "english": "she", "type": "pronoun", "icon": "female"},
-    {"russian": "оно", "english": "it", "type": "pronoun", "icon": "pest_control_rodent"},
-    {"russian": "мы", "english": "we", "type": "pronoun", "icon": "group"},
-    {"russian": "вы", "english": "you (plural/formal)", "type": "pronoun", "icon": "groups"},
-    {"russian": "они", "english": "they", "type": "pronoun", "icon": "people_outline"},
-    {"russian": "себя", "english": "oneself", "type": "pronoun", "icon": "self_improvement"},
-    {"russian": "кто-то", "english": "someone", "type": "pronoun", "icon": "person_search"}
+    {
+        "russian": "я",
+        "english": "I",
+        "type": "pronoun",
+        "icon": "person_outline",
+        "forms": {
+            "nominative": "я",
+            "genitive": "меня",
+            "dative": "мне",
+            "accusative": "меня",
+            "instrumental": "мной",
+            "prepositional": "обо мне"
+        }
+    },
+    {
+        "russian": "ты",
+        "english": "you (singular)",
+        "type": "pronoun",
+        "icon": "person",
+        "forms": {
+            "nominative": "ты",
+            "genitive": "тебя",
+            "dative": "тебе",
+            "accusative": "тебя",
+            "instrumental": "тобой",
+            "prepositional": "о тебе"
+        }
+    },
+    {
+        "russian": "он",
+        "english": "he",
+        "type": "pronoun",
+        "icon": "male",
+        "forms": {
+            "nominative": "он",
+            "genitive": "его",
+            "dative": "ему",
+            "accusative": "его",
+            "instrumental": "им",
+            "prepositional": "о нём"
+        }
+    },
+    {
+        "russian": "она",
+        "english": "she",
+        "type": "pronoun",
+        "icon": "female",
+        "forms": {
+            "nominative": "она",
+            "genitive": "её",
+            "dative": "ей",
+            "accusative": "её",
+            "instrumental": "ей",
+            "prepositional": "о ней"
+        }
+    },
+    {
+        "russian": "оно",
+        "english": "it",
+        "type": "pronoun",
+        "icon": "pest_control_rodent",
+        "forms": {
+            "nominative": "оно",
+            "genitive": "его",
+            "dative": "ему",
+            "accusative": "его",
+            "instrumental": "им",
+            "prepositional": "о нём"
+        }
+    },
+    {
+        "russian": "мы",
+        "english": "we",
+        "type": "pronoun",
+        "icon": "group",
+        "forms": {
+            "nominative": "мы",
+            "genitive": "нас",
+            "dative": "нам",
+            "accusative": "нас",
+            "instrumental": "нами",
+            "prepositional": "о нас"
+        }
+    },
+    {
+        "russian": "вы",
+        "english": "you (plural/formal)",
+        "type": "pronoun",
+        "icon": "groups",
+        "forms": {
+            "nominative": "вы",
+            "genitive": "вас",
+            "dative": "вам",
+            "accusative": "вас",
+            "instrumental": "вами",
+            "prepositional": "о вас"
+        }
+    },
+    {
+        "russian": "они",
+        "english": "they",
+        "type": "pronoun",
+        "icon": "people_outline",
+        "forms": {
+            "nominative": "они",
+            "genitive": "их",
+            "dative": "им",
+            "accusative": "их",
+            "instrumental": "ими",
+            "prepositional": "о них"
+        }
+    },
+    {
+        "russian": "себя",
+        "english": "oneself",
+        "type": "pronoun",
+        "icon": "self_improvement",
+        "forms": {
+            "nominative": "себя",
+            "genitive": "себя",
+            "dative": "себе",
+            "accusative": "себя",
+            "instrumental": "собой",
+            "prepositional": "о себе"
+        }
+    },
+    {
+        "russian": "кто-то",
+        "english": "someone",
+        "type": "pronoun",
+        "icon": "person_search",
+        "forms": {
+            "nominative": "кто-то",
+            "genitive": "кого-то",
+            "dative": "кому-то",
+            "accusative": "кого-то",
+            "instrumental": "кем-то",
+            "prepositional": "о ком-то"
+        }
+    }
 ]
