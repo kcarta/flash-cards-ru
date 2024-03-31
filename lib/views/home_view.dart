@@ -18,11 +18,21 @@ class _HomeViewState extends State<HomeView> {
   final DatabaseService _dbService = DatabaseService();
   List<Word> _unlearnedWords = [];
   List<Word> _learnedWords = [];
+  List<Word> _filteredUnlearnedWords = [];
+  List<Word> _filteredLearnedWords = [];
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     _loadWords();
+    _searchController.addListener(_filterWords);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadWords() async {
@@ -30,6 +40,20 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       _unlearnedWords = allWords.where((word) => !word.isLearned).toList();
       _learnedWords = allWords.where((word) => word.isLearned).toList();
+      _filteredUnlearnedWords = _unlearnedWords;
+      _filteredLearnedWords = _learnedWords;
+    });
+  }
+
+  void _filterWords() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      _filteredUnlearnedWords = _unlearnedWords
+          .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
+          .toList();
+      _filteredLearnedWords = _learnedWords
+          .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
+          .toList();
     });
   }
 
@@ -88,11 +112,18 @@ class _HomeViewState extends State<HomeView> {
       child: SafeArea(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+              child: CupertinoSearchTextField(
+                controller: _searchController,
+                placeholder: 'Search Words',
+              ),
+            ),
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  WordsSection(title: 'Learned', words: _learnedWords),
-                  WordsSection(title: 'Not Learned', words: _unlearnedWords),
+                  WordsSection(title: 'Learned', words: _filteredLearnedWords),
+                  WordsSection(title: 'Not Learned', words: _filteredUnlearnedWords),
                 ],
               ),
             ),
