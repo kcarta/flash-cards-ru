@@ -27,11 +27,19 @@ class DatabaseService {
   }
 
   Future<void> _seedDatabase(Database db) async {
-    String data = await rootBundle.loadString('assets/seed_data.json');
-    List<dynamic> jsonData = jsonDecode(data);
-    List<Word> seedData = jsonData.map((json) => Word.fromMap(json)).toList();
-    for (var word in seedData) {
-      await db.insert('Words', word.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    List<String> dataSources = [
+      "assets/data_adjectives.json",
+      "assets/data_nouns.json",
+      "assets/data_verbs.json",
+      "assets/data_other.json"
+    ];
+    for (var source in dataSources) {
+      String data = await rootBundle.loadString(source);
+      List<dynamic> jsonData = jsonDecode(data);
+      List<Word> seedData = jsonData.map((json) => Word.fromMap(json)).toList();
+      for (var word in seedData) {
+        await db.insert('Words', word.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+      }
     }
   }
 

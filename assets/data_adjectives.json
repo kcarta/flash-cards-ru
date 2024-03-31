@@ -1,0 +1,463 @@
+[
+    {
+        "russian": "маленький",
+        "english": "small",
+        "type": "adjective",
+        "icon": "photo_size_select_small",
+        "forms": {
+            "masculine": "маленький",
+            "feminine": "маленькая",
+            "neuter": "маленькое",
+            "plural": "маленькие"
+        }
+    },
+    {
+        "russian": "новый",
+        "english": "new",
+        "type": "adjective",
+        "icon": "fiber_new",
+        "forms": {
+            "masculine": "новый",
+            "feminine": "новая",
+            "neuter": "новое",
+            "plural": "новые"
+        }
+    },
+    {"russian": "старый", "english": "old", "type": "adjective", "icon": "hourglass_bottom"},
+    {
+        "russian": "хороший",
+        "english": "good",
+        "type": "adjective",
+        "icon": "thumb_up",
+        "forms": {
+            "masculine": "хороший",
+            "feminine": "хорошая",
+            "neuter": "хорошее",
+            "plural": "хорошие",
+            "adverbial": "хорошо"
+        }
+    },
+    {
+        "russian": "плохой",
+        "english": "bad",
+        "type": "adjective",
+        "icon": "thumb_down",
+        "forms": {
+            "masculine": "плохой",
+            "feminine": "плохая",
+            "neuter": "плохое",
+            "plural": "плохие",
+            "adverbial": "плохо"
+        }
+    },
+    {
+        "russian": "яркий",
+        "english": "bright",
+        "type": "adjective",
+        "icon": "highlight",
+        "forms": {
+            "masculine": "яркий",
+            "feminine": "яркая",
+            "neuter": "яркое",
+            "plural": "яркие",
+            "adverbial": "ярко"
+        }
+    },
+    {
+        "russian": "темный",
+        "english": "dark",
+        "type": "adjective",
+        "icon": "nights_stay",
+        "forms": {
+            "masculine": "темный",
+            "feminine": "темная",
+            "neuter": "темное",
+            "plural": "темные",
+            "adverbial": "темно"
+        }
+    },
+    {
+        "russian": "тяжелый",
+        "english": "heavy",
+        "type": "adjective",
+        "icon": "fitness_center",
+        "forms": {
+            "masculine": "тяжелый",
+            "feminine": "тяжелая",
+            "neuter": "тяжелое",
+            "plural": "тяжелые",
+            "adverbial": "тяжело"
+        }
+    },
+    {
+        "russian": "легкий",
+        "english": "light",
+        "type": "adjective",
+        "icon": "scale",
+        "forms": {
+            "masculine": "легкий",
+            "feminine": "легкая",
+            "neuter": "легкое",
+            "plural": "легкие",
+            "adverbial": "легко"
+        }
+    },
+    {
+        "russian": "красивый",
+        "english": "beautiful",
+        "type": "adjective",
+        "icon": "brush",
+        "forms": {
+            "masculine": "красивый",
+            "feminine": "красивая",
+            "neuter": "красивое",
+            "plural": "красивые",
+            "adverbial": "красиво"
+        }
+    },
+    {
+        "russian": "уродливый",
+        "english": "ugly",
+        "type": "adjective",
+        "icon": "mood_bad",
+        "forms": {
+            "masculine": "уродливый",
+            "feminine": "уродливая",
+            "neuter": "уродливое",
+            "plural": "уродливые",
+            "adverbial": "уродливо"
+        }
+    },
+    {
+        "russian": "быстрый",
+        "english": "fast",
+        "type": "adjective",
+        "icon": "forward_10",
+        "forms": {
+            "masculine": "быстрый",
+            "feminine": "быстрая",
+            "neuter": "быстрое",
+            "plural": "быстрые",
+            "adverbial": "быстро"
+        }
+    },
+    {
+        "russian": "медленный",
+        "english": "slow",
+        "type": "adjective",
+        "icon": "hourglass_top",
+        "forms": {
+            "masculine": "медленный",
+            "feminine": "медленная",
+            "neuter": "медленное",
+            "plural": "медленные",
+            "adverbial": "медленно"
+        }
+    },
+    {
+        "russian": "горячий",
+        "english": "hot",
+        "type": "adjective",
+        "icon": "whatshot",
+        "forms": {
+            "masculine": "горячий",
+            "feminine": "горячая",
+            "neuter": "горячее",
+            "plural": "горячие",
+            "adverbial": "горячо"
+        }
+    },
+    {
+        "russian": "холодный",
+        "english": "cold",
+        "type": "adjective",
+        "icon": "ac_unit",
+        "forms": {
+            "masculine": "холодный",
+            "feminine": "холодная",
+            "neuter": "холодное",
+            "plural": "холодные",
+            "adverbial": "холодно"
+        }
+    },
+    {
+        "russian": "мокрый",
+        "english": "wet",
+        "type": "adjective",
+        "icon": "opacity",
+        "forms": {
+            "masculine": "мокрый",
+            "feminine": "мокрая",
+            "neuter": "мокрое",
+            "plural": "мокрые",
+            "adverbial": "мокро"
+        }
+    },
+    {
+        "russian": "сухой",
+        "english": "dry",
+        "type": "adjective",
+        "icon": "wb_sunny",
+        "forms": {
+            "masculine": "сухой",
+            "feminine": "сухая",
+            "neuter": "сухое",
+            "plural": "сухие",
+            "adverbial": "сухо"
+        }
+    },
+    {
+        "russian": "пустой",
+        "english": "empty",
+        "type": "adjective",
+        "icon": "delete_outline",
+        "forms": {
+            "masculine": "пустой",
+            "feminine": "пустая",
+            "neuter": "пустое",
+            "plural": "пустые",
+            "adverbial": "пусто"
+        }
+    },
+    {
+        "russian": "полный",
+        "english": "full",
+        "type": "adjective",
+        "icon": "battery_full",
+        "forms": {
+            "masculine": "полный",
+            "feminine": "полная",
+            "neuter": "полное",
+            "plural": "полные",
+            "adverbial": "полно"
+        }
+    },
+    {
+        "russian": "тяжелый",
+        "english": "hard",
+        "type": "adjective",
+        "icon": "security",
+        "forms": {
+            "masculine": "тяжелый",
+            "feminine": "тяжелая",
+            "neuter": "тяжелое",
+            "plural": "тяжелые",
+            "adverbial": "тяжело"
+        }
+    },
+    {
+        "russian": "мягкий",
+        "english": "soft",
+        "type": "adjective",
+        "icon": "cloud",
+        "forms": {
+            "masculine": "мягкий",
+            "feminine": "мягкая",
+            "neuter": "мягкое",
+            "plural": "мягкие",
+            "adverbial": "мягко"
+        }
+    },
+    {
+        "russian": "легкий",
+        "english": "easy",
+        "type": "adjective",
+        "icon": "light_mode",
+        "forms": {
+            "masculine": "легкий",
+            "feminine": "легкая",
+            "neuter": "легкое",
+            "plural": "легкие",
+            "adverbial": "легко"
+        }
+    },
+    {
+        "russian": "трудный",
+        "english": "difficult",
+        "type": "adjective",
+        "icon": "extension",
+        "forms": {
+            "masculine": "трудный",
+            "feminine": "трудная",
+            "neuter": "трудное",
+            "plural": "трудные",
+            "adverbial": "трудно"
+        }
+    },
+    {
+        "russian": "близкий",
+        "english": "close",
+        "type": "adjective",
+        "icon": "near_me",
+        "forms": {
+            "masculine": "близкий",
+            "feminine": "близка",
+            "neuter": "близко",
+            "plural": "близки",
+            "adverbial": "близко"
+        }
+    },
+    {
+        "russian": "далекий",
+        "english": "far",
+        "type": "adjective",
+        "icon": "flight",
+        "forms": {
+            "masculine": "далекий",
+            "feminine": "далекая",
+            "neuter": "далекое",
+            "plural": "далекие",
+            "adverbial": "далеко"
+        }
+    },
+    {
+        "russian": "широкий",
+        "english": "wide",
+        "type": "adjective",
+        "icon": "panorama_horizontal",
+        "forms": {
+            "masculine": "широкий",
+            "feminine": "широкая",
+            "neuter": "широкое",
+            "plural": "широкие",
+            "adverbial": "широко"
+        }
+    },
+    {
+        "russian": "узкий",
+        "english": "narrow",
+        "type": "adjective",
+        "icon": "remove",
+        "forms": {
+            "masculine": "узкий",
+            "feminine": "узкая",
+            "neuter": "узкое",
+            "plural": "узкие",
+            "adverbial": "узко"
+        }
+    },
+    {
+        "russian": "глубокий",
+        "english": "deep",
+        "type": "adjective",
+        "icon": "layers_clear",
+        "forms": {
+            "masculine": "глубокий",
+            "feminine": "глубокая",
+            "neuter": "глубокое",
+            "plural": "глубокие",
+            "adverbial": "глубоко"
+        }
+    },
+    {
+        "russian": "поверхностный",
+        "english": "shallow",
+        "type": "adjective",
+        "icon": "layers",
+        "forms": {
+            "masculine": "поверхностный",
+            "feminine": "поверхностная",
+            "neuter": "поверхностное",
+            "plural": "поверхностные",
+            "adverbial": "поверхностно"
+        }
+    },
+    {
+        "russian": "высокий",
+        "english": "tall",
+        "type": "adjective",
+        "icon": "straighten",
+        "forms": {
+            "masculine": "высокий",
+            "feminine": "высокая",
+            "neuter": "высокое",
+            "plural": "высокие",
+            "adverbial": "высоко"
+        }
+    },
+    {
+        "russian": "низкий",
+        "english": "short",
+        "type": "adjective",
+        "icon": "exposure_neg_1",
+        "forms": {
+            "masculine": "низкий",
+            "feminine": "низкая",
+            "neuter": "низкое",
+            "plural": "низкие",
+            "adverbial": "низко"
+        }
+    },
+    {
+        "russian": "красный",
+        "english": "red",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "красный",
+            "feminine": "красная",
+            "neuter": "красное",
+            "plural": "красные"
+        }
+    },
+    {
+        "russian": "синий",
+        "english": "blue",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "синий",
+            "feminine": "синяя",
+            "neuter": "синее",
+            "plural": "синие"
+        }
+    },
+    {
+        "russian": "зеленый",
+        "english": "green",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "зеленый",
+            "feminine": "зеленая",
+            "neuter": "зеленое",
+            "plural": "зеленые"
+        }
+    },
+    {
+        "russian": "желтый",
+        "english": "yellow",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "желтый",
+            "feminine": "желтая",
+            "neuter": "желтое",
+            "plural": "желтые"
+        }
+    },
+    {
+        "russian": "черный",
+        "english": "black",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "черный",
+            "feminine": "черная",
+            "neuter": "черное",
+            "plural": "черные"
+        }
+    },
+    {
+        "russian": "белый",
+        "english": "white",
+        "type": "adjective",
+        "icon": "palette",
+        "forms": {
+            "masculine": "белый",
+            "feminine": "белая",
+            "neuter": "белое",
+            "plural": "белые"
+        }
+    }
+]
