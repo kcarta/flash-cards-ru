@@ -1,7 +1,6 @@
-- Bug: No cards in play when all filters off (filters should all be true by default and not show anything if all off)
-- Translate type in word card
 - Bug: TTS broken after STT 
-    - Fix? TTS checks audio levels and resets if needed
+    - Also fix styling in STT
+- Translate type in word card
 - Speak forms
 - Grammar pages
     - Help button to see:

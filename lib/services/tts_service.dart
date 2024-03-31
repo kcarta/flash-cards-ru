@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class TTSService {
@@ -6,24 +7,36 @@ class TTSService {
 
   Future<void> speak(String text) async {
     if (!_isInitialized) {
+      debugPrint("initializing TTS service");
       await _initialize();
       _isInitialized = true;
     }
     await flutterTts.speak(text);
-    print("speaking");
+    debugPrint("speaking $text");
   }
 
   Future<void> _initialize() async {
     await flutterTts.setLanguage("ru-RU");
     var voices = await flutterTts.getVoices;
+    Map<String, String> selectedVoice;
     if (voices.any((voice) => voice["name"] == "Yuri (Enhanced)")) {
-      await flutterTts.setVoice({"name": "Yuri (Enhanced)", "locale": "ru-RU"});
+      selectedVoice = {"name": "Yuri (Enhanced)", "locale": "ru-RU"};
     } else if (voices.any((voice) => voice["name"] == "Milena (Enhanced)")) {
-      await flutterTts.setVoice({"name": "Milena (Enhanced)", "locale": "ru-RU"});
+      selectedVoice = {"name": "Milena (Enhanced)", "locale": "ru-RU"};
     } else {
-      await flutterTts.setVoice({"name": "Milena", "locale": "ru-RU"});
+      selectedVoice = {"name": "Milena", "locale": "ru-RU"};
     }
+    debugPrint("selected voice: $selectedVoice");
+    await flutterTts.setVoice(selectedVoice);
+    await flutterTts.setVolume(1.0);
     await flutterTts.setPitch(1.0);
     await flutterTts.setSpeechRate(0.5);
+
+    // Needed for interop with the Speech-to-Text service
+    // Options are pretty extreme, but they work - should investigate further
+    await flutterTts.setIosAudioCategory(
+        IosTextToSpeechAudioCategory.playback,
+        [IosTextToSpeechAudioCategoryOptions.interruptSpokenAudioAndMixWithOthers],
+        IosTextToSpeechAudioMode.voicePrompt);
   }
 }
