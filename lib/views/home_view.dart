@@ -1,6 +1,7 @@
 import 'package:flash_cards/widgets/filter_panel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:translit/translit.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
 import 'learning_view.dart';
@@ -63,11 +64,13 @@ class _HomeViewState extends State<HomeView> {
     // Filter by type
     filteredWords = filteredWords.where((word) => _typeFilters[word.type] ?? false).toList();
 
+    String queryText = _searchController.text.toLowerCase();
     // Filter by the search query
     filteredWords = filteredWords
         .where((word) =>
-            word.russian.toLowerCase().contains(_searchController.text.toLowerCase()) ||
-            word.english.toLowerCase().contains(_searchController.text.toLowerCase()))
+            word.russian.toLowerCase().contains(queryText) ||
+            word.english.toLowerCase().contains(queryText) ||
+            Translit().toTranslit(source: word.russian).contains(queryText))
         .toList();
 
     setState(() {
