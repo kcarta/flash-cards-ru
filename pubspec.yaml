@@ -38,6 +38,7 @@ dependencies:
   flutter_tts: ^4.0.2
   provider: ^6.1.2
   string_extensions: ^0.7.1
+  speech_to_text: ^6.6.0
 
 
 dev_dependencies:

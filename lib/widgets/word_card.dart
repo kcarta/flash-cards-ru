@@ -1,5 +1,5 @@
-import 'package:flash_cards/services/stt_service.dart';
 import 'package:flash_cards/services/tts_service.dart';
+import 'package:flash_cards/widgets/pronunciation_test_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +36,6 @@ class _WordCardState extends State<WordCard> {
   @override
   Widget build(BuildContext context) {
     final TTSService ttsService = Provider.of<TTSService>(context);
-    final STTService sttService = Provider.of<STTService>(context);
     return GestureDetector(
       onTap: _flipCard,
       child: Transform(
@@ -131,14 +130,7 @@ class _WordCardState extends State<WordCard> {
                   Positioned(
                     left: 8,
                     bottom: 8,
-                    child: FloatingActionButton(
-                      heroTag: "test_pronunciation_${widget.word.russian}", // Ensure unique heroTag
-                      onPressed: () async {
-                        await sttService.testPronunciation(widget.word.russian);
-                      },
-                      backgroundColor: CupertinoColors.activeBlue,
-                      child: const Icon(Icons.mic, color: Colors.yellowAccent, size: 36),
-                    ),
+                    child: PronunciationTestButton(russianWord: widget.word.russian),
                   ),
               ],
             ),
@@ -148,3 +140,11 @@ class _WordCardState extends State<WordCard> {
     );
   }
 }
+
+/*
+[ERROR:flutter/runtime/dart_vm_initializer.cc(41)] Unhandled Exception: setState() called after dispose(): _StatefulBuilderState#072ec(lifecycle state: defunct, not mounted)
+This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+#0      State.setState.<anonymous closure> (package:flu<…>
+*/

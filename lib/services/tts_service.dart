@@ -10,6 +10,7 @@ class TTSService {
       _isInitialized = true;
     }
     await flutterTts.speak(text);
+    print("speaking");
   }
 
   Future<void> _initialize() async {
