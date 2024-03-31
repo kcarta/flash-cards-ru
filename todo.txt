@@ -1,7 +1,4 @@
-- Type shown on word card instead of in groups
 - Translate type in word card
-- Practice on filtered items
-- Filter per type
 - Speak forms
 - Grammar pages
     - Help button to see:

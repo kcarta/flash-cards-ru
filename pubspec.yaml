@@ -37,6 +37,8 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_tts: ^4.0.2
   provider: ^6.1.2
+  string_extensions: ^0.7.1
+
 
 dev_dependencies:
   flutter_test:

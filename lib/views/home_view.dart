@@ -1,3 +1,4 @@
+import 'package:flash_cards/widgets/filter_panel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/word_model.dart';
@@ -17,6 +18,16 @@ class _HomeViewState extends State<HomeView> {
   List<Word> _unlearnedWords = [];
   List<Word> _learnedWords = [];
   List<Word> _filteredWords = [];
+  Map<String, bool> _typeFilters = {
+    'noun': false,
+    'verb': false,
+    'adjective': false,
+    'pronoun': false,
+    'preposition': false,
+    'phrase': false,
+    'number': false,
+    'time': false,
+  };
   final TextEditingController _searchController = TextEditingController();
   String _currentFilter = "all"; // New filter state definition
 
@@ -45,12 +56,22 @@ class _HomeViewState extends State<HomeView> {
   void _filterWords() {
     final query = _searchController.text.toLowerCase();
     List<Word> allWords = [];
+
+    // Filter by learned and unlearned status
     if (_currentFilter == "all" || _currentFilter == "learned") {
       allWords.addAll(_learnedWords);
     }
     if (_currentFilter == "all" || _currentFilter == "unlearned") {
       allWords.addAll(_unlearnedWords);
     }
+
+    // Further filter by type if any type filters are active
+    bool hasActiveTypeFilter = _typeFilters.values.any((isActive) => isActive);
+    if (hasActiveTypeFilter) {
+      allWords = allWords.where((word) => _typeFilters[word.type] ?? false).toList();
+    }
+
+    // Finally, filter by the search query
     setState(() {
       _filteredWords = allWords
           .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
@@ -62,39 +83,20 @@ class _HomeViewState extends State<HomeView> {
     showCupertinoModalPopup(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Filters'),
-        message: Column(
-          children: [
-            CupertinoSegmentedControl<String>(
-              padding: const EdgeInsets.all(8.0),
-              children: const {
-                "all": Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
-                  child: Text('All', maxLines: 1),
-                ),
-                "learned": Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
-                  child: Text('Learned', maxLines: 1),
-                ),
-                "unlearned": Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0), // Adjust horizontal padding as needed
-                  child: Text('Not Learned', maxLines: 1, overflow: TextOverflow.ellipsis),
-                ),
-              },
-              onValueChanged: (String value) {
-                setState(() {
-                  _currentFilter = value;
-                  _filterWords();
-                });
-                Navigator.pop(context);
-              },
-              groupValue: _currentFilter,
-            ),
-          ],
-        ),
-        cancelButton: CupertinoActionSheetAction(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('Done'),
+        title: const Text('Filters', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        message: SingleChildScrollView(
+          child: FilterPanel(
+            currentFilter: _currentFilter,
+            typeFilters: _typeFilters,
+            onApplyFilters: (String newFilter, Map<String, bool> newTypeFilters) {
+              setState(() {
+                _currentFilter = newFilter;
+                _typeFilters = newTypeFilters;
+                _filterWords();
+              });
+              Navigator.pop(context); // Close the panel after applying filters
+            },
+          ),
         ),
       ),
     );
@@ -157,7 +159,11 @@ class _HomeViewState extends State<HomeView> {
   Future<void> _startLearningSession() async {
     await Navigator.push(
       context,
-      CupertinoPageRoute(builder: (context) => LearningView(words: _unlearnedWords)),
+      CupertinoPageRoute(builder: (context) {
+        // Pass unlearned words matching the current type filters to the LearningView
+        List<Word> wordsToLearn = _unlearnedWords.where((word) => _typeFilters[word.type] ?? false).toList();
+        return LearningView(words: wordsToLearn);
+      }),
     );
     _loadWords();
   }
@@ -195,7 +201,6 @@ class WordsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final groupedWords = groupWordsByType(words);
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -204,36 +209,10 @@ class WordsSection extends StatelessWidget {
           children: [
             Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
-            ...groupedWords.entries.map((entry) => WordTypeSection(entry: entry)),
+            ...words.map((word) => WordTile(word: word, key: ValueKey(word.id))),
           ],
         ),
       ),
-    );
-  }
-
-  Map<String, List<Word>> groupWordsByType(List<Word> words) {
-    final Map<String, List<Word>> groupedWords = {};
-    for (final word in words) {
-      groupedWords.putIfAbsent(word.type, () => []).add(word);
-    }
-    return groupedWords;
-  }
-}
-
-class WordTypeSection extends StatelessWidget {
-  final MapEntry<String, List<Word>> entry;
-
-  const WordTypeSection({required this.entry, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(entry.key, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 10),
-        ...entry.value.map((word) => WordTile(word: word, key: ValueKey(word.id))),
-      ],
     );
   }
 }
@@ -249,7 +228,24 @@ class WordTile extends StatelessWidget {
       child: ListTile(
         leading: Icon(word.icon),
         title: Text(word.russian),
-        subtitle: Text(word.english),
+        subtitle: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(word.english, style: const TextStyle(fontSize: 14)),
+            const SizedBox(width: 12),
+            Container(
+              padding: const EdgeInsets.only(left: 6, right: 6, bottom: 2),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                word.type,
+                style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+              ),
+            ),
+          ],
+        ),
         trailing: Icon(word.isLearned ? CupertinoIcons.check_mark_circled_solid : CupertinoIcons.circle),
         onTap: () => Navigator.push(
           context,
