@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class TTSService {
@@ -7,12 +7,12 @@ class TTSService {
 
   Future<void> speak(String text) async {
     if (!_isInitialized) {
-      debugPrint("initializing TTS service");
+      debugPrint("Initializing TTS service");
       await _initialize();
       _isInitialized = true;
     }
     await flutterTts.speak(text);
-    debugPrint("speaking $text");
+    debugPrint("Speaking $text");
   }
 
   Future<void> _initialize() async {
@@ -26,11 +26,11 @@ class TTSService {
     } else {
       selectedVoice = {"name": "Milena", "locale": "ru-RU"};
     }
-    debugPrint("selected voice: $selectedVoice");
+    debugPrint("Selected voice: $selectedVoice");
     await flutterTts.setVoice(selectedVoice);
     await flutterTts.setVolume(1.0);
     await flutterTts.setPitch(1.0);
-    await flutterTts.setSpeechRate(0.5);
+    await flutterTts.setSpeechRate(0.4);
 
     // Needed for interop with the Speech-to-Text service
     // Options are pretty extreme, but they work - should investigate further

@@ -17,13 +17,15 @@ class PronunciationTestButton extends StatefulWidget {
 
 class _PronunciationTestButtonState extends State<PronunciationTestButton> {
   bool _isListening = false;
-  String transcribedText = "";
+  String _transcribedText = "";
+  bool _isCorrect = false;
 
   void _startListening(STTService sttService, StateSetter setModalState) {
     setModalState(() => _isListening = true); // Set listening state within modal
     sttService.startListening(widget.russianWord, (result, isCorrect) {
       setModalState(() {
-        transcribedText = result; // Update transcribed text within modal
+        _isCorrect = isCorrect; // Update correctness within modal
+        _transcribedText = result; // Update transcribed text within modal
         _isListening = false; // Update listening state within modal
       });
     });
@@ -47,37 +49,50 @@ class _PronunciationTestButtonState extends State<PronunciationTestButton> {
                     const Center(
                       child: Text(
                         "Pronunciation Test",
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    if (_isListening) const Center(child: CircularProgressIndicator()), // Show spinner when listening
-                    if (transcribedText.isNotEmpty)
+                    const SizedBox(height: 30),
+                    if (_isListening)
+                      const Center(
+                          child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: CircularProgressIndicator(color: CupertinoColors.activeBlue),
+                      )),
+                    if (_transcribedText.isNotEmpty)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            transcribedText,
+                            _transcribedText,
                             textAlign: TextAlign.center,
                             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                           ),
-                          // Some horizontal spacing between the text and icon
-                          const SizedBox(width: 10),
                           Icon(
-                            transcribedText.toLowerCase() == widget.russianWord.toLowerCase()
-                                ? Icons.check_circle
-                                : Icons.cancel,
-                            color: transcribedText.toLowerCase() == widget.russianWord.toLowerCase()
-                                ? Colors.green
-                                : Colors.red,
+                            _isCorrect ? Icons.check_circle : Icons.cancel,
+                            color: _isCorrect ? Colors.green : Colors.red,
                           )
                         ],
                       ),
-                    const SizedBox(height: 20),
                     Center(
-                      child: ElevatedButton(
-                        onPressed: () => _startListening(sttService, setModalState),
-                        child: const Text('Start'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: CupertinoColors.activeBlue,
+                          ),
+                          onPressed: () => _startListening(sttService, setModalState),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('Test',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                              SizedBox(width: 10),
+                              Icon(Icons.mic, color: Colors.white),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -92,7 +107,7 @@ class _PronunciationTestButtonState extends State<PronunciationTestButton> {
           }
           setState(() {
             _isListening = false;
-            transcribedText = ""; // Clear transcribed text
+            _transcribedText = "";
           });
         });
       },
