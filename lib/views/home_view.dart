@@ -18,16 +18,7 @@ class _HomeViewState extends State<HomeView> {
   List<Word> _unlearnedWords = [];
   List<Word> _learnedWords = [];
   List<Word> _filteredWords = [];
-  Map<String, bool> _typeFilters = {
-    'noun': false,
-    'verb': false,
-    'adjective': false,
-    'pronoun': false,
-    'preposition': false,
-    'phrase': false,
-    'number': false,
-    'time': false,
-  };
+  Map<String, bool> _typeFilters = {};
   final TextEditingController _searchController = TextEditingController();
   String _currentFilter = "all"; // New filter state definition
 
@@ -49,33 +40,38 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       _unlearnedWords = allWords.where((word) => !word.isLearned).toList();
       _learnedWords = allWords.where((word) => word.isLearned).toList();
+      // If needed, Initialize type filters with all types present in the words lists, set to true
+      if (_typeFilters.isEmpty) {
+        _typeFilters = {
+          for (var type in {..._learnedWords.map((e) => e.type), ..._unlearnedWords.map((e) => e.type)}) type: true
+        };
+      }
       _filterWords();
     });
   }
 
   void _filterWords() {
-    final query = _searchController.text.toLowerCase();
-    List<Word> allWords = [];
-
+    List<Word> filteredWords = [];
     // Filter by learned and unlearned status
     if (_currentFilter == "all" || _currentFilter == "learned") {
-      allWords.addAll(_learnedWords);
+      filteredWords.addAll(_learnedWords);
     }
     if (_currentFilter == "all" || _currentFilter == "unlearned") {
-      allWords.addAll(_unlearnedWords);
+      filteredWords.addAll(_unlearnedWords);
     }
 
-    // Further filter by type if any type filters are active
-    bool hasActiveTypeFilter = _typeFilters.values.any((isActive) => isActive);
-    if (hasActiveTypeFilter) {
-      allWords = allWords.where((word) => _typeFilters[word.type] ?? false).toList();
-    }
+    // Filter by type
+    filteredWords = filteredWords.where((word) => _typeFilters[word.type] ?? false).toList();
 
-    // Finally, filter by the search query
+    // Filter by the search query
+    filteredWords = filteredWords
+        .where((word) =>
+            word.russian.toLowerCase().contains(_searchController.text.toLowerCase()) ||
+            word.english.toLowerCase().contains(_searchController.text.toLowerCase()))
+        .toList();
+
     setState(() {
-      _filteredWords = allWords
-          .where((word) => word.russian.toLowerCase().contains(query) || word.english.toLowerCase().contains(query))
-          .toList();
+      _filteredWords = filteredWords;
     });
   }
 
@@ -141,7 +137,7 @@ class _HomeViewState extends State<HomeView> {
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  WordsSection(title: 'Words', words: _filteredWords),
+                  WordsSection(words: _filteredWords),
                 ],
               ),
             ),
@@ -194,24 +190,23 @@ class _HomeViewState extends State<HomeView> {
 }
 
 class WordsSection extends StatelessWidget {
-  final String title;
   final List<Word> words;
 
-  const WordsSection({required this.title, required this.words, super.key});
+  const WordsSection({required this.words, super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            ...words.map((word) => WordTile(word: word, key: ValueKey(word.id))),
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Divider(
+            color: CupertinoColors.systemGrey5,
+            height: 1,
+            thickness: 1,
+          ),
+          ...words.map((word) => WordTile(word: word, key: ValueKey(word.id))),
+        ],
       ),
     );
   }
