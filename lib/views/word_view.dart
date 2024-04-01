@@ -17,6 +17,7 @@ class WordView extends StatefulWidget {
 class _WordViewState extends State<WordView> {
   int currentIndex = 0;
   bool _showForms = false;
+  bool _isFlipped = false;
 
   @override
   void initState() {
@@ -24,6 +25,12 @@ class _WordViewState extends State<WordView> {
     if (widget.isFlashcardMode) {
       widget.words.shuffle(); // Shuffle only if in flashcard mode
     }
+  }
+
+  void toggleCardFlip() {
+    setState(() {
+      _isFlipped = !_isFlipped;
+    });
   }
 
   void _handleCardSwipe(bool isLearned) {
@@ -84,6 +91,8 @@ class _WordViewState extends State<WordView> {
                     child: WordCard(
                       word: widget.words[currentIndex],
                       showForms: _showForms,
+                      isFlipped: _isFlipped,
+                      onFlip: toggleCardFlip,
                     ),
                   ),
                 )

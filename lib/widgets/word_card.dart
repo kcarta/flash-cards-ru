@@ -11,8 +11,9 @@ class WordCard extends StatefulWidget {
   final Word word;
   final bool isFlipped;
   final bool showForms;
+  final VoidCallback onFlip;
 
-  const WordCard({super.key, required this.word, this.isFlipped = false, this.showForms = false});
+  const WordCard({super.key, required this.word, this.isFlipped = false, this.showForms = false, required this.onFlip});
 
   @override
   State<WordCard> createState() => _WordCardState();
@@ -31,6 +32,7 @@ class _WordCardState extends State<WordCard> {
     setState(() {
       _isFlipped = !_isFlipped;
     });
+    widget.onFlip();
   }
 
   @override
