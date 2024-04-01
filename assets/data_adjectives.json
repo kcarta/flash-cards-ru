@@ -2,6 +2,8 @@
     {
         "russian": "маленький",
         "english": "small",
+        "example": "Маленький мальчик",
+        "exampleTranslation": "Small person",
         "type": "adjective",
         "icon": "photo_size_select_small",
         "forms": {
@@ -42,461 +44,1513 @@
     {
         "russian": "новый",
         "english": "new",
+        "example": "Новый дом",
+        "exampleTranslation": "New house",
         "type": "adjective",
         "icon": "fiber_new",
         "forms": {
-            "masculine": "новый",
-            "feminine": "новая",
-            "neuter": "новое",
-            "plural": "новые"
+            "masculine": {
+                "nominative": "новый",
+                "accusative": "нового",
+                "genitive": "нового",
+                "instrumental": "новым",
+                "dative": "новому",
+                "prepositional": "новом"
+            },
+            "feminine": {
+                "nominative": "новая",
+                "accusative": "новую",
+                "genitive": "новой",
+                "instrumental": "новой",
+                "dative": "новой",
+                "prepositional": "новой"
+            },
+            "neuter": {
+                "nominative": "новое",
+                "accusative": "новое",
+                "genitive": "нового",
+                "instrumental": "новым",
+                "dative": "новому",
+                "prepositional": "новом"
+            },
+            "plural": {
+                "nominative": "новые",
+                "accusative": "новых",
+                "genitive": "новых",
+                "instrumental": "новыми",
+                "dative": "новым",
+                "prepositional": "новых"
+            }
         }
     },
     {
         "russian": "старый",
         "english": "old",
+        "example": "Старый дедушка",
+        "exampleTranslation": "Old grandpa",
         "type": "adjective",
         "icon": "hourglass_bottom",
         "forms": {
-            "masculine": "старый",
-            "feminine": "старая",
-            "neuter": "старое",
-            "plural": "старые"
+            "masculine": {
+                "nominative": "старый",
+                "accusative": "старого",
+                "genitive": "старого",
+                "instrumental": "старым",
+                "dative": "старому",
+                "prepositional": "старом"
+            },
+            "feminine": {
+                "nominative": "старая",
+                "accusative": "старую",
+                "genitive": "старой",
+                "instrumental": "старой",
+                "dative": "старой",
+                "prepositional": "старой"
+            },
+            "neuter": {
+                "nominative": "старое",
+                "accusative": "старое",
+                "genitive": "старого",
+                "instrumental": "старым",
+                "dative": "старому",
+                "prepositional": "старом"
+            },
+            "plural": {
+                "nominative": "старые",
+                "accusative": "старых",
+                "genitive": "старых",
+                "instrumental": "старыми",
+                "dative": "старым",
+                "prepositional": "старых"
+            }
         }
     },
     {
         "russian": "хороший",
         "english": "good",
+        "example": "Хороший друг",
+        "exampleTranslation": "Good friend",
         "type": "adjective",
         "icon": "thumb_up",
         "forms": {
-            "masculine": "хороший",
-            "feminine": "хорошая",
-            "neuter": "хорошее",
-            "plural": "хорошие",
-            "adverbial": "хорошо"
+            "masculine": {
+                "nominative": "хороший",
+                "accusative": "хорошего",
+                "genitive": "хорошего",
+                "instrumental": "хорошим",
+                "dative": "хорошему",
+                "prepositional": "хорошем"
+            },
+            "feminine": {
+                "nominative": "хорошая",
+                "accusative": "хорошую",
+                "genitive": "хорошей",
+                "instrumental": "хорошей",
+                "dative": "хорошей",
+                "prepositional": "хорошей"
+            },
+            "neuter": {
+                "nominative": "хорошее",
+                "accusative": "хорошее",
+                "genitive": "хорошего",
+                "instrumental": "хорошим",
+                "dative": "хорошему",
+                "prepositional": "хорошем"
+            },
+            "plural": {
+                "nominative": "хорошие",
+                "accusative": "хороших",
+                "genitive": "хороших",
+                "instrumental": "хорошими",
+                "dative": "хорошим",
+                "prepositional": "хороших"
+            }
         }
     },
     {
         "russian": "плохой",
         "english": "bad",
+        "example": "Плохой день",
+        "exampleTranslation": "Bad day",
         "type": "adjective",
         "icon": "thumb_down",
         "forms": {
-            "masculine": "плохой",
-            "feminine": "плохая",
-            "neuter": "плохое",
-            "plural": "плохие",
-            "adverbial": "плохо"
+            "masculine": {
+                "nominative": "плохой",
+                "accusative": "плохого",
+                "genitive": "плохого",
+                "instrumental": "плохим",
+                "dative": "плохому",
+                "prepositional": "плохом"
+            },
+            "feminine": {
+                "nominative": "плохая",
+                "accusative": "плохую",
+                "genitive": "плохой",
+                "instrumental": "плохой",
+                "dative": "плохой",
+                "prepositional": "плохой"
+            },
+            "neuter": {
+                "nominative": "плохое",
+                "accusative": "плохое",
+                "genitive": "плохого",
+                "instrumental": "плохим",
+                "dative": "плохому",
+                "prepositional": "плохом"
+            },
+            "plural": {
+                "nominative": "плохие",
+                "accusative": "плохих",
+                "genitive": "плохих",
+                "instrumental": "плохими",
+                "dative": "плохим",
+                "prepositional": "плохих"
+            }
         }
     },
     {
         "russian": "яркий",
         "english": "bright",
+        "example": "Яркий свет",
+        "exampleTranslation": "Bright light",
         "type": "adjective",
         "icon": "highlight",
         "forms": {
-            "masculine": "яркий",
-            "feminine": "яркая",
-            "neuter": "яркое",
-            "plural": "яркие",
-            "adverbial": "ярко"
+            "masculine": {
+                "nominative": "яркий",
+                "accusative": "яркого",
+                "genitive": "яркого",
+                "instrumental": "ярким",
+                "dative": "яркому",
+                "prepositional": "ярком"
+            },
+            "feminine": {
+                "nominative": "яркая",
+                "accusative": "яркую",
+                "genitive": "яркой",
+                "instrumental": "яркой",
+                "dative": "яркой",
+                "prepositional": "яркой"
+            },
+            "neuter": {
+                "nominative": "яркое",
+                "accusative": "яркое",
+                "genitive": "яркого",
+                "instrumental": "ярким",
+                "dative": "яркому",
+                "prepositional": "ярком"
+            },
+            "plural": {
+                "nominative": "яркие",
+                "accusative": "ярких",
+                "genitive": "ярких",
+                "instrumental": "яркими",
+                "dative": "ярким",
+                "prepositional": "ярких"
+            }
         }
     },
     {
         "russian": "темный",
         "english": "dark",
+        "example": "Темная комната",
+        "exampleTranslation": "Dark room",
         "type": "adjective",
         "icon": "nights_stay",
         "forms": {
-            "masculine": "темный",
-            "feminine": "темная",
-            "neuter": "темное",
-            "plural": "темные",
-            "adverbial": "темно"
+            "masculine": {
+                "nominative": "темный",
+                "accusative": "темного",
+                "genitive": "темного",
+                "instrumental": "темным",
+                "dative": "темному",
+                "prepositional": "темном"
+            },
+            "feminine": {
+                "nominative": "темная",
+                "accusative": "темную",
+                "genitive": "темной",
+                "instrumental": "темной",
+                "dative": "темной",
+                "prepositional": "темной"
+            },
+            "neuter": {
+                "nominative": "темное",
+                "accusative": "темное",
+                "genitive": "темного",
+                "instrumental": "темным",
+                "dative": "темному",
+                "prepositional": "темном"
+            },
+            "plural": {
+                "nominative": "темные",
+                "accusative": "темных",
+                "genitive": "темных",
+                "instrumental": "темными",
+                "dative": "темным",
+                "prepositional": "темных"
+            }
         }
     },
     {
         "russian": "тяжелый",
         "english": "heavy",
+        "example": "Тяжелый груз",
+        "exampleTranslation": "Heavy load",
         "type": "adjective",
         "icon": "fitness_center",
         "forms": {
-            "masculine": "тяжелый",
-            "feminine": "тяжелая",
-            "neuter": "тяжелое",
-            "plural": "тяжелые",
-            "adverbial": "тяжело"
+            "masculine": {
+                "nominative": "тяжелый",
+                "accusative": "тяжелого",
+                "genitive": "тяжелого",
+                "instrumental": "тяжелым",
+                "dative": "тяжелому",
+                "prepositional": "тяжелом"
+            },
+            "feminine": {
+                "nominative": "тяжелая",
+                "accusative": "тяжелую",
+                "genitive": "тяжелой",
+                "instrumental": "тяжелой",
+                "dative": "тяжелой",
+                "prepositional": "тяжелой"
+            },
+            "neuter": {
+                "nominative": "тяжелое",
+                "accusative": "тяжелое",
+                "genitive": "тяжелого",
+                "instrumental": "тяжелым",
+                "dative": "тяжелому",
+                "prepositional": "тяжелом"
+            },
+            "plural": {
+                "nominative": "тяжелые",
+                "accusative": "тяжелых",
+                "genitive": "тяжелых",
+                "instrumental": "тяжелыми",
+                "dative": "тяжелым",
+                "prepositional": "тяжелых"
+            }
         }
     },
     {
         "russian": "легкий",
         "english": "light",
+        "example": "Легкий ветер",
+        "exampleTranslation": "Light wind",
         "type": "adjective",
         "icon": "scale",
         "forms": {
-            "masculine": "легкий",
-            "feminine": "легкая",
-            "neuter": "легкое",
-            "plural": "легкие",
-            "adverbial": "легко"
+            "masculine": {
+                "nominative": "легкий",
+                "accusative": "легкого",
+                "genitive": "легкого",
+                "instrumental": "легким",
+                "dative": "легкому",
+                "prepositional": "легком"
+            },
+            "feminine": {
+                "nominative": "легкая",
+                "accusative": "легкую",
+                "genitive": "легкой",
+                "instrumental": "легкой",
+                "dative": "легкой",
+                "prepositional": "легкой"
+            },
+            "neuter": {
+                "nominative": "легкое",
+                "accusative": "легкое",
+                "genitive": "легкого",
+                "instrumental": "легким",
+                "dative": "легкому",
+                "prepositional": "легком"
+            },
+            "plural": {
+                "nominative": "легкие",
+                "accusative": "легких",
+                "genitive": "легких",
+                "instrumental": "легкими",
+                "dative": "легким",
+                "prepositional": "легких"
+            }
         }
     },
     {
         "russian": "красивый",
         "english": "beautiful",
+        "example": "Красивая девушка",
+        "exampleTranslation": "Beautiful girl", 
         "type": "adjective",
         "icon": "brush",
         "forms": {
-            "masculine": "красивый",
-            "feminine": "красивая",
-            "neuter": "красивое",
-            "plural": "красивые",
-            "adverbial": "красиво"
+            "masculine": {
+                "nominative": "красивый",
+                "accusative": "красивого",
+                "genitive": "красивого",
+                "instrumental": "красивым",
+                "dative": "красивому",
+                "prepositional": "красивом"
+            },
+            "feminine": {
+                "nominative": "красивая",
+                "accusative": "красивую",
+                "genitive": "красивой",
+                "instrumental": "красивой",
+                "dative": "красивой",
+                "prepositional": "красивой"
+            },
+            "neuter": {
+                "nominative": "красивое",
+                "accusative": "красивое",
+                "genitive": "красивого",
+                "instrumental": "красивым",
+                "dative": "красивому",
+                "prepositional": "красивом"
+            },
+            "plural": {
+                "nominative": "красивые",
+                "accusative": "красивых",
+                "genitive": "красивых",
+                "instrumental": "красивыми",
+                "dative": "красивым",
+                "prepositional": "красивых"
+            }
         }
     },
     {
         "russian": "уродливый",
         "english": "ugly",
+        "example": "Уродливый человек",
+        "exampleTranslation": "Ugly person",
         "type": "adjective",
         "icon": "mood_bad",
         "forms": {
-            "masculine": "уродливый",
-            "feminine": "уродливая",
-            "neuter": "уродливое",
-            "plural": "уродливые",
-            "adverbial": "уродливо"
+            "masculine": {
+                "nominative": "уродливый",
+                "accusative": "уродливого",
+                "genitive": "уродливого",
+                "instrumental": "уродливым",
+                "dative": "уродливому",
+                "prepositional": "уродливом"
+            },
+            "feminine": {
+                "nominative": "уродливая",
+                "accusative": "уродливую",
+                "genitive": "уродливой",
+                "instrumental": "уродливой",
+                "dative": "уродливой",
+                "prepositional": "уродливой"
+            },
+            "neuter": {
+                "nominative": "уродливое",
+                "accusative": "уродливое",
+                "genitive": "уродливого",
+                "instrumental": "уродливым",
+                "dative": "уродливому",
+                "prepositional": "уродливом"
+            },
+            "plural": {
+                "nominative": "уродливые",
+                "accusative": "уродливых",
+                "genitive": "уродливых",
+                "instrumental": "уродливыми",
+                "dative": "уродливым",
+                "prepositional": "уродливых"
+            }
         }
     },
     {
         "russian": "быстрый",
         "english": "fast",
+        "example": "Быстрый автомобиль",
+        "exampleTranslation": "Fast car",
         "type": "adjective",
         "icon": "forward_10",
         "forms": {
-            "masculine": "быстрый",
-            "feminine": "быстрая",
-            "neuter": "быстрое",
-            "plural": "быстрые",
-            "adverbial": "быстро"
+            "masculine": {
+                "nominative": "быстрый",
+                "accusative": "быстрого",
+                "genitive": "быстрого",
+                "instrumental": "быстрым",
+                "dative": "быстрому",
+                "prepositional": "быстром"
+            },
+            "feminine": {
+                "nominative": "быстрая",
+                "accusative": "быструю",
+                "genitive": "быстрой",
+                "instrumental": "быстрой",
+                "dative": "быстрой",
+                "prepositional": "быстрой"
+            },
+            "neuter": {
+                "nominative": "быстрое",
+                "accusative": "быстрое",
+                "genitive": "быстрого",
+                "instrumental": "быстрым",
+                "dative": "быстрому",
+                "prepositional": "быстром"
+            },
+            "plural": {
+                "nominative": "быстрые",
+                "accusative": "быстрых",
+                "genitive": "быстрых",
+                "instrumental": "быстрыми",
+                "dative": "быстрым",
+                "prepositional": "быстрых"
+            }
         }
     },
     {
         "russian": "медленный",
         "english": "slow",
+        "example": "Медленный темп",
+        "exampleTranslation": "Slow pace",
         "type": "adjective",
         "icon": "hourglass_top",
         "forms": {
-            "masculine": "медленный",
-            "feminine": "медленная",
-            "neuter": "медленное",
-            "plural": "медленные",
-            "adverbial": "медленно"
+            "masculine": {
+                "nominative": "медленный",
+                "accusative": "медленного",
+                "genitive": "медленного",
+                "instrumental": "медленным",
+                "dative": "медленному",
+                "prepositional": "медленном"
+            },
+            "feminine": {
+                "nominative": "медленная",
+                "accusative": "медленную",
+                "genitive": "медленной",
+                "instrumental": "медленной",
+                "dative": "медленной",
+                "prepositional": "медленной"
+            },
+            "neuter": {
+                "nominative": "медленное",
+                "accusative": "медленное",
+                "genitive": "медленного",
+                "instrumental": "медленным",
+                "dative": "медленному",
+                "prepositional": "медленном"
+            },
+            "plural": {
+                "nominative": "медленные",
+                "accusative": "медленных",
+                "genitive": "медленных",
+                "instrumental": "медленными",
+                "dative": "медленным",
+                "prepositional": "медленных"
+            }
         }
     },
     {
         "russian": "горячий",
         "english": "hot",
+        "example": "Горячий чай",
+        "exampleTranslation": "Hot tea",
         "type": "adjective",
         "icon": "whatshot",
         "forms": {
-            "masculine": "горячий",
-            "feminine": "горячая",
-            "neuter": "горячее",
-            "plural": "горячие",
-            "adverbial": "горячо"
+            "masculine": {
+                "nominative": "горячий",
+                "accusative": "горячего",
+                "genitive": "горячего",
+                "instrumental": "горячим",
+                "dative": "горячему",
+                "prepositional": "горячем"
+            },
+            "feminine": {
+                "nominative": "горячая",
+                "accusative": "горячую",
+                "genitive": "горячей",
+                "instrumental": "горячей",
+                "dative": "горячей",
+                "prepositional": "горячей"
+            },
+            "neuter": {
+                "nominative": "горячее",
+                "accusative": "горячее",
+                "genitive": "горячего",
+                "instrumental": "горячим",
+                "dative": "горячему",
+                "prepositional": "горячем"
+            },
+            "plural": {
+                "nominative": "горячие",
+                "accusative": "горячих",
+                "genitive": "горячих",
+                "instrumental": "горячими",
+                "dative": "горячим",
+                "prepositional": "горячих"
+            }
         }
     },
     {
         "russian": "холодный",
         "english": "cold",
+        "example": "Холодный лед",
+        "exampleTranslation": "Cold ice",
         "type": "adjective",
         "icon": "ac_unit",
         "forms": {
-            "masculine": "холодный",
-            "feminine": "холодная",
-            "neuter": "холодное",
-            "plural": "холодные",
-            "adverbial": "холодно"
+            "masculine": {
+                "nominative": "холодный",
+                "accusative": "холодного",
+                "genitive": "холодного",
+                "instrumental": "холодным",
+                "dative": "холодному",
+                "prepositional": "холодном"
+            },
+            "feminine": {
+                "nominative": "холодная",
+                "accusative": "холодную",
+                "genitive": "холодной",
+                "instrumental": "холодной",
+                "dative": "холодной",
+                "prepositional": "холодной"
+            },
+            "neuter": {
+                "nominative": "холодное",
+                "accusative": "холодное",
+                "genitive": "холодного",
+                "instrumental": "холодным",
+                "dative": "холодному",
+                "prepositional": "холодном"
+            },
+            "plural": {
+                "nominative": "холодные",
+                "accusative": "холодных",
+                "genitive": "холодных",
+                "instrumental": "холодными",
+                "dative": "холодным",
+                "prepositional": "холодных"
+            }
         }
     },
     {
         "russian": "мокрый",
         "english": "wet",
+        "example": "Мокрый дождь",
+        "exampleTranslation": "Wet rain",
         "type": "adjective",
         "icon": "opacity",
         "forms": {
-            "masculine": "мокрый",
-            "feminine": "мокрая",
-            "neuter": "мокрое",
-            "plural": "мокрые",
-            "adverbial": "мокро"
+            "masculine": {
+                "nominative": "мокрый",
+                "accusative": "мокрого",
+                "genitive": "мокрого",
+                "instrumental": "мокрым",
+                "dative": "мокрому",
+                "prepositional": "мокром"
+            },
+            "feminine": {
+                "nominative": "мокрая",
+                "accusative": "мокрую",
+                "genitive": "мокрой",
+                "instrumental": "мокрой",
+                "dative": "мокрой",
+                "prepositional": "мокрой"
+            },
+            "neuter": {
+                "nominative": "мокрое",
+                "accusative": "мокрое",
+                "genitive": "мокрого",
+                "instrumental": "мокрым",
+                "dative": "мокрому",
+                "prepositional": "мокром"
+            },
+            "plural": {
+                "nominative": "мокрые",
+                "accusative": "мокрых",
+                "genitive": "мокрых",
+                "instrumental": "мокрыми",
+                "dative": "мокрым",
+                "prepositional": "мокрых"
+            }
         }
     },
     {
         "russian": "сухой",
         "english": "dry",
+        "example": "Сухой песок",
+        "exampleTranslation": "Dry sand",
         "type": "adjective",
         "icon": "wb_sunny",
         "forms": {
-            "masculine": "сухой",
-            "feminine": "сухая",
-            "neuter": "сухое",
-            "plural": "сухие",
-            "adverbial": "сухо"
+            "masculine": {
+                "nominative": "сухой",
+                "accusative": "сухого",
+                "genitive": "сухого",
+                "instrumental": "сухим",
+                "dative": "сухому",
+                "prepositional": "сухом"
+            },
+            "feminine": {
+                "nominative": "сухая",
+                "accusative": "сухую",
+                "genitive": "сухой",
+                "instrumental": "сухой",
+                "dative": "сухой",
+                "prepositional": "сухой"
+            },
+            "neuter": {
+                "nominative": "сухое",
+                "accusative": "сухое",
+                "genitive": "сухого",
+                "instrumental": "сухим",
+                "dative": "сухому",
+                "prepositional": "сухом"
+            },
+            "plural": {
+                "nominative": "сухие",
+                "accusative": "сухих",
+                "genitive": "сухих",
+                "instrumental": "сухими",
+                "dative": "сухим",
+                "prepositional": "сухих"
+            }
         }
     },
     {
         "russian": "пустой",
         "english": "empty",
+        "example": "Пустая коробка",
+        "exampleTranslation": "Empty box",
         "type": "adjective",
         "icon": "delete_outline",
         "forms": {
-            "masculine": "пустой",
-            "feminine": "пустая",
-            "neuter": "пустое",
-            "plural": "пустые",
-            "adverbial": "пусто"
+            "masculine": {
+                "nominative": "пустой",
+                "accusative": "пустого",
+                "genitive": "пустого",
+                "instrumental": "пустым",
+                "dative": "пустому",
+                "prepositional": "пустом"
+            },
+            "feminine": {
+                "nominative": "пустая",
+                "accusative": "пустую",
+                "genitive": "пустой",
+                "instrumental": "пустой",
+                "dative": "пустой",
+                "prepositional": "пустой"
+            },
+            "neuter": {
+                "nominative": "пустое",
+                "accusative": "пустое",
+                "genitive": "пустого",
+                "instrumental": "пустым",
+                "dative": "пустому",
+                "prepositional": "пустом"
+            },
+            "plural": {
+                "nominative": "пустые",
+                "accusative": "пустых",
+                "genitive": "пустых",
+                "instrumental": "пустыми",
+                "dative": "пустым",
+                "prepositional": "пустых"
+            }
         }
     },
     {
         "russian": "полный",
         "english": "full",
+        "example": "Полный стакан",
+        "exampleTranslation": "Full glass",
         "type": "adjective",
         "icon": "battery_full",
         "forms": {
-            "masculine": "полный",
-            "feminine": "полная",
-            "neuter": "полное",
-            "plural": "полные",
-            "adverbial": "полно"
+            "masculine": {
+                "nominative": "полный",
+                "accusative": "полного",
+                "genitive": "полного",
+                "instrumental": "полным",
+                "dative": "полному",
+                "prepositional": "полном"
+            },
+            "feminine": {
+                "nominative": "полная",
+                "accusative": "полную",
+                "genitive": "полной",
+                "instrumental": "полной",
+                "dative": "полной",
+                "prepositional": "полной"
+            },
+            "neuter": {
+                "nominative": "полное",
+                "accusative": "полное",
+                "genitive": "полного",
+                "instrumental": "полным",
+                "dative": "полному",
+                "prepositional": "полном"
+            },
+            "plural": {
+                "nominative": "полные",
+                "accusative": "полных",
+                "genitive": "полных",
+                "instrumental": "полными",
+                "dative": "полным",
+                "prepositional": "полных"
+            }
         }
     },
     {
         "russian": "тяжелый",
         "english": "hard",
+        "example": "Тяжелая работа",
+        "exampleTranslation": "Hard work",
         "type": "adjective",
         "icon": "security",
         "forms": {
-            "masculine": "тяжелый",
-            "feminine": "тяжелая",
-            "neuter": "тяжелое",
-            "plural": "тяжелые",
-            "adverbial": "тяжело"
+            "masculine": {
+                "nominative": "тяжелый",
+                "accusative": "тяжелого",
+                "genitive": "тяжелого",
+                "instrumental": "тяжелым",
+                "dative": "тяжелому",
+                "prepositional": "тяжелом"
+            },
+            "feminine": {
+                "nominative": "тяжелая",
+                "accusative": "тяжелую",
+                "genitive": "тяжелой",
+                "instrumental": "тяжелой",
+                "dative": "тяжелой",
+                "prepositional": "тяжелой"
+            },
+            "neuter": {
+                "nominative": "тяжелое",
+                "accusative": "тяжелое",
+                "genitive": "тяжелого",
+                "instrumental": "тяжелым",
+                "dative": "тяжелому",
+                "prepositional": "тяжелом"
+            },
+            "plural": {
+                "nominative": "тяжелые",
+                "accusative": "тяжелых",
+                "genitive": "тяжелых",
+                "instrumental": "тяжелыми",
+                "dative": "тяжелым",
+                "prepositional": "тяжелых"
+            }
         }
     },
     {
         "russian": "мягкий",
         "english": "soft",
+        "example": "Мягкая подушка",
+        "exampleTranslation": "Soft pillow",
         "type": "adjective",
         "icon": "cloud",
         "forms": {
-            "masculine": "мягкий",
-            "feminine": "мягкая",
-            "neuter": "мягкое",
-            "plural": "мягкие",
-            "adverbial": "мягко"
+            "masculine": {
+                "nominative": "мягкий",
+                "accusative": "мягкого",
+                "genitive": "мягкого",
+                "instrumental": "мягким",
+                "dative": "мягкому",
+                "prepositional": "мягком"
+            },
+            "feminine": {
+                "nominative": "мягкая",
+                "accusative": "мягкую",
+                "genitive": "мягкой",
+                "instrumental": "мягкой",
+                "dative": "мягкой",
+                "prepositional": "мягкой"
+            },
+            "neuter": {
+                "nominative": "мягкое",
+                "accusative": "мягкое",
+                "genitive": "мягкого",
+                "instrumental": "мягким",
+                "dative": "мягкому",
+                "prepositional": "мягком"
+            },
+            "plural": {
+                "nominative": "мягкие",
+                "accusative": "мягких",
+                "genitive": "мягких",
+                "instrumental": "мягкими",
+                "dative": "мягким",
+                "prepositional": "мягких"
+            }
         }
     },
     {
         "russian": "легкий",
         "english": "easy",
+        "example": "Легкий выбор",
+        "exampleTranslation": "Easy choice",
         "type": "adjective",
         "icon": "light_mode",
         "forms": {
-            "masculine": "легкий",
-            "feminine": "легкая",
-            "neuter": "легкое",
-            "plural": "легкие",
-            "adverbial": "легко"
+            "masculine": {
+                "nominative": "легкий",
+                "accusative": "легкого",
+                "genitive": "легкого",
+                "instrumental": "легким",
+                "dative": "легкому",
+                "prepositional": "легком"
+            },
+            "feminine": {
+                "nominative": "легкая",
+                "accusative": "легкую",
+                "genitive": "легкой",
+                "instrumental": "легкой",
+                "dative": "легкой",
+                "prepositional": "легкой"
+            },
+            "neuter": {
+                "nominative": "легкое",
+                "accusative": "легкое",
+                "genitive": "легкого",
+                "instrumental": "легким",
+                "dative": "легкому",
+                "prepositional": "легком"
+            },
+            "plural": {
+                "nominative": "легкие",
+                "accusative": "легких",
+                "genitive": "легких",
+                "instrumental": "легкими",
+                "dative": "легким",
+                "prepositional": "легких"
+            }
         }
     },
     {
         "russian": "трудный",
         "english": "difficult",
+        "example": "Трудный выбор",
+        "exampleTranslation": "Difficult choice",
         "type": "adjective",
         "icon": "extension",
         "forms": {
-            "masculine": "трудный",
-            "feminine": "трудная",
-            "neuter": "трудное",
-            "plural": "трудные",
-            "adverbial": "трудно"
+            "masculine": {
+                "nominative": "трудный",
+                "accusative": "трудного",
+                "genitive": "трудного",
+                "instrumental": "трудным",
+                "dative": "трудному",
+                "prepositional": "трудном"
+            },
+            "feminine": {
+                "nominative": "трудная",
+                "accusative": "трудную",
+                "genitive": "трудной",
+                "instrumental": "трудной",
+                "dative": "трудной",
+                "prepositional": "трудной"
+            },
+            "neuter": {
+                "nominative": "трудное",
+                "accusative": "трудное",
+                "genitive": "трудного",
+                "instrumental": "трудным",
+                "dative": "трудному",
+                "prepositional": "трудном"
+            },
+            "plural": {
+                "nominative": "трудные",
+                "accusative": "трудных",
+                "genitive": "трудных",
+                "instrumental": "трудными",
+                "dative": "трудным",
+                "prepositional": "трудных"
+            }
         }
     },
     {
         "russian": "близкий",
         "english": "close",
+        "example": "Близкий друг",
+        "exampleTranslation": "Close friend",
         "type": "adjective",
         "icon": "near_me",
         "forms": {
-            "masculine": "близкий",
-            "feminine": "близка",
-            "neuter": "близко",
-            "plural": "близки",
-            "adverbial": "близко"
+            "masculine": {
+                "nominative": "близкий",
+                "accusative": "близкого",
+                "genitive": "близкого",
+                "instrumental": "близким",
+                "dative": "близкому",
+                "prepositional": "близком"
+            },
+            "feminine": {
+                "nominative": "близкая",
+                "accusative": "близкую",
+                "genitive": "близкой",
+                "instrumental": "близкой",
+                "dative": "близкой",
+                "prepositional": "близкой"
+            },
+            "neuter": {
+                "nominative": "близкое",
+                "accusative": "близкое",
+                "genitive": "близкого",
+                "instrumental": "близким",
+                "dative": "близкому",
+                "prepositional": "близком"
+            },
+            "plural": {
+                "nominative": "близкие",
+                "accusative": "близких",
+                "genitive": "близких",
+                "instrumental": "близкими",
+                "dative": "близким",
+                "prepositional": "близких"
+            }
         }
     },
     {
         "russian": "далекий",
         "english": "far",
+        "example": "Далекий пляж",
+        "exampleTranslation": "Far beach",
         "type": "adjective",
         "icon": "flight",
         "forms": {
-            "masculine": "далекий",
-            "feminine": "далекая",
-            "neuter": "далекое",
-            "plural": "далекие",
-            "adverbial": "далеко"
+            "masculine": {
+                "nominative": "далекий",
+                "accusative": "далекого",
+                "genitive": "далекого",
+                "instrumental": "далеким",
+                "dative": "далекому",
+                "prepositional": "далеком"
+            },
+            "feminine": {
+                "nominative": "далекая",
+                "accusative": "далекую",
+                "genitive": "далекой",
+                "instrumental": "далекой",
+                "dative": "далекой",
+                "prepositional": "далекой"
+            },
+            "neuter": {
+                "nominative": "далекое",
+                "accusative": "далекое",
+                "genitive": "далекого",
+                "instrumental": "далеким",
+                "dative": "далекому",
+                "prepositional": "далеком"
+            },
+            "plural": {
+                "nominative": "далекие",
+                "accusative": "далеких",
+                "genitive": "далеких",
+                "instrumental": "далекими",
+                "dative": "далеким",
+                "prepositional": "далеких"
+            }
         }
     },
     {
         "russian": "широкий",
         "english": "wide",
+        "example": "Широкая улица",
+        "exampleTranslation": "Wide street",
         "type": "adjective",
         "icon": "panorama_horizontal",
         "forms": {
-            "masculine": "широкий",
-            "feminine": "широкая",
-            "neuter": "широкое",
-            "plural": "широкие",
-            "adverbial": "широко"
+            "masculine": {
+                "nominative": "широкий",
+                "accusative": "широкого",
+                "genitive": "широкого",
+                "instrumental": "широким",
+                "dative": "широкому",
+                "prepositional": "широком"
+            },
+            "feminine": {
+                "nominative": "широкая",
+                "accusative": "широкую",
+                "genitive": "широкой",
+                "instrumental": "широкой",
+                "dative": "широкой",
+                "prepositional": "широкой"
+            },
+            "neuter": {
+                "nominative": "широкое",
+                "accusative": "широкое",
+                "genitive": "широкого",
+                "instrumental": "широким",
+                "dative": "широкому",
+                "prepositional": "широком"
+            },
+            "plural": {
+                "nominative": "широкие",
+                "accusative": "широких",
+                "genitive": "широких",
+                "instrumental": "широкими",
+                "dative": "широким",
+                "prepositional": "широких"
+            }
         }
     },
     {
         "russian": "узкий",
         "english": "narrow",
+        "example": "Узкая дорога",
+        "exampleTranslation": "Narrow road",
         "type": "adjective",
         "icon": "remove",
         "forms": {
-            "masculine": "узкий",
-            "feminine": "узкая",
-            "neuter": "узкое",
-            "plural": "узкие",
-            "adverbial": "узко"
+            "masculine": {
+                "nominative": "узкий",
+                "accusative": "узкого",
+                "genitive": "узкого",
+                "instrumental": "узким",
+                "dative": "узкому",
+                "prepositional": "узком"
+            },
+            "feminine": {
+                "nominative": "узкая",
+                "accusative": "узкую",
+                "genitive": "узкой",
+                "instrumental": "узкой",
+                "dative": "узкой",
+                "prepositional": "узкой"
+            },
+            "neuter": {
+                "nominative": "узкое",
+                "accusative": "узкое",
+                "genitive": "узкого",
+                "instrumental": "узким",
+                "dative": "узкому",
+                "prepositional": "узком"
+            },
+            "plural": {
+                "nominative": "узкие",
+                "accusative": "узких",
+                "genitive": "узких",
+                "instrumental": "узкими",
+                "dative": "узким",
+                "prepositional": "узких"
+            }
         }
     },
     {
         "russian": "глубокий",
         "english": "deep",
+        "example": "Глубокое озеро",
+        "exampleTranslation": "Deep lake",
         "type": "adjective",
         "icon": "layers_clear",
         "forms": {
-            "masculine": "глубокий",
-            "feminine": "глубокая",
-            "neuter": "глубокое",
-            "plural": "глубокие",
-            "adverbial": "глубоко"
+            "masculine": {
+                "nominative": "глубокий",
+                "accusative": "глубокого",
+                "genitive": "глубокого",
+                "instrumental": "глубоким",
+                "dative": "глубокому",
+                "prepositional": "глубоком"
+            },
+            "feminine": {
+                "nominative": "глубокая",
+                "accusative": "глубокую",
+                "genitive": "глубокой",
+                "instrumental": "глубокой",
+                "dative": "глубокой",
+                "prepositional": "глубокой"
+            },
+            "neuter": {
+                "nominative": "глубокое",
+                "accusative": "глубокое",
+                "genitive": "глубокого",
+                "instrumental": "глубоким",
+                "dative": "глубокому",
+                "prepositional": "глубоком"
+            },
+            "plural": {
+                "nominative": "глубокие",
+                "accusative": "глубоких",
+                "genitive": "глубоких",
+                "instrumental": "глубокими",
+                "dative": "глубоким",
+                "prepositional": "глубоких"
+            }
         }
     },
     {
         "russian": "поверхностный",
         "english": "shallow",
+        "example": "Поверхностное озеро",
+        "exampleTranslation": "Shallow lake",
         "type": "adjective",
         "icon": "layers",
         "forms": {
-            "masculine": "поверхностный",
-            "feminine": "поверхностная",
-            "neuter": "поверхностное",
-            "plural": "поверхностные",
-            "adverbial": "поверхностно"
+            "masculine": {
+                "nominative": "поверхностный",
+                "accusative": "поверхностного",
+                "genitive": "поверхностного",
+                "instrumental": "поверхностным",
+                "dative": "поверхностному",
+                "prepositional": "поверхностном"
+            },
+            "feminine": {
+                "nominative": "поверхностная",
+                "accusative": "поверхностную",
+                "genitive": "поверхностной",
+                "instrumental": "поверхностной",
+                "dative": "поверхностной",
+                "prepositional": "поверхностной"
+            },
+            "neuter": {
+                "nominative": "поверхностное",
+                "accusative": "поверхностное",
+                "genitive": "поверхностного",
+                "instrumental": "поверхностным",
+                "dative": "поверхностному",
+                "prepositional": "поверхностном"
+            },
+            "plural": {
+                "nominative": "поверхностные",
+                "accusative": "поверхностных",
+                "genitive": "поверхностных",
+                "instrumental": "поверхностными",
+                "dative": "поверхностным",
+                "prepositional": "поверхностных"
+            }
         }
     },
     {
         "russian": "высокий",
         "english": "tall",
+        "example": "Высокое здание",
+        "exampleTranslation": "Tall building",
         "type": "adjective",
         "icon": "straighten",
         "forms": {
-            "masculine": "высокий",
-            "feminine": "высокая",
-            "neuter": "высокое",
-            "plural": "высокие",
-            "adverbial": "высоко"
+            "masculine": {
+                "nominative": "высокий",
+                "accusative": "высокого",
+                "genitive": "высокого",
+                "instrumental": "высоким",
+                "dative": "высокому",
+                "prepositional": "высоком"
+            },
+            "feminine": {
+                "nominative": "высокая",
+                "accusative": "высокую",
+                "genitive": "высокой",
+                "instrumental": "высокой",
+                "dative": "высокой",
+                "prepositional": "высокой"
+            },
+            "neuter": {
+                "nominative": "высокое",
+                "accusative": "высокое",
+                "genitive": "высокого",
+                "instrumental": "высоким",
+                "dative": "высокому",
+                "prepositional": "высоком"
+            },
+            "plural": {
+                "nominative": "высокие",
+                "accusative": "высоких",
+                "genitive": "высоких",
+                "instrumental": "высокими",
+                "dative": "высоким",
+                "prepositional": "высоких"
+            }
         }
     },
     {
         "russian": "низкий",
         "english": "short",
+        "example": "Низкое здание",
+        "exampleTranslation": "Short building",
         "type": "adjective",
         "icon": "exposure_neg_1",
         "forms": {
-            "masculine": "низкий",
-            "feminine": "низкая",
-            "neuter": "низкое",
-            "plural": "низкие",
-            "adverbial": "низко"
+            "masculine": {
+                "nominative": "низкий",
+                "accusative": "низкого",
+                "genitive": "низкого",
+                "instrumental": "низким",
+                "dative": "низкому",
+                "prepositional": "низком"
+            },
+            "feminine": {
+                "nominative": "низкая",
+                "accusative": "низкую",
+                "genitive": "низкой",
+                "instrumental": "низкой",
+                "dative": "низкой",
+                "prepositional": "низкой"
+            },
+            "neuter": {
+                "nominative": "низкое",
+                "accusative": "низкое",
+                "genitive": "низкого",
+                "instrumental": "низким",
+                "dative": "низкому",
+                "prepositional": "низком"
+            },
+            "plural": {
+                "nominative": "низкие",
+                "accusative": "низких",
+                "genitive": "низких",
+                "instrumental": "низкими",
+                "dative": "низким",
+                "prepositional": "низких"
+            }
         }
     },
     {
         "russian": "красный",
         "english": "red",
+        "example": "Красная роза",
+        "exampleTranslation": "Red rose",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "красный",
-            "feminine": "красная",
-            "neuter": "красное",
-            "plural": "красные"
+            "masculine": {
+                "nominative": "красный",
+                "accusative": "красного",
+                "genitive": "красного",
+                "instrumental": "красным",
+                "dative": "красному",
+                "prepositional": "красном"
+            },
+            "feminine": {
+                "nominative": "красная",
+                "accusative": "красную",
+                "genitive": "красной",
+                "instrumental": "красной",
+                "dative": "красной",
+                "prepositional": "красной"
+            },
+            "neuter": {
+                "nominative": "красное",
+                "accusative": "красное",
+                "genitive": "красного",
+                "instrumental": "красным",
+                "dative": "красному",
+                "prepositional": "красном"
+            },
+            "plural": {
+                "nominative": "красные",
+                "accusative": "красных",
+                "genitive": "красных",
+                "instrumental": "красными",
+                "dative": "красным",
+                "prepositional": "красных"
+            }
         }
     },
     {
         "russian": "синий",
         "english": "blue",
+        "example": "Синяя машина",
+        "exampleTranslation": "Blue car",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "синий",
-            "feminine": "синяя",
-            "neuter": "синее",
-            "plural": "синие"
+            "masculine": {
+                "nominative": "синий",
+                "accusative": "синего",
+                "genitive": "синего",
+                "instrumental": "синим",
+                "dative": "синему",
+                "prepositional": "синем"
+            },
+            "feminine": {
+                "nominative": "синяя",
+                "accusative": "синюю",
+                "genitive": "синей",
+                "instrumental": "синей",
+                "dative": "синей",
+                "prepositional": "синей"
+            },
+            "neuter": {
+                "nominative": "синее",
+                "accusative": "синее",
+                "genitive": "синего",
+                "instrumental": "синим",
+                "dative": "синему",
+                "prepositional": "синем"
+            },
+            "plural": {
+                "nominative": "синие",
+                "accusative": "синих",
+                "genitive": "синих",
+                "instrumental": "синими",
+                "dative": "синим",
+                "prepositional": "синих"
+            }
         }
     },
     {
         "russian": "зеленый",
         "english": "green",
+        "example": "Зеленый лес",
+        "exampleTranslation": "Green forest",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "зеленый",
-            "feminine": "зеленая",
-            "neuter": "зеленое",
-            "plural": "зеленые"
+            "masculine": {
+                "nominative": "зеленый",
+                "accusative": "зеленого",
+                "genitive": "зеленого",
+                "instrumental": "зеленым",
+                "dative": "зеленому",
+                "prepositional": "зеленом"
+            },
+            "feminine": {
+                "nominative": "зеленая",
+                "accusative": "зеленую",
+                "genitive": "зеленой",
+                "instrumental": "зеленой",
+                "dative": "зеленой",
+                "prepositional": "зеленой"
+            },
+            "neuter": {
+                "nominative": "зеленое",
+                "accusative": "зеленое",
+                "genitive": "зеленого",
+                "instrumental": "зеленым",
+                "dative": "зеленому",
+                "prepositional": "зеленом"
+            },
+            "plural": {
+                "nominative": "зеленые",
+                "accusative": "зеленых",
+                "genitive": "зеленых",
+                "instrumental": "зелеными",
+                "dative": "зеленым",
+                "prepositional": "зеленых"
+            }
         }
     },
     {
         "russian": "желтый",
         "english": "yellow",
+        "example": "Желтый цвет",
+        "exampleTranslation": "Yellow color",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "желтый",
-            "feminine": "желтая",
-            "neuter": "желтое",
-            "plural": "желтые"
+            "masculine": {
+                "nominative": "желтый",
+                "accusative": "желтого",
+                "genitive": "желтого",
+                "instrumental": "желтым",
+                "dative": "желтому",
+                "prepositional": "желтом"
+            },
+            "feminine": {
+                "nominative": "желтая",
+                "accusative": "желтую",
+                "genitive": "желтой",
+                "instrumental": "желтой",
+                "dative": "желтой",
+                "prepositional": "желтой"
+            },
+            "neuter": {
+                "nominative": "желтое",
+                "accusative": "желтое",
+                "genitive": "желтого",
+                "instrumental": "желтым",
+                "dative": "желтому",
+                "prepositional": "желтом"
+            },
+            "plural": {
+                "nominative": "желтые",
+                "accusative": "желтых",
+                "genitive": "желтых",
+                "instrumental": "желтыми",
+                "dative": "желтым",
+                "prepositional": "желтых"
+            }
         }
     },
     {
         "russian": "черный",
         "english": "black",
+        "example": "Черный кофе",
+        "exampleTranslation": "Black coffee",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "черный",
-            "feminine": "черная",
-            "neuter": "черное",
-            "plural": "черные"
+            "masculine": {
+                "nominative": "черный",
+                "accusative": "черного",
+                "genitive": "черного",
+                "instrumental": "черным",
+                "dative": "черному",
+                "prepositional": "черном"
+            },
+            "feminine": {
+                "nominative": "черная",
+                "accusative": "черную",
+                "genitive": "черной",
+                "instrumental": "черной",
+                "dative": "черной",
+                "prepositional": "черной"
+            },
+            "neuter": {
+                "nominative": "черное",
+                "accusative": "черное",
+                "genitive": "черного",
+                "instrumental": "черным",
+                "dative": "черному",
+                "prepositional": "черном"
+            },
+            "plural": {
+                "nominative": "черные",
+                "accusative": "черных",
+                "genitive": "черных",
+                "instrumental": "черными",
+                "dative": "черным",
+                "prepositional": "черных"
+            }
         }
     },
     {
         "russian": "белый",
         "english": "white",
+        "example": "Белый снег",
+        "exampleTranslation": "White snow",
         "type": "adjective",
         "icon": "palette",
         "forms": {
-            "masculine": "белый",
-            "feminine": "белая",
-            "neuter": "белое",
-            "plural": "белые"
+            "masculine": {
+                "nominative": "белый",
+                "accusative": "белого",
+                "genitive": "белого",
+                "instrumental": "белым",
+                "dative": "белому",
+                "prepositional": "белом"
+            },
+            "feminine": {
+                "nominative": "белая",
+                "accusative": "белую",
+                "genitive": "белой",
+                "instrumental": "белой",
+                "dative": "белой",
+                "prepositional": "белой"
+            },
+            "neuter": {
+                "nominative": "белое",
+                "accusative": "белое",
+                "genitive": "белого",
+                "instrumental": "белым",
+                "dative": "белому",
+                "prepositional": "белом"
+            },
+            "plural": {
+                "nominative": "белые",
+                "accusative": "белых",
+                "genitive": "белых",
+                "instrumental": "белыми",
+                "dative": "белым",
+                "prepositional": "белых"
+            }
         }
     }
 ]

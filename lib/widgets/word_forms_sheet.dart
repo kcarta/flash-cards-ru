@@ -1,10 +1,9 @@
-import 'package:flash_cards/services/tts_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_cards/models/word_model.dart';
 import 'package:provider/provider.dart';
-
-import '../services/word_form_helper.dart';
+import '../services/tts_service.dart';
+import '../services/word_form_helper.dart'; // Make sure this path is correct
 
 class WordFormsSheet extends StatefulWidget {
   final Word word;
@@ -16,23 +15,46 @@ class WordFormsSheet extends StatefulWidget {
 }
 
 class _WordFormsSheetState extends State<WordFormsSheet> {
-  Widget buildFormSection(String title, Map<String, String> forms) {
+  Widget buildFormSection(String title, dynamic forms) {
     TTSService ttsService = Provider.of<TTSService>(context, listen: false);
-    List<Widget> tiles = forms.entries.map((entry) {
-      return ListTile(
-        title: Text(
-          "${translateFormToRussianWord(title, entry.key)}: ${entry.value}",
-          style: const TextStyle(fontSize: 16, color: Colors.black87),
-        ),
-        trailing: IconButton(
-          icon: const Icon(Icons.volume_up, color: Colors.blue),
-          onPressed: () async {
-            ttsService.speak(entry.value);
-          },
-        ),
-        visualDensity: VisualDensity.compact, // Reduces space between list tiles
-      );
-    }).toList();
+
+    List<Widget> tiles;
+    if (forms is Map) {
+      tiles = forms.entries.map<Widget>((entry) {
+        String displayKey = translateFormToRussianWord(widget.word.type, title, entry.key);
+        return ListTile(
+          title: Text(
+            "$displayKey: ${entry.value}",
+            style: const TextStyle(fontSize: 16, color: Colors.black87),
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.volume_up, color: Colors.blue),
+            onPressed: () {
+              ttsService.speak(entry.value);
+            },
+          ),
+          visualDensity: VisualDensity.compact,
+        );
+      }).toList();
+    } else {
+      // Handle the case where forms is just a String
+      String displayKey = translateFormToRussianWord(widget.word.type, title, "");
+      tiles = [
+        ListTile(
+          title: Text(
+            "$displayKey: $forms",
+            style: const TextStyle(fontSize: 16, color: Colors.black87),
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.volume_up, color: Colors.blue),
+            onPressed: () {
+              ttsService.speak(forms);
+            },
+          ),
+          visualDensity: VisualDensity.compact,
+        )
+      ];
+    }
 
     return Card(
       margin: const EdgeInsets.all(8.0),
@@ -52,11 +74,7 @@ class _WordFormsSheetState extends State<WordFormsSheet> {
     List<Widget> formSections = [];
     forms.forEach((key, value) {
       String keyDisplay = key[0].toUpperCase() + key.substring(1);
-      if (value is Map) {
-        formSections.add(buildFormSection(keyDisplay, Map<String, String>.from(value)));
-      } else if (value is String) {
-        formSections.add(buildFormSection(keyDisplay, {keyDisplay: value}));
-      }
+      formSections.add(buildFormSection(keyDisplay, value));
     });
     return formSections;
   }
@@ -70,8 +88,7 @@ class _WordFormsSheetState extends State<WordFormsSheet> {
         showCupertinoModalPopup(
           context: context,
           builder: (BuildContext context) => CupertinoActionSheet(
-            title: Text("Forms for ${widget.word.russian}",
-                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black87)),
+            title: Text("Forms for ${widget.word.russian}"),
             message: SizedBox(
               height: MediaQuery.of(context).size.height * 0.75,
               child: SingleChildScrollView(

@@ -20,7 +20,7 @@ class DatabaseService {
     String path = join(await getDatabasesPath(), 'russian_flashcards.db');
     return await openDatabase(path, version: 1, onCreate: (db, version) async {
       await db.execute(
-        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, type TEXT, icon TEXT, forms TEXT, isLearned INTEGER)",
+        "CREATE TABLE words(id INTEGER PRIMARY KEY, english TEXT, russian TEXT, example TEXT, exampleTranslation TEXT, type TEXT, icon TEXT, forms TEXT, isLearned INTEGER)",
       );
       await _seedDatabase(db);
     });

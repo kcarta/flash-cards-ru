@@ -56,14 +56,29 @@ class _WordCardState extends State<WordCard> {
                   child: Transform(
                     alignment: Alignment.center,
                     transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      _isFlipped ? widget.word.english : widget.word.russian,
-                      style: TextStyle(
-                        fontSize: 42,
-                        fontWeight: FontWeight.bold,
-                        color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          textAlign: TextAlign.center,
+                          _isFlipped ? widget.word.english : widget.word.russian,
+                          style: TextStyle(
+                            fontSize: 42,
+                            fontWeight: FontWeight.bold,
+                            color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          textAlign: TextAlign.center,
+                          _isFlipped ? widget.word.exampleTranslation : widget.word.example,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontStyle: FontStyle.italic,
+                            color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

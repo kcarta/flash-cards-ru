@@ -1,30 +1,40 @@
+// File: word_form_helper.dart
 library word_form_helper;
 
-String translateFormToRussianWord(String form, String subform) {
-  if (form == "present") {
-    switch (subform) {
-      case "first-singular":
-        return "я";
-      case "second-singular":
-        return "ты";
-      case "third-singular":
-        return "он/она/оно";
-      case "first-plural":
-        return "мы";
-      case "second-plural":
-        return "вы";
-      case "third-plural":
-        return "они";
-    }
-  } else if (form == "past") {
-    switch (subform) {
-      case "masculine-singular":
-        return "я";
-      case "feminine-singular":
-        return "ты";
-      case "neuter-singular":
-        return "он/она/оно";
-    }
+String translateFormToRussianWord(String type, String form, String subform) {
+  Map<String, Map<String, String>> typeMap = {
+    "verb": {
+      "first-singular": "я",
+      "second-singular": "ты",
+      "third-singular": "он/она/оно",
+      "first-plural": "мы",
+      "second-plural": "вы",
+      "third-plural": "они",
+    },
+    "noun": {
+      "singular": "единственное число",
+      "plural": "множественное число",
+    },
+    "adjective": {
+      "masculine": "мужской род",
+      "feminine": "женский род",
+      "neuter": "средний род",
+      "plural": "множественное число",
+    },
+    "pronoun": {
+      // Similar mapping for pronouns
+    },
+    // Add other part of speech mappings as needed
+  };
+
+  // Check if the type exists in the map, and if the subform exists for that type
+  if (typeMap.containsKey(type) && typeMap[type]!.containsKey(subform)) {
+    return typeMap[type]![subform]!;
+  } else if (typeMap.containsKey(type) && typeMap[type]!.containsKey(form)) {
+    // This condition handles cases where 'form' is the key of interest, not 'subform'
+    return typeMap[type]![form]!;
   }
-  return subform;
+
+  // Fallback to subform or form if no translation is found
+  return subform.isNotEmpty ? subform : form;
 }

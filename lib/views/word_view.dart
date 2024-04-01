@@ -65,15 +65,14 @@ class _WordViewState extends State<WordView> {
           children: [
             GrammarRulesSheet(key: ValueKey(currentIndex), type: widget.words[currentIndex].type),
             const SizedBox(width: 4),
-            Opacity(
-              // Only show the button if the word has forms
-              opacity: widget.words[currentIndex].hasForms ? 1 : 0,
-              child: CupertinoButton(
+            if (widget.words[currentIndex].hasForms) // Only show the button if the word has forms
+              CupertinoButton(
                 padding: EdgeInsets.zero,
                 onPressed: () => setState(() => _showForms = !_showForms),
                 child: WordFormsSheet(key: ValueKey(currentIndex), word: widget.words[currentIndex]),
               ),
-            ),
+            if (!widget.words[currentIndex].hasForms)
+              const SizedBox(width: 44) // Placeholder to save space if word does not have forms
           ],
         ),
       ),

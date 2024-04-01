@@ -7,6 +7,8 @@ class Word {
   final int? id;
   final String english;
   final String russian;
+  final String example;
+  final String exampleTranslation;
   final String type;
   final IconData icon;
   final Map<String, dynamic> forms;
@@ -18,6 +20,8 @@ class Word {
     required this.russian,
     required this.type,
     required this.icon,
+    this.example = '',
+    this.exampleTranslation = '',
     this.forms = const {},
     this.isLearned = false,
   });
@@ -44,6 +48,8 @@ class Word {
       id: json["id"],
       english: json["english"],
       russian: json["russian"],
+      example: json["example"] ?? '',
+      exampleTranslation: json["exampleTranslation"] ?? '',
       type: json["type"],
       icon: int.tryParse(json["icon"]) != null
           ? IconData(int.parse(json["icon"]), fontFamily: 'MaterialIcons')
@@ -60,6 +66,8 @@ class Word {
       'id': id,
       'english': english,
       'russian': russian,
+      'example': example,
+      'exampleTranslation': exampleTranslation,
       'type': type,
       'icon': icon.codePoint.toString(),
       'isLearned': isLearned ? 1 : 0,
