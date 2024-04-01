@@ -1,5 +1,6 @@
+import 'package:flash_cards/widgets/word_forms_sheet.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flash_cards/widgets/grammar_rules_overlay.dart';
+import 'package:flash_cards/widgets/grammar_rules_sheet.dart';
 import 'package:flash_cards/widgets/word_card.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
@@ -62,16 +63,16 @@ class _WordViewState extends State<WordView> {
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            GrammarRulesOverlay(key: ValueKey(currentIndex), type: widget.words[currentIndex].type),
+            GrammarRulesSheet(key: ValueKey(currentIndex), type: widget.words[currentIndex].type),
             const SizedBox(width: 4),
             Opacity(
               // Only show the button if the word has forms
               opacity: widget.words[currentIndex].hasForms ? 1 : 0,
               child: CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () => setState(() => _showForms = !_showForms),
-                  child: Icon(CupertinoIcons.text_badge_plus,
-                      color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2, size: 28)),
+                padding: EdgeInsets.zero,
+                onPressed: () => setState(() => _showForms = !_showForms),
+                child: WordFormsSheet(key: ValueKey(currentIndex), word: widget.words[currentIndex]),
+              ),
             ),
           ],
         ),

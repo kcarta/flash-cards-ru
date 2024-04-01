@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class GrammarRulesOverlay extends StatefulWidget {
+class GrammarRulesSheet extends StatefulWidget {
   final String type;
-  const GrammarRulesOverlay({super.key, required this.type});
+  const GrammarRulesSheet({super.key, required this.type});
 
   @override
-  State<GrammarRulesOverlay> createState() => _GrammarRulesOverlayState();
+  State<GrammarRulesSheet> createState() => _GrammarRulesSheetState();
 }
 
-class _GrammarRulesOverlayState extends State<GrammarRulesOverlay> {
+class _GrammarRulesSheetState extends State<GrammarRulesSheet> {
   String _markdownData = "";
 
   @override
