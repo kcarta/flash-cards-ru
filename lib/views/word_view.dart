@@ -39,9 +39,9 @@ class _WordViewState extends State<WordView> {
       } else {
         // In single word view mode, reset currentIndex to 0 to "reload" the card
         setState(() {
-          // Optionally, you might want to show some feedback or update the UI
-          // to reflect the word's new 'learned' status before resetting the index
           currentIndex = 0;
+          // Update the learned status of the word in the list, so the card UI reflects the change
+          widget.words[currentIndex].isLearned = isLearned;
         });
       }
     }
