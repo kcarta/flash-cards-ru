@@ -1,11 +1,10 @@
-import 'package:flash_cards/widgets/filter_panel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:translit/translit.dart';
+import 'word_view.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
-import 'learning_view.dart';
-import 'single_word_view.dart';
+import '../widgets/filter_panel.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -159,9 +158,7 @@ class _HomeViewState extends State<HomeView> {
     await Navigator.push(
       context,
       CupertinoPageRoute(builder: (context) {
-        // Pass unlearned words matching the current type filters to the LearningView
-        List<Word> wordsToLearn = _unlearnedWords.where((word) => _typeFilters[word.type] ?? false).toList();
-        return LearningView(words: wordsToLearn);
+        return WordView(words: _filteredWords, isFlashcardMode: true);
       }),
     );
     _loadWords();
@@ -247,7 +244,7 @@ class WordTile extends StatelessWidget {
         trailing: Icon(word.isLearned ? CupertinoIcons.check_mark_circled_solid : CupertinoIcons.circle),
         onTap: () => Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => SingleWordView(word: word)),
+          CupertinoPageRoute(builder: (context) => WordView(words: [word], isFlashcardMode: false)),
         ),
       ),
     );
