@@ -91,16 +91,15 @@ class _WordCardState extends State<WordCard> {
                 // Word Type (Top-Center)
                 if (!_isFlipped)
                   Positioned(
-                    top: 8,
-                    left: 0,
-                    right: 0,
+                    top: 10,
+                    left: 18,
                     child: Text(
                       widget.word.type,
-                      textAlign: TextAlign.center,
                       style: const TextStyle(
-                        fontSize: 24,
+                        fontSize: 20,
                         fontStyle: FontStyle.italic,
-                        color: CupertinoColors.white,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellowAccent,
                       ),
                     ),
                   ),
