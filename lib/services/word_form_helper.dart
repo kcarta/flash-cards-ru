@@ -1,8 +1,8 @@
 library word_form_helper;
 
-String translateFormToRussianWord(String tense, String form) {
-  if (tense == "present") {
-    switch (form) {
+String translateFormToRussianWord(String form, String subform) {
+  if (form == "present") {
+    switch (subform) {
       case "first-singular":
         return "я";
       case "second-singular":
@@ -16,8 +16,8 @@ String translateFormToRussianWord(String tense, String form) {
       case "third-plural":
         return "они";
     }
-  } else if (tense == "past") {
-    switch (form) {
+  } else if (form == "past") {
+    switch (subform) {
       case "masculine-singular":
         return "я";
       case "feminine-singular":
@@ -26,5 +26,5 @@ String translateFormToRussianWord(String tense, String form) {
         return "он/она/оно";
     }
   }
-  return form;
+  return subform;
 }

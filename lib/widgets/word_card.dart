@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:math';
 import '../models/word_model.dart';
-import 'word_forms.dart';
 
 class WordCard extends StatefulWidget {
   final Word word;
@@ -57,27 +56,14 @@ class _WordCardState extends State<WordCard> {
                   child: Transform(
                     alignment: Alignment.center,
                     transform: Matrix4.identity()..rotateY(_isFlipped ? pi : 0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Center(
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            _isFlipped ? widget.word.english : widget.word.russian,
-                            style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
-                            ),
-                          ),
-                        ),
-                        // Word Forms (Center, shown based on showForms flag)
-                        if (widget.showForms && !_isFlipped)
-                          WordFormsWidget(
-                            forms: widget.word.forms,
-                            type: widget.word.type,
-                          ),
-                      ],
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      _isFlipped ? widget.word.english : widget.word.russian,
+                      style: TextStyle(
+                        fontSize: 42,
+                        fontWeight: FontWeight.bold,
+                        color: _isFlipped ? CupertinoColors.black : CupertinoColors.white,
+                      ),
                     ),
                   ),
                 ),
