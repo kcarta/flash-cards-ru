@@ -62,13 +62,17 @@ class _WordViewState extends State<WordView> {
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CupertinoButton(
-                padding: EdgeInsets.zero,
-                onPressed: () => setState(() => _showForms = !_showForms),
-                child: Icon(CupertinoIcons.text_badge_plus,
-                    color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2, size: 28)),
-            const SizedBox(width: 10),
-            GrammarRulesOverlay(type: widget.words[currentIndex].type),
+            GrammarRulesOverlay(key: ValueKey(currentIndex), type: widget.words[currentIndex].type),
+            const SizedBox(width: 4),
+            Opacity(
+              // Only show the button if the word has forms
+              opacity: widget.words[currentIndex].hasForms ? 1 : 0,
+              child: CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () => setState(() => _showForms = !_showForms),
+                  child: Icon(CupertinoIcons.text_badge_plus,
+                      color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2, size: 28)),
+            ),
           ],
         ),
       ),

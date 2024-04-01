@@ -21,6 +21,7 @@ class FilterPanel extends StatefulWidget {
 class _FilterPanelState extends State<FilterPanel> {
   late String currentFilter;
   late Map<String, bool> typeFilters;
+  String segmentControlValue = 'all'; // Initial value for the segment control
 
   @override
   void initState() {
@@ -31,6 +32,12 @@ class _FilterPanelState extends State<FilterPanel> {
 
   void applyFilters() {
     widget.onApplyFilters(currentFilter, typeFilters);
+  }
+
+  void setAllTypeFilters(bool value) {
+    setState(() {
+      typeFilters.updateAll((key, val) => value);
+    });
   }
 
   @override
@@ -49,7 +56,7 @@ class _FilterPanelState extends State<FilterPanel> {
             children: [
               const Text(
                 'Learned Status',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14), // Larger text for the section title
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
               const SizedBox(height: 8),
               CupertinoSegmentedControl<String>(
@@ -83,14 +90,34 @@ class _FilterPanelState extends State<FilterPanel> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Word Type',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Word Type',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  ),
+                  CupertinoSegmentedControl<String>(
+                    borderColor: CupertinoColors.activeBlue,
+                    selectedColor: CupertinoColors.activeBlue,
+                    unselectedColor: CupertinoColors.white,
+                    padding: const EdgeInsets.all(4),
+                    children: const {
+                      "all": Text('All'),
+                      "none": Padding(padding: EdgeInsets.symmetric(horizontal: 6), child: Text('None')),
+                    },
+                    onValueChanged: (String value) {
+                      setAllTypeFilters(value == 'all');
+                      segmentControlValue = value; // Update the state to refresh the UI
+                    },
+                    groupValue: segmentControlValue,
+                  ),
+                ],
               ),
               const SizedBox(height: 12),
               ...typeFilters.keys.map((type) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 64.0),
+                  padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 48),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -114,13 +141,11 @@ class _FilterPanelState extends State<FilterPanel> {
             ],
           ),
         ),
-        const SizedBox(height: 8),
         Divider(
           height: 16,
           thickness: 1,
           color: Colors.grey[300],
         ),
-        const SizedBox(height: 8),
         CupertinoButton(
           onPressed: applyFilters,
           child: const Text('Apply Filters', style: TextStyle(color: CupertinoColors.activeBlue)),

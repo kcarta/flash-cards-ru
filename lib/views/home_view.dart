@@ -20,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
   List<Word> _filteredWords = [];
   Map<String, bool> _typeFilters = {};
   final TextEditingController _searchController = TextEditingController();
-  String _currentFilter = "all"; // New filter state definition
+  String _currentFilter = "all";
 
   @override
   void initState() {

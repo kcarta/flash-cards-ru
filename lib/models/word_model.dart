@@ -53,6 +53,8 @@ class Word {
     );
   }
 
+  bool get hasForms => forms.isNotEmpty;
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,
