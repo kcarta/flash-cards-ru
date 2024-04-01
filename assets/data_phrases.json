@@ -1,0 +1,242 @@
+[
+    {
+        "russian": "Привет",
+        "english": "Hi/Hello",
+        "type": "phrase",
+        "icon": "tag_faces"
+    },
+    {
+        "russian": "Доброе утро",
+        "english": "Good morning",
+        "type": "phrase",
+        "icon": "wb_sunny"
+    },
+    {
+        "russian": "Добрый день",
+        "english": "Good afternoon",
+        "type": "phrase",
+        "icon": "brightness_high"
+    },
+    {
+        "russian": "Добрый вечер",
+        "english": "Good evening",
+        "type": "phrase",
+        "icon": "brightness_3"
+    },
+    {
+        "russian": "Спокойной ночи",
+        "english": "Good night",
+        "type": "phrase",
+        "icon": "nights_stay"
+    },
+    {
+        "russian": "До свидания",
+        "english": "Goodbye",
+        "type": "phrase",
+        "icon": "exit_to_app"
+    },
+    {
+        "russian": "Пока",
+        "english": "Bye",
+        "type": "phrase",
+        "icon": "exit_to_app"
+    },
+    {
+        "russian": "Рад тебя видеть",
+        "english": "Nice to see you",
+        "type": "phrase",
+        "icon": "visibility"
+    },
+    {
+        "russian": "Как дела?",
+        "english": "How are you?",
+        "type": "phrase",
+        "icon": "live_help"
+    },
+    {
+        "russian": "Прощай",
+        "english": "Farewell",
+        "type": "phrase",
+        "icon": "airplanemode_inactive"
+    },
+    {
+        "russian": "Пожалуйста",
+        "english": "Please",
+        "type": "phrase",
+        "icon": "record_voice_over"
+    },
+    {
+        "russian": "Спасибо",
+        "english": "Thank you",
+        "type": "phrase",
+        "icon": "thumb_up"
+    },
+    {
+        "russian": "Извините",
+        "english": "Excuse me/Sorry",
+        "type": "phrase",
+        "icon": "sentiment_dissatisfied"
+    },
+    {
+        "russian": "Да",
+        "english": "Yes",
+        "type": "phrase",
+        "icon": "check_circle"
+    },
+    {
+        "russian": "Нет",
+        "english": "No",
+        "type": "phrase",
+        "icon": "cancel"
+    },
+    {
+        "russian": "Можно?",
+        "english": "May I?",
+        "type": "phrase",
+        "icon": "help_outline"
+    },
+    {
+        "russian": "Сколько это стоит?",
+        "english": "How much is this?",
+        "type": "phrase",
+        "icon": "attach_money"
+    },
+    {
+        "russian": "Где находится ...?",
+        "english": "Where is ...?",
+        "type": "phrase",
+        "icon": "map"
+    },
+    {
+        "russian": "Я не понимаю",
+        "english": "I don't understand",
+        "type": "phrase",
+        "icon": "hearing_disabled"
+    },
+    {
+        "russian": "Повторите, пожалуйста",
+        "english": "Repeat, please",
+        "type": "phrase",
+        "icon": "replay"
+    },
+    {
+        "russian": "Как тебя зовут?",
+        "english": "What is your name?",
+        "type": "phrase",
+        "icon": "perm_identity"
+    },
+    {
+        "russian": "Меня зовут ...",
+        "english": "My name is ...",
+        "type": "phrase",
+        "icon": "account_circle"
+    },
+    {
+        "russian": "Я из ...",
+        "english": "I am from ...",
+        "type": "phrase",
+        "icon": "public"
+    },
+    {
+        "russian": "Я говорю по-английски",
+        "english": "I speak English",
+        "type": "phrase",
+        "icon": "language"
+    },
+    {
+        "russian": "Где туалет?",
+        "english": "Where is the bathroom?",
+        "type": "phrase",
+        "icon": "wc"
+    },
+    {
+        "russian": "Помогите мне",
+        "english": "Help me",
+        "type": "phrase",
+        "icon": "live_help"
+    },
+    {
+        "russian": "Я люблю Молдову",
+        "english": "I love Moldova",
+        "type": "phrase",
+        "icon": "favorite"
+    },
+    {
+        "russian": "Это очень вкусно",
+        "english": "This is very tasty",
+        "type": "phrase",
+        "icon": "restaurant"
+    },
+    {
+        "russian": "Я не знаю",
+        "english": "I don't know",
+        "type": "phrase",
+        "icon": "help_outline"
+    },
+    {
+        "russian": "Вы говорите по-английски?",
+        "english": "Do you speak English?",
+        "type": "phrase",
+        "icon": "question_answer"
+    },
+    {
+        "russian": "Кто?",
+        "english": "Who?",
+        "type": "phrase",
+        "icon": "person_search"
+    },
+    {
+        "russian": "Что?",
+        "english": "What?",
+        "type": "phrase",
+        "icon": "help_outline"
+    },
+    {
+        "russian": "Где?",
+        "english": "Where?",
+        "type": "phrase",
+        "icon": "place"
+    },
+    {
+        "russian": "Когда?",
+        "english": "When?",
+        "type": "phrase",
+        "icon": "access_time"
+    },
+    {
+        "russian": "Почему?",
+        "english": "Why?",
+        "type": "phrase",
+        "icon": "question_answer"
+    },
+    {
+        "russian": "Как?",
+        "english": "How?",
+        "type": "phrase",
+        "icon": "build_circle"
+    },
+    {
+        "russian": "Сколько?",
+        "english": "How much/many?",
+        "type": "phrase",
+        "icon": "calculate"
+    },
+    {
+        "russian": "Который?",
+        "english": "Which?",
+        "type": "phrase",
+        "icon": "filter_list"
+    },
+    {
+        "russian": "Чей?",
+        "english": "Whose?",
+        "type": "phrase",
+        "icon": "group"
+    },
+    {
+        "russian": "Зачем?",
+        "english": "What for?",
+        "type": "phrase",
+        "icon": "live_help"
+    }
+]

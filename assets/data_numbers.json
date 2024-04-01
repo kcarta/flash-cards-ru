@@ -1,0 +1,170 @@
+[
+    {
+        "russian": "один",
+        "english": "one",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "два",
+        "english": "two",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "три",
+        "english": "three",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "четыре",
+        "english": "four",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "пять",
+        "english": "five",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "шесть",
+        "english": "six",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "семь",
+        "english": "seven",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "восемь",
+        "english": "eight",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "девять",
+        "english": "nine",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "десять",
+        "english": "ten",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "одиннадцать",
+        "english": "eleven",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "двенадцать",
+        "english": "twelve",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "тринадцать",
+        "english": "thirteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "четырнадцать",
+        "english": "fourteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "пятнадцать",
+        "english": "fifteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "шестнадцать",
+        "english": "sixteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "семнадцать",
+        "english": "seventeen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "восемнадцать",
+        "english": "eighteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "девятнадцать",
+        "english": "nineteen",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "двадцать",
+        "english": "twenty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "тридцать",
+        "english": "thirty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "сорок",
+        "english": "forty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "пятьдесят",
+        "english": "fifty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "шестьдесят",
+        "english": "sixty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "семьдесят",
+        "english": "seventy",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "восемьдесят",
+        "english": "eighty",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "девяносто",
+        "english": "ninety",
+        "type": "number",
+        "icon": "tag"
+    },
+    {
+        "russian": "сто",
+        "english": "hundred",
+        "type": "number",
+        "icon": "tag"
+    }
+]

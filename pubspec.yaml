@@ -71,8 +71,12 @@ flutter:
   assets:
     - assets/data_adjectives.json
     - assets/data_nouns.json
+    - assets/data_numbers.json
+    - assets/data_phrases.json
+    - assets/data_prepositions.json
+    - assets/data_pronouns.json
+    - assets/data_time.json
     - assets/data_verbs.json
-    - assets/data_other.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,9 +1,14 @@
-- Bug: TTS broken after STT 
-    - Also fix styling in STT
-- Translate type in word card
-- Speak forms
+- Better view for forms
+    - View longer forms
+    - Speak forms
 - Grammar pages
+    - https://www.russianpod101.com/blog/2021/03/18/russian-grammar-overview/?src=blog_article_beginner_words_russian
     - Help button to see:
         - All grammar pages
         - Grammar page for type
     - Two actions under play
+- Expanded vocabulary & grammar
+    - https://www.russianpod101.com/blog/2021/09/23/russian-beginner-words/
+    - Verb forms
+    - Prepositions & cases
+- Translate type in word card

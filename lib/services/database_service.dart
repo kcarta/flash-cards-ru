@@ -30,8 +30,12 @@ class DatabaseService {
     List<String> dataSources = [
       "assets/data_adjectives.json",
       "assets/data_nouns.json",
-      "assets/data_verbs.json",
-      "assets/data_other.json"
+      "assets/data_numbers.json",
+      "assets/data_phrases.json",
+      "assets/data_prepositions.json",
+      "assets/data_pronouns.json",
+      "assets/data_time.json",
+      "assets/data_verbs.json"
     ];
     for (var source in dataSources) {
       String data = await rootBundle.loadString(source);

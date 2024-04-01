@@ -1,0 +1,122 @@
+[
+    {
+        "russian": "в",
+        "english": "in/at",
+        "type": "preposition",
+        "icon": "login"
+    },
+    {
+        "russian": "на",
+        "english": "on",
+        "type": "preposition",
+        "icon": "landscape"
+    },
+    {
+        "russian": "с",
+        "english": "with",
+        "type": "preposition",
+        "icon": "group_add"
+    },
+    {
+        "russian": "для",
+        "english": "for",
+        "type": "preposition",
+        "icon": "card_giftcard"
+    },
+    {
+        "russian": "о",
+        "english": "about",
+        "type": "preposition",
+        "icon": "info"
+    },
+    {
+        "russian": "из",
+        "english": "from",
+        "type": "preposition",
+        "icon": "import_export"
+    },
+    {
+        "russian": "до",
+        "english": "until/before",
+        "type": "preposition",
+        "icon": "schedule"
+    },
+    {
+        "russian": "после",
+        "english": "after",
+        "type": "preposition",
+        "icon": "history_toggle_off"
+    },
+    {
+        "russian": "под",
+        "english": "under",
+        "type": "preposition",
+        "icon": "call_missed_outgoing"
+    },
+    {
+        "russian": "над",
+        "english": "above",
+        "type": "preposition",
+        "icon": "publish"
+    },
+    {
+        "russian": "перед",
+        "english": "in front of",
+        "type": "preposition",
+        "icon": "front_hand"
+    },
+    {
+        "russian": "за",
+        "english": "behind",
+        "type": "preposition",
+        "icon": "flip_camera_android"
+    },
+    {
+        "russian": "между",
+        "english": "between",
+        "type": "preposition",
+        "icon": "swap_horiz"
+    },
+    {
+        "russian": "через",
+        "english": "through",
+        "type": "preposition",
+        "icon": "subway"
+    },
+    {
+        "russian": "около",
+        "english": "near",
+        "type": "preposition",
+        "icon": "near_me"
+    },
+    {
+        "russian": "вокруг",
+        "english": "around",
+        "type": "preposition",
+        "icon": "donut_large"
+    },
+    {
+        "russian": "против",
+        "english": "against",
+        "type": "preposition",
+        "icon": "not_interested"
+    },
+    {
+        "russian": "без",
+        "english": "without",
+        "type": "preposition",
+        "icon": "remove_circle_outline"
+    },
+    {
+        "russian": "внутри",
+        "english": "inside",
+        "type": "preposition",
+        "icon": "input"
+    },
+    {
+        "russian": "снаружи",
+        "english": "outside",
+        "type": "preposition",
+        "icon": "exit_to_app"
+    }
+]

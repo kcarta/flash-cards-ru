@@ -23,7 +23,18 @@
             "plural": "новые"
         }
     },
-    {"russian": "старый", "english": "old", "type": "adjective", "icon": "hourglass_bottom"},
+    {
+        "russian": "старый",
+        "english": "old",
+        "type": "adjective",
+        "icon": "hourglass_bottom",
+        "forms": {
+            "masculine": "старый",
+            "feminine": "старая",
+            "neuter": "старое",
+            "plural": "старые"
+        }
+    },
     {
         "russian": "хороший",
         "english": "good",

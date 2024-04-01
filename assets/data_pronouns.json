@@ -1,0 +1,236 @@
+[
+    {
+        "russian": "я",
+        "english": "I",
+        "type": "pronoun",
+        "icon": "person_outline",
+        "forms": {
+            "nominative": "я",
+            "genitive": "меня",
+            "dative": "мне",
+            "accusative": "меня",
+            "instrumental": "мной",
+            "prepositional": "обо мне"
+        }
+    },
+    {
+        "russian": "ты",
+        "english": "you (singular)",
+        "type": "pronoun",
+        "icon": "person",
+        "forms": {
+            "nominative": "ты",
+            "genitive": "тебя",
+            "dative": "тебе",
+            "accusative": "тебя",
+            "instrumental": "тобой",
+            "prepositional": "о тебе"
+        }
+    },
+    {
+        "russian": "он",
+        "english": "he",
+        "type": "pronoun",
+        "icon": "male",
+        "forms": {
+            "nominative": "он",
+            "genitive": "его",
+            "dative": "ему",
+            "accusative": "его",
+            "instrumental": "им",
+            "prepositional": "о нём"
+        }
+    },
+    {
+        "russian": "она",
+        "english": "she",
+        "type": "pronoun",
+        "icon": "female",
+        "forms": {
+            "nominative": "она",
+            "genitive": "её",
+            "dative": "ей",
+            "accusative": "её",
+            "instrumental": "ей",
+            "prepositional": "о ней"
+        }
+    },
+    {
+        "russian": "оно",
+        "english": "it",
+        "type": "pronoun",
+        "icon": "pest_control_rodent",
+        "forms": {
+            "nominative": "оно",
+            "genitive": "его",
+            "dative": "ему",
+            "accusative": "его",
+            "instrumental": "им",
+            "prepositional": "о нём"
+        }
+    },
+    {
+        "russian": "мы",
+        "english": "we",
+        "type": "pronoun",
+        "icon": "group",
+        "forms": {
+            "nominative": "мы",
+            "genitive": "нас",
+            "dative": "нам",
+            "accusative": "нас",
+            "instrumental": "нами",
+            "prepositional": "о нас"
+        }
+    },
+    {
+        "russian": "вы",
+        "english": "you (plural/formal)",
+        "type": "pronoun",
+        "icon": "groups",
+        "forms": {
+            "nominative": "вы",
+            "genitive": "вас",
+            "dative": "вам",
+            "accusative": "вас",
+            "instrumental": "вами",
+            "prepositional": "о вас"
+        }
+    },
+    {
+        "russian": "они",
+        "english": "they",
+        "type": "pronoun",
+        "icon": "people_outline",
+        "forms": {
+            "nominative": "они",
+            "genitive": "их",
+            "dative": "им",
+            "accusative": "их",
+            "instrumental": "ими",
+            "prepositional": "о них"
+        }
+    },
+    {
+        "russian": "себя",
+        "english": "oneself",
+        "type": "pronoun",
+        "icon": "self_improvement",
+        "forms": {
+            "nominative": "себя",
+            "genitive": "себя",
+            "dative": "себе",
+            "accusative": "себя",
+            "instrumental": "собой",
+            "prepositional": "о себе"
+        }
+    },
+    {
+        "russian": "этот",
+        "english": "this",
+        "type": "pronoun",
+        "icon": "arrow_forward",
+        "forms": {
+            "masculine": {
+                "nominative": "этот",
+                "genitive": "этого",
+                "dative": "этому",
+                "accusative": "этот",
+                "instrumental": "этим",
+                "prepositional": "об этом"
+            },
+            "feminine": {
+                "nominative": "эта",
+                "genitive": "этой",
+                "dative": "этой",
+                "accusative": "эту",
+                "instrumental": "этой",
+                "prepositional": "об этой"
+            },
+            "neuter": {
+                "nominative": "это",
+                "genitive": "этого",
+                "dative": "этому",
+                "accusative": "это",
+                "instrumental": "этим",
+                "prepositional": "об этом"
+            },
+            "plural": {
+                "nominative": "эти",
+                "genitive": "этих",
+                "dative": "этим",
+                "accusative": "эти",
+                "instrumental": "этими",
+                "prepositional": "об этих"
+            }
+        }
+    },
+    {
+        "russian": "тот",
+        "english": "that",
+        "type": "pronoun",
+        "icon": "arrow_back",
+        "forms": {
+            "masculine": {
+                "nominative": "тот",
+                "genitive": "того",
+                "dative": "тому",
+                "accusative": "тот",
+                "instrumental": "тем",
+                "prepositional": "об том"
+            },
+            "feminine": {
+                "nominative": "та",
+                "genitive": "той",
+                "dative": "той",
+                "accusative": "ту",
+                "instrumental": "той",
+                "prepositional": "об той"
+            },
+            "neuter": {
+                "nominative": "то",
+                "genitive": "того",
+                "dative": "тому",
+                "accusative": "то",
+                "instrumental": "тем",
+                "prepositional": "об том"
+            },
+            "plural": {
+                "nominative": "те",
+                "genitive": "тех",
+                "dative": "тем",
+                "accusative": "те",
+                "instrumental": "теми",
+                "prepositional": "об тех"
+            }
+        }
+    },
+    {
+        "russian": "кто-то",
+        "english": "someone",
+        "type": "pronoun",
+        "icon": "person_search",
+        "forms": {
+            "nominative": "кто-то",
+            "genitive": "кого-то",
+            "dative": "кому-то",
+            "accusative": "кого-то",
+            "instrumental": "кем-то",
+            "prepositional": "о ком-то"
+        }
+    },
+    {
+        "russian": "что-то",
+        "english": "something",
+        "type": "pronoun",
+        "icon": "help_outline",
+        "forms": {
+            "nominative": "что-то",
+            "genitive": "чего-то",
+            "dative": "чему-то",
+            "accusative": "что-то",
+            "instrumental": "чем-то",
+            "prepositional": "о чём-то"
+        }
+    }
+]

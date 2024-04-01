@@ -1,0 +1,332 @@
+[
+    {
+        "russian": "понедельник",
+        "english": "Monday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "вторник",
+        "english": "Tuesday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "среда",
+        "english": "Wednesday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "четверг",
+        "english": "Thursday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "пятница",
+        "english": "Friday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "суббота",
+        "english": "Saturday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "воскресенье",
+        "english": "Sunday",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "russian": "утро",
+        "english": "morning",
+        "type": "time",
+        "icon": "wb_sunny",
+        "forms": {
+            "singular": {
+                "nominative": "утро",
+                "genitive": "утра",
+                "dative": "утру",
+                "accusative": "утро",
+                "instrumental": "утром",
+                "prepositional": "утре"
+            },
+            "plural": {
+                "nominative": "утра",
+                "genitive": "утров",
+                "dative": "утрам",
+                "accusative": "утра",
+                "instrumental": "утрами",
+                "prepositional": "утрах"
+            }
+        }
+    },
+    {
+        "russian": "день",
+        "english": "day",
+        "type": "time",
+        "icon": "wb_sunny",
+        "forms": {
+            "singular": {
+                "nominative": "день",
+                "genitive": "дня",
+                "dative": "дню",
+                "accusative": "день",
+                "instrumental": "днем",
+                "prepositional": "дне"
+            },
+            "plural": {
+                "nominative": "дни",
+                "genitive": "дней",
+                "dative": "дням",
+                "accusative": "дни",
+                "instrumental": "днями",
+                "prepositional": "днях"
+            }
+        }
+    },
+    {
+        "russian": "вечер",
+        "english": "evening",
+        "type": "time",
+        "icon": "nights_stay",
+        "forms": {
+            "singular": {
+                "nominative": "вечер",
+                "genitive": "вечера",
+                "dative": "вечеру",
+                "accusative": "вечер",
+                "instrumental": "вечером",
+                "prepositional": "вечере"
+            },
+            "plural": {
+                "nominative": "вечера",
+                "genitive": "вечеров",
+                "dative": "вечерам",
+                "accusative": "вечера",
+                "instrumental": "вечерами",
+                "prepositional": "вечерах"
+            }
+        }
+    },
+    {
+        "russian": "ночь",
+        "english": "night",
+        "type": "time",
+        "icon": "nightlight",
+        "forms": {
+            "singular": {
+                "nominative": "ночь",
+                "genitive": "ночи",
+                "dative": "ночи",
+                "accusative": "ночь",
+                "instrumental": "ночью",
+                "prepositional": "ночи"
+            },
+            "plural": {
+                "nominative": "ночи",
+                "genitive": "ночей",
+                "dative": "ночам",
+                "accusative": "ночи",
+                "instrumental": "ночами",
+                "prepositional": "ночах"
+            }
+        }
+    },
+    {
+        "english": "second",
+        "russian": "секунда",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "секунда",
+                "genitive": "секунды",
+                "dative": "секунде",
+                "accusative": "секунду",
+                "instrumental": "секундой",
+                "prepositional": "секунде"
+            },
+            "plural": {
+                "nominative": "секунды",
+                "genitive": "секунд",
+                "dative": "секундам",
+                "accusative": "секунды",
+                "instrumental": "секундами",
+                "prepositional": "секундах"
+            }
+        }
+    },
+    {
+        "english": "minute",
+        "russian": "минута",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "минута",
+                "genitive": "минуты",
+                "dative": "минуте",
+                "accusative": "минуту",
+                "instrumental": "минутой",
+                "prepositional": "минуте"
+            },
+            "plural": {
+                "nominative": "минуты",
+                "genitive": "минут",
+                "dative": "минутам",
+                "accusative": "минуты",
+                "instrumental": "минутами",
+                "prepositional": "минутах"
+            }
+        }
+    },
+    {
+        "english": "hour",
+        "russian": "час",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "час",
+                "genitive": "часа",
+                "dative": "часу",
+                "accusative": "час",
+                "instrumental": "часом",
+                "prepositional": "часе"
+            },
+            "plural": {
+                "nominative": "часы",
+                "genitive": "часов",
+                "dative": "часам",
+                "accusative": "часы",
+                "instrumental": "часами",
+                "prepositional": "часах"
+            }
+        }
+    },
+    {
+        "english": "day",
+        "russian": "день",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "день",
+                "genitive": "дня",
+                "dative": "дню",
+                "accusative": "день",
+                "instrumental": "днем",
+                "prepositional": "дне"
+            },
+            "plural": {
+                "nominative": "дни",
+                "genitive": "дней",
+                "dative": "дням",
+                "accusative": "дни",
+                "instrumental": "днями",
+                "prepositional": "днях"
+            }
+        }
+    },
+    {
+        "english": "week",
+        "russian": "неделя",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "неделя",
+                "genitive": "недели",
+                "dative": "неделе",
+                "accusative": "неделю",
+                "instrumental": "неделей",
+                "prepositional": "неделе"
+            },
+            "plural": {
+                "nominative": "недели",
+                "genitive": "недель",
+                "dative": "неделям",
+                "accusative": "недели",
+                "instrumental": "неделями",
+                "prepositional": "неделях"
+            }
+        }
+    },
+    {
+        "english": "month",
+        "russian": "месяц",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "месяц",
+                "genitive": "месяца",
+                "dative": "месяцу",
+                "accusative": "месяц",
+                "instrumental": "месяцем",
+                "prepositional": "месяце"
+            },
+            "plural": {
+                "nominative": "месяцы",
+                "genitive": "месяцев",
+                "dative": "месяцам",
+                "accusative": "месяцы",
+                "instrumental": "месяцами",
+                "prepositional": "месяцах"
+            }
+        }
+    },
+    {
+        "english": "year",
+        "russian": "год",
+        "type": "time",
+        "icon": "timer",
+        "forms": {
+            "singular": {
+                "nominative": "год",
+                "genitive": "года",
+                "dative": "году",
+                "accusative": "год",
+                "instrumental": "годом",
+                "prepositional": "годе"
+            },
+            "plural": {
+                "nominative": "годы",
+                "genitive": "лет",
+                "dative": "годам",
+                "accusative": "годы",
+                "instrumental": "годами",
+                "prepositional": "годах"
+            }
+        }
+    },
+    {
+        "english": "today",
+        "russian": "сегодня",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "english": "tomorrow",
+        "russian": "завтра",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "english": "yesterday",
+        "russian": "вчера",
+        "type": "time",
+        "icon": "calendar_today"
+    },
+    {
+        "english": "now",
+        "russian": "сейчас",
+        "type": "time",
+        "icon": "timer"
+    }
+]
