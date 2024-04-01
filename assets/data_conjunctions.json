@@ -1,0 +1,50 @@
+[
+    {
+        "russian": "и",
+        "english": "and",
+        "type": "conjunction",
+        "icon": "add"
+    },
+    {
+        "russian": "но",
+        "english": "but",
+        "type": "conjunction",
+        "icon": "remove"
+    },
+    {
+        "russian": "или",
+        "english": "or",
+        "type": "conjunction",
+        "icon": "add_circle_outline"
+    },
+    {
+        "russian": "а",
+        "english": "but/and",
+        "type": "conjunction",
+        "icon": "flip_to_front"
+    },
+    {
+        "russian": "потому что",
+        "english": "because",
+        "type": "conjunction",
+        "icon": "subdirectory_arrow_right"
+    },
+    {
+        "russian": "если",
+        "english": "if",
+        "type": "conjunction",
+        "icon": "help_outline"
+    },
+    {
+        "russian": "когда",
+        "english": "when",
+        "type": "conjunction",
+        "icon": "schedule"
+    },
+    {
+        "russian": "чтобы",
+        "english": "in order to",
+        "type": "conjunction",
+        "icon": "trending_flat"
+    }
+]

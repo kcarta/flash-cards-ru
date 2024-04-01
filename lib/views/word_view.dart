@@ -68,7 +68,7 @@ class _WordViewState extends State<WordView> {
                 child: Icon(CupertinoIcons.text_badge_plus,
                     color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2, size: 28)),
             const SizedBox(width: 10),
-            const GrammarRulesOverlay(),
+            GrammarRulesOverlay(type: widget.words[currentIndex].type),
           ],
         ),
       ),

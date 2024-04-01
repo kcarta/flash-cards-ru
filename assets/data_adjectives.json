@@ -5,10 +5,38 @@
         "type": "adjective",
         "icon": "photo_size_select_small",
         "forms": {
-            "masculine": "маленький",
-            "feminine": "маленькая",
-            "neuter": "маленькое",
-            "plural": "маленькие"
+            "masculine": {
+                "nominative": "маленький",
+                "accusative": "маленького",
+                "genitive": "маленького",
+                "instrumental": "маленьким",
+                "dative": "маленькому",
+                "prepositional": "маленьком"
+            },
+            "feminine": {
+                "nominative": "маленькая",
+                "accusative": "маленькую",
+                "genitive": "маленькой",
+                "instrumental": "маленькой",
+                "dative": "маленькой",
+                "prepositional": "маленькой"
+            },
+            "neuter": {
+                "nominative": "маленькое",
+                "accusative": "маленькое",
+                "genitive": "маленького",
+                "instrumental": "маленьким",
+                "dative": "маленькому",
+                "prepositional": "маленьком"
+            },
+            "plural": {
+                "nominative": "маленькие",
+                "accusative": "маленьких",
+                "genitive": "маленьких",
+                "instrumental": "маленькими",
+                "dative": "маленьким",
+                "prepositional": "маленьких"
+            }   
         }
     },
     {

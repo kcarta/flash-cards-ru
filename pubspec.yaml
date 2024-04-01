@@ -40,6 +40,7 @@ dependencies:
   string_extensions: ^0.7.1
   speech_to_text: ^6.6.0
   translit: ^2.0.1
+  flutter_markdown: ^0.6.22
 
 
 dev_dependencies:
@@ -70,6 +71,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/data_adjectives.json
+    - assets/data_conjunctions.json
     - assets/data_nouns.json
     - assets/data_numbers.json
     - assets/data_phrases.json
@@ -77,6 +79,15 @@ flutter:
     - assets/data_pronouns.json
     - assets/data_time.json
     - assets/data_verbs.json
+    - assets/grammar_rules/adjective.md
+    - assets/grammar_rules/conjunction.md
+    - assets/grammar_rules/noun.md
+    - assets/grammar_rules/number.md
+    - assets/grammar_rules/phrase.md
+    - assets/grammar_rules/preposition.md
+    - assets/grammar_rules/pronoun.md
+    - assets/grammar_rules/time.md
+    - assets/grammar_rules/verb.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

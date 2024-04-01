@@ -3,61 +3,148 @@
         "russian": "один",
         "english": "one",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "cardinal": {
+                "masculine": "один",
+                "feminine": "одна",
+                "neuter": "одно"
+            },
+            "ordinal": {
+                "masculine": "первый",
+                "feminine": "первая",
+                "neuter": "первое"
+            }
+        }
+
     },
     {
         "russian": "два",
         "english": "two",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "cardinal": {
+                "masculine": "два",
+                "feminine": "две",
+                "neuter": "два"
+            },
+            "ordinal": {
+                "masculine": "второй",
+                "feminine": "вторая",
+                "neuter": "второе"
+            }
+        }
     },
     {
         "russian": "три",
         "english": "three",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "cardinal": {
+                "masculine": "три",
+                "feminine": "три",
+                "neuter": "три"
+            },
+            "ordinal": {
+                "masculine": "третий",
+                "feminine": "третья",
+                "neuter": "третье"
+            }
+        }
     },
     {
         "russian": "четыре",
         "english": "four",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "четвертый",
+                "feminine": "четвертая",
+                "neuter": "четвертое"
+            }
+        }
+
     },
     {
         "russian": "пять",
         "english": "five",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "пятый",
+                "feminine": "пятая",
+                "neuter": "пятое"
+            }
+        }
     },
     {
         "russian": "шесть",
         "english": "six",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "шестой",
+                "feminine": "шестая",
+                "neuter": "шестое"
+            }
+        }
     },
     {
         "russian": "семь",
         "english": "seven",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "седьмой",
+                "feminine": "седьмая",
+                "neuter": "седьмое"
+            }
+        }
     },
     {
         "russian": "восемь",
         "english": "eight",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "восьмой",
+                "feminine": "восьмая",
+                "neuter": "восьмое"
+            }
+        }
     },
     {
         "russian": "девять",
         "english": "nine",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "девятый",
+                "feminine": "девятая",
+                "neuter": "девятое"
+            }
+        }
     },
     {
         "russian": "десять",
         "english": "ten",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "десятый",
+                "feminine": "десятая",
+                "neuter": "десятое"
+            }
+        }
     },
     {
         "russian": "одиннадцать",
@@ -159,12 +246,30 @@
         "russian": "девяносто",
         "english": "ninety",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "девяностый",
+                "feminine": "девяностая",
+                "neuter": "девяностое"
+            }
+        }
     },
     {
         "russian": "сто",
         "english": "hundred",
         "type": "number",
-        "icon": "tag"
+        "icon": "tag",
+        "forms": {
+            "ordinal": {
+                "masculine": "сотый",
+                "feminine": "сотая",
+                "neuter": "сотое"
+            }
+        }
     }
+
+
+
+
 ]

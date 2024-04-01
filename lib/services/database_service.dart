@@ -29,6 +29,7 @@ class DatabaseService {
   Future<void> _seedDatabase(Database db) async {
     List<String> dataSources = [
       "assets/data_adjectives.json",
+      "assets/data_conjunctions.json",
       "assets/data_nouns.json",
       "assets/data_numbers.json",
       "assets/data_phrases.json",
