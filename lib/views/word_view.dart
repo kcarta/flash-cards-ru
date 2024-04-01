@@ -51,33 +51,17 @@ class _WordViewState extends State<WordView> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        leading: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CupertinoButton(
-              padding: EdgeInsets.zero,
-              child: const Icon(CupertinoIcons.back, color: CupertinoColors.activeBlue),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-            const SizedBox(width: 16),
-            const GrammarRulesOverlay(),
-          ],
-        ),
         middle: Text(widget.isFlashcardMode ? 'Learning Session' : 'Word Detail'),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(CupertinoIcons.text_badge_plus,
-                color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2),
-            CupertinoSwitch(
-              activeColor: CupertinoColors.activeBlue,
-              value: _showForms,
-              onChanged: (bool value) {
-                setState(() {
-                  _showForms = value;
-                });
-              },
-            ),
+            CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () => setState(() => _showForms = !_showForms),
+                child: Icon(CupertinoIcons.text_badge_plus,
+                    color: _showForms ? CupertinoColors.activeBlue : CupertinoColors.systemGrey2, size: 28)),
+            const SizedBox(width: 10),
+            const GrammarRulesOverlay(),
           ],
         ),
       ),

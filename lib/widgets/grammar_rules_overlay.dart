@@ -8,7 +8,7 @@ class GrammarRulesOverlay extends StatelessWidget {
     // This builds the button that, when tapped, will show the overlay
     return CupertinoButton(
       padding: EdgeInsets.zero, // Adjust padding as needed
-      child: const Icon(CupertinoIcons.book, color: CupertinoColors.activeBlue),
+      child: const Icon(CupertinoIcons.book, color: CupertinoColors.activeBlue, size: 28),
       onPressed: () {
         // This is where the overlay is triggered
         showCupertinoModalPopup(
