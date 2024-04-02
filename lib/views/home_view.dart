@@ -155,13 +155,55 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Future<void> _startLearningSession() async {
-    await Navigator.push(
-      context,
-      CupertinoPageRoute(builder: (context) {
-        return WordView(words: _filteredWords, isFlashcardMode: true);
-      }),
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Start Learning Session'),
+        actions: <Widget>[
+          CupertinoActionSheetAction(
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Flashcards', style: TextStyle(color: CupertinoColors.systemBlue)),
+                SizedBox(width: 6),
+                Icon(CupertinoIcons.rectangle_stack, color: CupertinoColors.systemBlue)
+              ],
+            ),
+            onPressed: () async {
+              Navigator.pop(context); // Implement navigation to quiz view
+              await Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => WordView(words: _filteredWords, mode: WordViewMode.ordered)),
+              );
+              _loadWords(); // Reload words after session ends
+            },
+          ),
+          CupertinoActionSheetAction(
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Shuffled Flashcards', style: TextStyle(color: CupertinoColors.systemBlue)),
+                SizedBox(width: 6),
+                Icon(CupertinoIcons.shuffle, color: CupertinoColors.systemBlue)
+              ],
+            ),
+            onPressed: () async {
+              Navigator.pop(context); // Close the action sheet
+              await Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => WordView(words: _filteredWords, mode: WordViewMode.shuffled)),
+              );
+              _loadWords(); // Reload words after session ends
+            },
+          ),
+          // Add more options for different types of sessions or activities
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          child: const Text('Cancel'),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
     );
-    _loadWords();
   }
 
   void _showSettingsMenu() {
@@ -244,7 +286,7 @@ class WordTile extends StatelessWidget {
         trailing: Icon(word.isLearned ? CupertinoIcons.check_mark_circled_solid : CupertinoIcons.circle),
         onTap: () => Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => WordView(words: [word], isFlashcardMode: false)),
+          CupertinoPageRoute(builder: (context) => WordView(words: [word], mode: WordViewMode.single)),
         ),
       ),
     );

@@ -7,9 +7,9 @@ import '../services/database_service.dart';
 
 class WordView extends StatefulWidget {
   final List<Word> words;
-  final bool isFlashcardMode;
+  final WordViewMode mode;
 
-  const WordView({super.key, required this.words, this.isFlashcardMode = false});
+  const WordView({super.key, required this.words, required this.mode});
 
   @override
   State<WordView> createState() => _WordViewState();
@@ -23,8 +23,8 @@ class _WordViewState extends State<WordView> {
   @override
   void initState() {
     super.initState();
-    if (widget.isFlashcardMode) {
-      widget.words.shuffle(); // Shuffle only if in flashcard mode
+    if (widget.mode == WordViewMode.shuffled) {
+      widget.words.shuffle();
     }
   }
 
@@ -40,7 +40,7 @@ class _WordViewState extends State<WordView> {
       Word currentWord = widget.words[currentIndex];
       dbService.updateWordLearnedStatus(currentWord.id!, isLearned);
 
-      if (widget.isFlashcardMode) {
+      if (widget.mode != WordViewMode.single) {
         setState(() {
           currentIndex++;
         });
@@ -59,7 +59,7 @@ class _WordViewState extends State<WordView> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(widget.isFlashcardMode ? 'Learning Session' : 'Word Detail'),
+        middle: Text(widget.mode == WordViewMode.single ? "Word Detail" : "Learning Session"),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -80,12 +80,12 @@ class _WordViewState extends State<WordView> {
         child: Center(
           child: currentIndex < widget.words.length
               ? SizedBox(
-                  width: MediaQuery.of(context).size.width * (widget.isFlashcardMode ? 0.9 : 1),
-                  height: MediaQuery.of(context).size.height * (widget.isFlashcardMode ? 0.85 : 1),
+                  width: MediaQuery.of(context).size.width * (widget.mode == WordViewMode.single ? 1 : 0.9),
+                  height: MediaQuery.of(context).size.height * (widget.mode == WordViewMode.single ? 1 : 0.85),
                   child: Dismissible(
                     resizeDuration: const Duration(milliseconds: 75),
                     key: UniqueKey(), // Ensure the card can be dismissed again
-                    direction: widget.isFlashcardMode ? DismissDirection.horizontal : DismissDirection.none,
+                    direction: widget.mode == WordViewMode.single ? DismissDirection.none : DismissDirection.horizontal,
                     onDismissed: (direction) {
                       bool isLearned = direction == DismissDirection.startToEnd;
                       _handleCardSwipe(isLearned);
@@ -106,3 +106,5 @@ class _WordViewState extends State<WordView> {
     );
   }
 }
+
+enum WordViewMode { single, shuffled, ordered }
