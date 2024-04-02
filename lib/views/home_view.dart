@@ -1,5 +1,8 @@
+import 'package:flash_cards/services/tts_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:string_extensions/string_extensions.dart';
 import 'package:translit/translit.dart';
 import 'word_view.dart';
 import '../models/word_model.dart';
@@ -213,12 +216,59 @@ class _HomeViewState extends State<HomeView> {
         title: const Text('Settings'),
         actions: <Widget>[
           CupertinoActionSheetAction(
+            onPressed: () {
+              // Implement: Change voice in TTS
+              _showVoiceSelection();
+            },
+            child: const Text(
+              'Select Speech Voice',
+              style: TextStyle(color: CupertinoColors.activeBlue),
+            ),
+          ),
+          CupertinoActionSheetAction(
             isDestructiveAction: true,
             onPressed: () {
               Navigator.pop(context);
               _resetWords();
             },
             child: const Text('Reset Words'),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          isDefaultAction: true,
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancel'),
+        ),
+      ),
+    );
+  }
+
+  void _showVoiceSelection() {
+    final TTSService ttsService = Provider.of<TTSService>(context, listen: false);
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Choose Voice'),
+        actions: <Widget>[
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              ttsService.setVoice(Voice.male);
+            },
+            child: const Text(
+              'Male Voice (Yuri)',
+              style: TextStyle(color: CupertinoColors.activeBlue),
+            ),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              ttsService.setVoice(Voice.female);
+            },
+            child: const Text(
+              'Female Voice (Milena)',
+              style: TextStyle(color: CupertinoColors.activeBlue),
+            ),
           ),
         ],
         cancelButton: CupertinoActionSheetAction(
