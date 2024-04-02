@@ -11,6 +11,7 @@ class TTSService {
       await _initialize();
       _isInitialized = true;
     }
+    await flutterTts.setVolume(1.0); // Reset volume to 1.0 in case it was changed (by STT service)
     await flutterTts.speak(text);
     debugPrint("Speaking $text");
   }

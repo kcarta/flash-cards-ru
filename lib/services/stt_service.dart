@@ -24,11 +24,7 @@ class STTService {
         localeId: "ru-RU",
         listenFor: const Duration(seconds: 7),
         pauseFor: const Duration(seconds: 2),
-        listenOptions: stt.SpeechListenOptions(
-            //listenMode: stt.ListenMode.search, // TODO check this
-            partialResults: false,
-            onDevice: true,
-            cancelOnError: true),
+        listenOptions: stt.SpeechListenOptions(partialResults: false, onDevice: true, cancelOnError: true),
         onResult: (result) async {
           bool isCorrect =
               (result.recognizedWords.toLowerCase() == russianWord.toLowerCase()) && result.confidence > 0.8;

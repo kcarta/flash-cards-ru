@@ -1,6 +1,0 @@
-- Better view for forms
-    - Translate & speak forms
-- Expanded vocabulary & grammar
-    - https://www.russianpod101.com/blog/2021/09/23/russian-beginner-words/
-    - Verb forms
-    - Prepositions & cases
