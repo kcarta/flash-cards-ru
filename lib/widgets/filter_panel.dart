@@ -21,13 +21,14 @@ class FilterPanel extends StatefulWidget {
 class _FilterPanelState extends State<FilterPanel> {
   late String currentFilter;
   late Map<String, bool> typeFilters;
-  String segmentControlValue = 'all'; // Initial value for the segment control
+  String? segmentControlValue = 'all'; // Initial value for the segment control
 
   @override
   void initState() {
     super.initState();
     currentFilter = widget.currentFilter;
     typeFilters = Map.from(widget.typeFilters);
+    updateSegmentControlValueBasedOnTypeFilters();
   }
 
   void applyFilters() {
@@ -106,8 +107,10 @@ class _FilterPanelState extends State<FilterPanel> {
                       "all": Text('All'),
                       "none": Padding(padding: EdgeInsets.symmetric(horizontal: 6), child: Text('None')),
                     },
-                    onValueChanged: (String value) {
-                      setAllTypeFilters(value == 'all');
+                    onValueChanged: (String? value) {
+                      if (value != null) {
+                        setAllTypeFilters(value == 'all');
+                      }
                       segmentControlValue = value; // Update the state to refresh the UI
                     },
                     groupValue: segmentControlValue,
@@ -131,6 +134,7 @@ class _FilterPanelState extends State<FilterPanel> {
                         onChanged: (bool value) {
                           setState(() {
                             typeFilters[type] = value;
+                            updateSegmentControlValueBasedOnTypeFilters();
                           });
                         },
                       ),
@@ -152,5 +156,21 @@ class _FilterPanelState extends State<FilterPanel> {
         ),
       ],
     );
+  }
+
+  void updateSegmentControlValueBasedOnTypeFilters() {
+    // Determine if all or none of the typeFilters are true
+    final allSelected = typeFilters.values.every((value) => value);
+    final noneSelected = typeFilters.values.every((value) => !value);
+
+    setState(() {
+      if (allSelected) {
+        segmentControlValue = 'all';
+      } else if (noneSelected) {
+        segmentControlValue = 'none';
+      } else {
+        segmentControlValue = null; // No selection
+      }
+    });
   }
 }
