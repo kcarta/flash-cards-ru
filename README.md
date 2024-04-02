@@ -251,8 +251,9 @@ Remember to implement the functionality for each option accordingly. For instanc
 # TODO
 
 - Styling in card view
-  - Rounded corners
-  - Transparency down to the swipe background?
+  - Rounded view (only in flash card mode?)
+  - Remove padding around card...
+    - Transparency down to the swipe background?
 - Sorting in home view
   - A-Z Russian
   - A-Z English

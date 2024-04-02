@@ -80,12 +80,12 @@ class _WordViewState extends State<WordView> {
         child: Center(
           child: currentIndex < widget.words.length
               ? SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.95,
-                  height: MediaQuery.of(context).size.height * 0.95,
+                  width: MediaQuery.of(context).size.width * (widget.isFlashcardMode ? 0.9 : 1),
+                  height: MediaQuery.of(context).size.height * (widget.isFlashcardMode ? 0.85 : 1),
                   child: Dismissible(
-                    resizeDuration: const Duration(milliseconds: 100),
+                    resizeDuration: const Duration(milliseconds: 75),
                     key: UniqueKey(), // Ensure the card can be dismissed again
-                    direction: DismissDirection.horizontal,
+                    direction: widget.isFlashcardMode ? DismissDirection.horizontal : DismissDirection.none,
                     onDismissed: (direction) {
                       bool isLearned = direction == DismissDirection.startToEnd;
                       _handleCardSwipe(isLearned);

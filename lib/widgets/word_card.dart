@@ -46,8 +46,10 @@ class _WordCardState extends State<WordCard> {
           ..rotateY(_isFlipped ? pi : 0), // Flips the card around the Y axis
         child: Card(
           child: Container(
+            padding: EdgeInsets.zero,
             decoration: BoxDecoration(
               color: _isFlipped ? CupertinoColors.systemGrey5 : CupertinoColors.activeBlue,
+              //borderRadius: BorderRadius.circular(20)
             ),
             child: Stack(
               children: [
