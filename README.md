@@ -247,3 +247,17 @@ Future<void> _startLearningSession() async {
 In this updated `_startLearningSession` method, the `CupertinoActionSheet` offers multiple options such as "Flashcards" and "Quiz". When the user selects an option, the action sheet is dismissed with `Navigator.pop(context)`, and the selected activity is started. For example, selecting "Flashcards" navigates to the `WordView` with `isFlashcardMode: true`, similar to your original method. You can add more options by adding additional `CupertinoActionSheetAction` widgets to the `actions` list.
 
 Remember to implement the functionality for each option accordingly. For instance, the "Quiz" option in the example above has a placeholder comment where you should add the implementation for starting a quiz session.
+
+# TODO
+
+- Styling in card view
+  - Rounded corners
+  - Transparency down to the swipe background?
+- Sorting in home view
+  - A-Z Russian
+  - A-Z English
+  - Type
+- Sorting the types by priority
+- 
+- Different activities
+  - 

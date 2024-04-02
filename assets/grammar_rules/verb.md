@@ -1,4 +1,4 @@
-# Detailed Overview of Russian Verbs
+# Russian Verbs
 
 Russian verbs are integral to conveying nuances such as the action's doer, number of subjects, timing, nature, speaker's attitude, and action direction. This expanded guide includes examples to illustrate these concepts.
 

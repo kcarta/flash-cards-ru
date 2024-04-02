@@ -1,4 +1,3 @@
-# Russian Numbers: Cardinal and Ordinal
 
 Numbers in Russian, both cardinal and ordinal, have specific forms and endings that change based on gender, case, and usage in sentences. Understanding these nuances is essential for accurate communication.
 

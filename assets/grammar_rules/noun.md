@@ -1,4 +1,4 @@
-# Russian Nouns: A Comprehensive Guide
+# Russian Nouns
 
 Russian nouns are characterized by their gender, number, and case. They form the backbone of Russian sentences, representing subjects, objects, and indirect objects. Understanding their properties and declensions is fundamental for mastering Russian grammar.
 

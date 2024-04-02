@@ -1,4 +1,4 @@
-# Russian Conjunctions: Linking Words and Ideas
+# Russian Conjunctions
 
 Conjunctions in Russian serve as essential tools for connecting elements within sentences, mirroring their counterparts in English but with unique usage aspects due to the nuances of Russian syntax and grammar.
 
