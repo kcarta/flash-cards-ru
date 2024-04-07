@@ -616,6 +616,30 @@
         }
     },
     {
+        "russian": "понимать",
+        "english": "understand",
+        "example": "Я понимаю русский язык",
+        "example_english": "I understand Russian language",
+        "type": "verb",
+        "icon": "psychology",
+        "forms": {
+            "present": {
+                "first-singular": "понимаю",
+                "second-singular": "понимаешь",
+                "third-singular": "понимает",
+                "first-plural": "понимаем",
+                "second-plural": "понимаете",
+                "third-plural": "понимают"
+            },
+            "past": {
+                "masculine-singular": "понимал",
+                "feminine-singular": "понимала",
+                "neuter-singular": "понимало",
+                "plural": "понимали"
+            }
+        }
+    },
+    {
         "russian": "готовить",
         "english": "cook",
         "type": "verb",
