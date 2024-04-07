@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import '../models/word_model.dart';
 

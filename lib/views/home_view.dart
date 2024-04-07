@@ -1,11 +1,10 @@
-import 'package:flash_cards/services/tts_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:string_extensions/string_extensions.dart';
 import 'package:translit/translit.dart';
 import 'word_view.dart';
 import '../models/word_model.dart';
+import '../services/tts_service.dart';
 import '../services/database_service.dart';
 import '../widgets/filter_panel.dart';
 

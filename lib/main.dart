@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart'; // Ensure Material is imported
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flash_cards/services/stt_service.dart';
-import 'package:flash_cards/services/tts_service.dart';
-import 'package:flash_cards/views/home_view.dart';
 import 'package:provider/provider.dart';
+import 'services/stt_service.dart';
+import 'services/tts_service.dart';
+import 'views/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             theme: CupertinoThemeData(
               primaryColor: CupertinoColors.systemBlue,
             ),
-            home: HomeView(), // Your main Cupertino page
+            home: HomeView(),
           ),
         ),
       ),

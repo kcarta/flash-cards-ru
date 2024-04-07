@@ -1,6 +1,6 @@
 library icon_helper;
 // From https://github.com/VoltaireApp/icons_helper
-// Simplified ot only use Material Icons
+// Simplified to only use Material Icons
 
 import "package:flutter/material.dart";
 

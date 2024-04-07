@@ -54,7 +54,7 @@ class TTSService {
           return {"name": "Yuri (Enhanced)", "locale": "ru-RU"};
         } else if (voice["name"] == "Yuri") {
           selectedVoice = {"name": "Yuri", "locale": "ru-RU"};
-          // Don't break yet, in case the enhanced version is available
+          // Don't stop yet, in case the enhanced version is available
         }
       }
     }

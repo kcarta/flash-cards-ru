@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flash_cards/models/word_model.dart';
 import 'package:provider/provider.dart';
+import '../models/word_model.dart';
 import '../services/tts_service.dart';
 import '../services/word_form_helper.dart'; // Make sure this path is correct
 

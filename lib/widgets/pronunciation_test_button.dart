@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flash_cards/services/stt_service.dart';
 import 'package:provider/provider.dart';
+import '../services/stt_service.dart';
 
 class PronunciationTestButton extends StatefulWidget {
   final String russianWord;

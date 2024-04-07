@@ -1,7 +1,7 @@
-import 'package:flash_cards/widgets/word_forms_sheet.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flash_cards/widgets/grammar_rules_sheet.dart';
-import 'package:flash_cards/widgets/word_card.dart';
+import '../widgets/grammar_rules_sheet.dart';
+import '../widgets/word_forms_sheet.dart';
+import '../widgets/word_card.dart';
 import '../models/word_model.dart';
 import '../services/database_service.dart';
 

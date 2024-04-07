@@ -1,9 +1,9 @@
-import 'package:flash_cards/services/tts_service.dart';
-import 'package:flash_cards/widgets/pronunciation_test_button.dart';
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'dart:math';
+import 'pronunciation_test_button.dart';
+import '../services/tts_service.dart';
 import '../models/word_model.dart';
 
 class WordCard extends StatefulWidget {
