@@ -2,7 +2,9 @@
 
 This is a simple flashcard app for learning basic Russian vocabulary and grammar rules around forming words.
 
-(*This is a hobby project mostly made over a single weekend, and is not intended to be a full-featured language learning app.*)
+Two notes:
+- This is a hobby project mostly made over a single weekend, and is not intended to be a full-featured language learning app of value for anyone besides me.
+- I am learning Russian as my in-laws speak it due to a fluke of geopolitical history and Soviet imperialism. [Support Ukraine](https://war.ukraine.ua/donate/) any way you can.
 
 ## Features
 
@@ -15,9 +17,8 @@ This is a simple flashcard app for learning basic Russian vocabulary and grammar
 - Grammar guides
 
 # TODO
-
 - Finish word forms
-- Theming Material/Cupertino
+- Better theming Material/Cupertino
 - Styling in card view
   - Rounded view (only in flash card mode?)
   - Remove padding around card...
